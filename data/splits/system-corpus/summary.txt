@@ -1,0 +1,62 @@
+Clips per split
+split           train  val  test
+language                        
+Haitian Creole    170   30   120
+Hausa             187   33   120
+Hindi             187   33   120
+Oromo             187   33   120
+Shona             187   33   120
+Swahili           187   33   120
+Telugu            187   33   120
+Turkish           187   33   120
+Vietnamese        187   33   120
+Yoruba            187   33   120
+
+Ratings per split
+split           train  val  test
+language                        
+Haitian Creole    510   90   360
+Hausa             561   99   360
+Hindi             561   99   360
+Oromo             561   99   360
+Shona             561   99   360
+Swahili           561   99   360
+Telugu            561   99   360
+Turkish           561   99   360
+Vietnamese        561   99   360
+Yoruba            561   99   360
+
+Systems x corpora in each split (clips)
+split                    train  val  test
+dataset    system                        
+bouquet    EveryVoice      170   30     0
+           F5              170   30     0
+           Gemini            0    0   200
+           OmniVoice         0    0   200
+           VITS            170   30     0
+fleurs     EveryVoice      170   30     0
+           F5                0    0   200
+           Gemini          170   30     0
+           OmniVoice       170   30     0
+           VITS              0    0   200
+           ground-truth    153   27     0
+open-bible EveryVoice        0    0   200
+           F5              170   30     0
+           Gemini          170   30     0
+           OmniVoice       170   30     0
+           VITS            170   30     0
+           ground-truth      0    0   200
+
+Difficulty tiers within each split (clips)
+difficulty  easy  hard  unanimous  very_hard
+split                                       
+test         595   249        318         38
+train        916   386        446        105
+val          158    66         88         15
+
+MOS per split
+           mean       std  size
+split                          
+test   3.423611  1.159785  1200
+train  3.455298  1.071309  1853
+val    3.453619  1.068132   327

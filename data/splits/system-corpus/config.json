@@ -1,0 +1,13 @@
+{
+  "strategy": "unseen system x corpus pairing; one held-out cell per system (Latin-square diagonal), identical across all languages",
+  "test_cells": [
+    "bouquet:Gemini",
+    "bouquet:OmniVoice",
+    "fleurs:F5",
+    "fleurs:VITS",
+    "open-bible:EveryVoice",
+    "open-bible:ground-truth"
+  ],
+  "val_sentences_per_language_corpus": 3,
+  "seed": 42
+}
