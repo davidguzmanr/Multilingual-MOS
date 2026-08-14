@@ -217,5 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-UTMOSv2/
+repositories/
+papers/
 data/audios/

@@ -1,0 +1,16 @@
+EST_009_Verse_014.wav,1.3333
+EXO_007_Verse_020.wav,1.0000
+EZK_030_Verse_025.wav,2.3333
+GEN_002_Verse_018.wav,1.0000
+ISA_026_Verse_020.wav,1.3333
+JHN_002_Verse_008.wav,1.0000
+JOB_010_Verse_013.wav,2.3333
+LUK_024_Verse_005.wav,1.3333
+MAT_013_Verse_013.wav,1.3333
+MAT_027_Verse_002.wav,3.6667
+MAT_028_Verse_008.wav,4.0000
+MRK_015_Verse_016.wav,2.0000
+PSA_048_Verse_005.wav,3.3333
+PSA_105_Verse_031.wav,2.6667
+ROM_001_Verse_022.wav,4.0000
+ZEC_005_Verse_002.wav,1.3333

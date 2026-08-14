@@ -1,0 +1,4 @@
+ISA_060_Verse_017.wav,3.3333
+LUK_019_Verse_044.wav,2.6667
+PRO_018_Verse_014.wav,3.3333
+REV_010_Verse_003.wav,3.0000

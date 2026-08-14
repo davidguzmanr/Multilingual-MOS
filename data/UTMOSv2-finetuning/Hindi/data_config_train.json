@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "name": "bouquet-EveryVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/bouquet/EveryVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/bouquet-EveryVoice_train.txt"
+    },
+    {
+      "name": "bouquet-F5-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/bouquet/F5/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/bouquet-F5_train.txt"
+    },
+    {
+      "name": "bouquet-Gemini-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/bouquet/Gemini/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/bouquet-Gemini_train.txt"
+    },
+    {
+      "name": "bouquet-OmniVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/bouquet/OmniVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/bouquet-OmniVoice_train.txt"
+    },
+    {
+      "name": "bouquet-VITS-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/bouquet/VITS/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/bouquet-VITS_train.txt"
+    },
+    {
+      "name": "fleurs-EveryVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/EveryVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-EveryVoice_train.txt"
+    },
+    {
+      "name": "fleurs-F5-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/F5/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-F5_train.txt"
+    },
+    {
+      "name": "fleurs-Gemini-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/Gemini/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-Gemini_train.txt"
+    },
+    {
+      "name": "fleurs-OmniVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/OmniVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-OmniVoice_train.txt"
+    },
+    {
+      "name": "fleurs-VITS-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/VITS/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-VITS_train.txt"
+    },
+    {
+      "name": "fleurs-ground-truth-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/fleurs/ground-truth/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/fleurs-ground-truth_train.txt"
+    },
+    {
+      "name": "open-bible-EveryVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/EveryVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-EveryVoice_train.txt"
+    },
+    {
+      "name": "open-bible-F5-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/F5/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-F5_train.txt"
+    },
+    {
+      "name": "open-bible-Gemini-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/Gemini/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-Gemini_train.txt"
+    },
+    {
+      "name": "open-bible-OmniVoice-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/OmniVoice/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-OmniVoice_train.txt"
+    },
+    {
+      "name": "open-bible-VITS-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/VITS/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-VITS_train.txt"
+    },
+    {
+      "name": "open-bible-ground-truth-Hindi",
+      "dir": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/audios/open-bible/ground-truth/Hindi",
+      "mos_list": "/network/scratch/g/guzmand/Repositories/Multilingual-MOS/data/UTMOSv2-finetuning/Hindi/open-bible-ground-truth_train.txt"
+    }
+  ]
+}
