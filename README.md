@@ -19,6 +19,37 @@ Fully-crossed design, per language:
 Two gaps: `bouquet` has no ground-truth, and Haitian Creole has no
 `fleurs × ground-truth`.
 
+### Clip duration and annotation time
+
+Clip duration from the wav headers; annotation time from the `lead_time` column
+(seconds of wall-clock per rating):
+
+| Language | dur. mean | dur. median | time mean | time median |
+|---|---:|---:|---:|---:|
+| Haitian Creole | 9.09 | 9.37 | 142.7 | 21.0 |
+| Hausa | 9.57 | 8.94 | 47.8 | 24.3 |
+| Hindi | 8.84 | 8.53 | 36.8 | 17.1 |
+| Oromo | 7.99 | 7.11 | 87.1 | 25.4 |
+| Shona | 7.67 | 7.35 | 195.6 | 20.1 |
+| Swahili | 8.90 | 8.61 | 111.5 | 19.5 |
+| Telugu | 8.12 | 8.13 | 43.9 | 21.4 |
+| Turkish | 7.73 | 7.52 | 105.2 | 12.7 |
+| Vietnamese | 7.45 | 7.18 | 80.8 | 12.6 |
+| Yoruba | 8.03 | 7.77 | 71.6 | 25.1 |
+| **All** | **8.34** | **8.00** | **92.0** | **19.4** |
+
+7.83 h of audio total. Duration varies far more by corpus than by language
+(`bouquet` 4.26 mean, `fleurs` 10.23, `open-bible` 9.87), and ground-truth runs
+~35% longer than any system (11.19 vs 7.01–8.77) on the same texts.
+
+`lead_time` is wall-clock on the task, so it absorbs breaks — the raw mean is
+unusable (max 22.6 h, std 1409). Prefer the median, ~19 s; trimming the top and
+bottom 1% gives a mean of 31.3 s.
+
+Let's say each annotator rates 500 samples, at a median of 19.4s per sample it would
+take 2.7 hours to annotate them (just one dimension). Around 30-40 USD seems fair. 
+With 5 annotators per  language each language would cost us 150-200 USD.
+
 ## Split strategy: unseen system × corpus pairing
 
 One (corpus, system) cell **per system** is held out for test — a Latin-square
