@@ -152,10 +152,10 @@ The open multilingual MOS landscape covers a few thousand utterances of French, 
 - Udupa, S. et al. (2024). *IndicMOS: A Multilingual MOS Prediction Dataset for Indian Languages.* [ISCA Archive (INTERSPEECH 2024)](https://www.isca-archive.org/interspeech_2024/udupa24b_interspeech.pdf)
 - Reddy, C.K.A. et al. (2021). *DNSMOS P.835: A Non-Intrusive Perceptual Objective Speech Quality Metric.* [arXiv:2010.15258](https://arxiv.org/abs/2010.15258)
 - Tseng, W. et al. (2022). *Toward Robust Training for Automatic MOS Prediction.* [arXiv:2110.02635](https://arxiv.org/abs/2110.02635)
-- Yi, J. et al. (2022). *ConferencingSpeech 2022 Challenge: Non-Intrusive Objective Speech Quality Assessment for Online Conferencing Applications.* [arXiv:2203.16032](https://arxiv.org/abs/2203.16032) ⚠️ *unverified — see note below*
+- Yi, G. et al. (2022). *ConferencingSpeech 2022 Challenge: Non-intrusive Objective Speech Quality Assessment (NISQA) Challenge for Online Conferencing Applications.* [arXiv:2203.16032](https://arxiv.org/abs/2203.16032)
 - Yi, J. et al. (2025). *QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning and Descriptions.* [arXiv:2503.20290](https://arxiv.org/abs/2503.20290)
 - Zhang, J. et al. (2024). *SingMOS: Multi-Model MOS Corpus for Singing Voice Synthesis.* [arXiv:2406.10911](https://arxiv.org/abs/2406.10911)
 - (2024). *MOS-Bench: A Benchmark for Automatic MOS Prediction.* [arXiv:2411.03715](https://arxiv.org/abs/2411.03715)
 - (2025). *Cross-lingual Zero-Shot MOS Prediction.* [arXiv:2502.13004](https://arxiv.org/abs/2502.13004)
 
-> ⚠️ **Unverified citation:** the Tencent Corpus / ConferencingSpeech 2022 entry originally shared the same (wrong) arXiv ID as BVCC (2203.16032), which is a strong signal it was also misattributed by the research agent. I haven't been able to confirm the correct ID — treat this citation as unverified until checked against the ConferencingSpeech 2022 proceedings.
+<!-- Verified 2026-10-23: arXiv:2203.16032 is the ConferencingSpeech 2022 (NISQA) challenge paper, Gaoxiong Yi et al., submitted 30 Mar 2022. BVCC is arXiv:2105.02373, so the two never shared an ID; the earlier suspicion was unfounded. Tencent corpus figures in the table (~10k Mandarin clips without reverb + ~4k with reverb, P.808-style crowdsourcing, >24 raters per clip with >20 retained) come from Section 3 of that paper. -->
