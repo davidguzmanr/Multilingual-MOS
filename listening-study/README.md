@@ -78,39 +78,37 @@ covers depends on the overlap decision (k = 5: 300-450 clips; k = 1: 1,500-2,300
 
 ## Candidate languages
 
-TTS systems = pretrained models that synthesize the language out of the box; every language also gets
-the 3 trainable toolkits from the pilot (EveryVoice, F5-TTS fine-tune, VITS). Datasets = sources with
+TTS systems = pretrained models or commercial APIs that synthesize the language out of the box, from a
+64-model sweep checked 2026-11-06 (research_notes/tts_models_coverage.csv); every language also gets the
+3 trainable toolkits from the pilot (EveryVoice, F5-TTS fine-tune, VITS). Datasets = sources with
 sentences and human ground-truth audio: core = Open Bible (OB), FLEURS (FL), Common Voice (CV, counted
 only above ~1 h); BOUQuET is text only. Full names behind each count:
 [mos-datasets/target-languages.csv](../mos-datasets/target-languages.csv).
 
 | Region | Language | Family › Branch | Distinct in region? | TTS systems | Datasets with text + GT audio | BOUQuET text |
 |---|---|---|---|---:|---|---|
-| East Asia | Chinese (Mandarin) | Sino-Tibetan › Sinitic | yes | 11 | 2 core (FL, CV) + 5 other | yes |
-| East Asia | Japanese | Japonic | yes | 9 (10 if MMS-TTS) | 2 core (FL, CV) + 5 other | yes |
-| East Asia | Korean | Koreanic | yes | 9 | 2 core (FL, CV 10 h) + 3 other | yes |
-| South Asia | Hindi | Indo-European › Indo-Aryan | yes | 9 | 3 core (OB, FL, CV) + 3 other | yes |
-| South Asia | Tamil | Dravidian › Southern | yes | 6 | 3 core (OB, FL, CV) + 2 other | no |
-| Southeast Asia | Vietnamese | Austroasiatic › Vietic | yes | 4 | 3 core (OB, FL, CV small) + 3 other | yes |
-| Africa | Yoruba | Niger-Congo › Volta-Niger | family shared | 4 (+Gemini unofficial) | 3 core (OB, FL, CV small) + 3 other | yes |
-| Africa | Swahili | Niger-Congo › Bantu | **branch shared with Shona** | 6 | 3 core (OB, FL, CV) + 3 other | yes |
-| Africa | Shona | Niger-Congo › Bantu | **branch shared with Swahili** | 2 | 2 core (OB, FL) + 1 other | no |
-| Americas | Haitian Creole | French-lexifier creole | yes | 3 (OmniVoice nominal) | 1 core (OB) + 1 other | no |
-| Americas | Quechua | Quechuan › Quechua II | yes | 2 (OmniVoice nominal) | 1 core (CV 1.7 h) + 3 other | no |
-| Europe | French | Indo-European › Romance | **branch shared with Spanish** | 10 | 2 core (FL, CV) + 6 other | yes |
-| Europe | Spanish | Indo-European › Romance | **branch shared with French** | 10 | 2 core (FL, CV) + 5 other | yes |
-| Europe | German | Indo-European › Germanic | family shared | 10 | 2 core (FL, CV) + 6 other | yes |
-| Middle East | Arabic | Afro-Asiatic › Semitic | yes | 7 | 3 core (OB, FL, CV) + 4 other | yes |
-| Middle East | Turkish | Turkic › Oghuz | yes | 6 | 3 core (OB, FL, CV) + 0 other | yes |
+| East Asia | Japanese | Japonic | yes | 34 (22 open + 12 API) | 2 core (FL, CV) + 5 other | yes |
+| East Asia | Korean | Koreanic | yes | 32 (21 open + 11 API) | 2 core (FL, CV 10 h) + 3 other | yes |
+| South Asia | Hindi | Indo-European › Indo-Aryan | yes | 31 (20 open + 11 API) | 3 core (OB, FL, CV) + 3 other | yes |
+| Southeast Asia | Vietnamese | Austroasiatic › Vietic | yes | 21 (12 open + 9 API) | 3 core (OB, FL, CV small) + 3 other | yes |
+| Southeast Asia | Indonesian | Austronesian › Malayo-Polynesian | yes | 18 (9 open + 9 API) | 2 core (FL, CV) + 0 other | yes |
+| Africa | Yoruba | Niger-Congo › Volta-Niger | family shared | 11 (10 open + 1 API) | 3 core (OB, FL, CV small) + 3 other | yes |
+| Africa | Swahili | Niger-Congo › Bantu | family shared | 19 (13 open + 6 API) | 3 core (OB, FL, CV) + 3 other | yes |
+| Africa | Hausa | Afro-Asiatic › Chadic | family shared with Arabic, branch distinct | 11 (8 open + 3 API) | 3 core (OB, FL, CV) + 2 other | no |
+| Americas | Haitian Creole | French-lexifier creole | yes | 9 (7 open + 2 API) | 1 core (OB) + 1 other | no |
+| Europe | French | Indo-European › Romance | **branch shared with Spanish** | 39 (27 open + 12 API) | 2 core (FL, CV) + 6 other | yes |
+| Europe | Spanish | Indo-European › Romance | **branch shared with French** | 38 (26 open + 12 API) | 2 core (FL, CV) + 5 other | yes |
+| Europe | German | Indo-European › Germanic | family shared | 37 (25 open + 12 API) | 2 core (FL, CV) + 6 other | yes |
+| Middle East | Arabic | Afro-Asiatic › Semitic | yes | 28 (17 open + 11 API) | 3 core (OB, FL, CV) + 4 other | yes |
+| Middle East | Turkish | Turkic › Oghuz | yes | 25 (15 open + 10 API) | 3 core (OB, FL, CV) + 0 other | yes |
 
-Africa repeats a branch (Swahili and Shona are both Bantu) and Europe repeats a branch (French and
-Spanish are both Romance); Indo-European appears four times overall. Swaps that remove the repeats and
-have corpus coverage: Hausa or Oromo (Afro-Asiatic, in the pilot) or Dholuo (Nilo-Saharan, Open Bible +
-FLEURS) for Shona; Hungarian or Finnish (Uralic), Polish (Slavic) or Greek (Hellenic) for French or
-Spanish. Seven languages already have pilot audio from 5 systems: Hindi, Vietnamese, Yoruba, Swahili,
-Shona, Haitian Creole, Turkish. Two sourcing problems:
-Quechua has no Open Bible, FLEURS or BOUQuET coverage (pick a variety; Common Voice Chanka has 1.7 h);
-Haitian Creole has Open Bible as its only ground-truth audio. Chinese, Japanese, Korean, French,
+Shona was dropped and Indonesian added on 2026-11-02 (adds Austronesian, removes the Bantu repeat);
+Hausa was added on 2026-11-04 as the third African language (Chadic: same family as Arabic, different
+branch). Europe still repeats a branch (French and Spanish are both Romance) and Indo-European appears
+four times overall; Hungarian or Finnish (Uralic), Polish (Slavic) or Greek (Hellenic) would replace one
+of them. Seven languages already have pilot audio from 5 systems: Hindi, Vietnamese, Yoruba, Swahili,
+Hausa, Haitian Creole, Turkish. Chinese, Tamil and Quechua were dropped on 2026-11-06, leaving 14 languages. One sourcing problem:
+Haitian Creole has Open Bible as its only ground-truth audio. Japanese, Korean, Indonesian, French,
 Spanish and German are not in Open Bible and need another ground-truth source.
 
 ## VoiceMOS timeline

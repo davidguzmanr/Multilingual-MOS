@@ -131,12 +131,31 @@ For a dataset covering **10 languages** at the recommended level: **800K–1.5M 
 | Open multilingual TTS naturalness MOS | Only French (~1,460 utts) and Mandarin (~1,352 utts) — both too small to train on |
 | European languages (DE, ES, IT, PT, NL) | **Not represented in any public MOS dataset** |
 | Low-resource / African / SE Asian languages | **No public MOS data exists** |
+| Indonesian (Austronesian; added to the target list 2026-11-02) | **No public MOS data.** Only precedent: the ZeroSpeech 2019 Indonesian naturalness MOS test ([arXiv:1904.11469](https://arxiv.org/abs/1904.11469)), 1-5 scale with native judges; ratings release not confirmed. Sentences and ground truth available from FLEURS (`id_id`), Common Voice and BOUQuET (source pivot); no Open Bible data. |
 | Rating density in multilingual efforts | IndicMOS has ~1 rating/utt; unusable for training |
 | Open equivalent of SQuId | **Does not exist** |
 
 The open multilingual MOS landscape covers a few thousand utterances of French, Mandarin, and singing voice. An open dataset covering 5+ language families with 8+ ratings/utterance and 15+ systems per language would be a substantial contribution and the most comprehensive open multilingual TTS MOS resource available.
 
 ---
+
+## TTS model coverage for the target languages
+
+A sweep of 64 TTS models and APIs (checked 2026-11-06; full matrix with official language lists, licences and
+sources in `research_notes/tts_models_coverage.md` / `.csv`) against the 14 target languages in
+[target-languages.csv](target-languages.csv):
+
+- **All 14 languages:** OmniVoice (k2-fsa, 646 languages, Apache-2.0) and IMS-Toucan (7,000+ ISO codes); both
+  list by training table, and quality for Haitian Creole (0.04 h in OmniVoice) is undocumented.
+- **13 of 14:** MMS-TTS (no Japanese; CC-BY-NC), Fish Audio S2-Pro / Drama 3 (no Hausa), Higgs TTS 3 (no Yoruba;
+  non-commercial), Gemini TTS (no Yoruba), ElevenLabs v3 (no Haitian Creole). VoxCPM2 covers 11 (no Yoruba,
+  Hausa, Haitian Creole; Apache-2.0).
+- **Out-of-the-box systems per language** (open weights + APIs): French 39, Spanish 38, German 37, Japanese 34,
+  Korean 32, Hindi 31, Arabic 28, Turkish 25, Vietnamese 21, Swahili 19, Indonesian 18, Yoruba 11, Hausa 11,
+  Haitian Creole 9. Yoruba and Hausa rely on African-specific checkpoints (BibleTTS, Sunbird Orpheus-3B,
+  YarnGPT, VoxCPM2-Yoruba) plus OmniVoice, MMS-TTS and Toucan.
+- Licence caveat for a released dataset: MMS-TTS, XTTS-v2, Fish S2-Pro and Higgs TTS 3 weights are
+  non-commercial; API terms on audio redistribution were not reviewed.
 
 ## References
 
