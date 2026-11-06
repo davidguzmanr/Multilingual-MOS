@@ -113,6 +113,63 @@ Hausa, Haitian Creole, Turkish. Chinese, Tamil and Quechua were dropped on 2026-
 Haitian Creole has Open Bible as its only ground-truth audio. Japanese, Korean, Indonesian, French,
 Spanish and German are not in Open Bible and need another ground-truth source.
 
+## Candidate TTS systems per language
+
+Shortlist from the 64-model sweep (full lists in [mos-datasets/target-languages.csv](../mos-datasets/target-languages.csv)).
+Common core in every language: ground truth, Gemini TTS, ElevenLabs, OmniVoice, MMS-TTS (no Japanese), plus
+EveryVoice and F5-TTS fine-tunes. Gemini (Yoruba) and ElevenLabs (Haitian Creole) are unlisted but worked in the pilot.
+Target 9 systems per language, ~100 sentences each; keep MMS-TTS/Piper as genuinely weak systems and add
+text-corrupted or degraded conditions where high-resource languages cluster at the top.
+
+| Language | Open weights beyond the core | APIs |
+|---|---|---|
+| Japanese, Korean | VoxCPM2, Qwen3-TTS, CosyVoice 3, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5 (Kokoro ja) | Gemini, ElevenLabs |
+| Hindi | VoxCPM2, IndicF5, Indic Parler-TTS, Higgs TTS 3, Kokoro, Piper | Gemini, ElevenLabs |
+| Vietnamese | VoxCPM2, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5, Piper, NVIDIA Magpie | Gemini, ElevenLabs |
+| Indonesian | VoxCPM2, Fish S2-Pro, Higgs TTS 3, Piper | Gemini, ElevenLabs |
+| Yoruba | Fish S2-Pro, Sunbird Orpheus-3B, YarnGPT, VoxCPM2-Yoruba, BibleTTS | ElevenLabs (Gemini unofficial) |
+| Swahili | VoxCPM2, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5, Chatterbox, Sunbird Orpheus-3B, swa-csm-1b, Piper | Gemini, ElevenLabs |
+| Hausa | Higgs TTS 3, Sunbird Orpheus-3B, YarnGPT, BibleTTS | Gemini, ElevenLabs |
+| Haitian Creole | Fish S2-Pro, Higgs TTS 3 | Gemini (ElevenLabs unofficial) |
+| French, Spanish, German | VoxCPM2, Qwen3-TTS, CosyVoice 3, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5, Kokoro (fr, es), Chatterbox, Piper | Gemini, ElevenLabs |
+| Arabic | VoxCPM2, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5, Chatterbox, Piper, IndexTTS-2.5 | Gemini (Egyptian, MSA), ElevenLabs |
+| Turkish | VoxCPM2, Fish S2-Pro, Higgs TTS 3, MOSS-TTS v1.5, Chatterbox, Piper | Gemini, ElevenLabs |
+
+Licences: the release will be non-commercial (MMS-TTS CC-BY-NC, Fish and Higgs research licences, YarnGPT NC-SA);
+Indic Parler-TTS (Apache-2.0) and IndicF5 (MIT) are gated for access only. Check Gemini and ElevenLabs terms on
+redistributing generated audio before synthesis. Cloning models need a reference voice with permission.
+
+## Environments on the cluster
+
+`module load miniconda/3 && conda activate <env>`; scripts, smoke tests and fixes in [env/](env/) (see its README).
+All six were verified by synthesizing audio on an L40S (2026-11-06).
+
+| Env | Models | Notes |
+|---|---|---|
+| `Multilingual-MOS` | OmniVoice, VoxCPM2, MMS-TTS, Kokoro, Piper, F5-TTS, Orpheus/SNAC, swa-csm, coqui-tts (OpenBible VITS), Gemini and ElevenLabs SDKs | py3.10, torch 2.8.0+cu128, transformers 5.19.0 |
+| `Multilingual-MOS-qwen3-tts` | Qwen3-TTS, YarnGPT | transformers 4.57.3 |
+| `Multilingual-MOS-fish-speech` | Fish S2-Pro | exact tokenizers/pydantic pins; CLI inference |
+| `Multilingual-MOS-moss-tts` | MOSS-TTS v1.5 | py3.12, torch 2.9.1, transformers 5.0.0 |
+| `Multilingual-MOS-higgs` | Higgs TTS 3 (sglang-omni server) | py3.12; `module load cuda/13.1.0`, `SGLANG_OMNI_STARTUP_TIMEOUT=3600` |
+| `Multilingual-MOS-indic` | Indic Parler-TTS, IndicF5 | transformers 4.46.1; gated weights (HF login) |
+| `EveryVoice` (existing) | EveryVoice fine-tunes | torch 2.7.1 |
+
+GPU jobs: `sbatch --partition=unkillable --gpus=l40s:1 --cpus-per-task=4 --mem=32G` (the interactive allocation is CPU-only).
+
+## Open questions and issues
+
+- **Annotator overlap.** Full overlap (k = 5): ~300-450 clips, label ceiling 0.95. Disjoint sets (k = 1): ~1,500-2,300
+  clips, ceiling 0.82, listener bias not separable. Leaning to mostly disjoint with a 10-20% shared subset; undecided.
+- **Top clustering in high-resource languages.** The strong models are near-human in fr/es/de/ja/ko (pilot: 4.7-4.9 in
+  Swahili/Hindi vs 2.2-2.4 in Haitian Creole/Yoruba); little variance left to predict there.
+- **Bad samples.** Prefer weak real systems (MMS-TTS 3.06, F5 fine-tunes 2.74 in the pilot) and models run out of
+  distribution; synthesize from corrupted text for the accuracy axis; signal degradations last, capped at 10-20% of clips.
+- **Two questions per clip.** Time cost (+20-40%?) and inter-axis correlation unmeasured; pilot on ~50 clips.
+- **Ground truth** for ja/ko/id/fr/es/de must come from FLEURS or Common Voice (no Open Bible).
+- **Cloning.** Some models require a reference audio, also consent for the reference audio.
+- **Licences.** Release will be CC-BY-NC at best; Gemini/ElevenLabs redistribution terms unchecked.
+- **Varieties.** Arabic (MSA/Egyptian) and Spanish (European/Latin American) still to choose.
+
 ## VoiceMOS timeline
 
 The VoiceMOS 2026 challenge started in Friday, May 22.
