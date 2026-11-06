@@ -1,0 +1,74 @@
+[
+  {
+    "data": {
+      "task_uid": "tutorial-01",
+      "reference_text": "Printing, then, for our purpose, may be considered as the art of making books by means of movable types.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/01_nat5_acc5.wav",
+      "expected_naturalness": 5,
+      "expected_accuracy": 5
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-02",
+      "reference_text": "Printing, then, for our purpose, may be considered as the art of making books by means of movable types.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/02_nat4_acc5.wav",
+      "expected_naturalness": 4,
+      "expected_accuracy": 5
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-03",
+      "reference_text": "Printing, then, for our purpose, may be considered as the art of making books by means of movable types.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/03_nat3_acc5.wav",
+      "expected_naturalness": 3,
+      "expected_accuracy": 5
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-04",
+      "reference_text": "Printing, then, for our purpose, may be considered as the art of making books by means of movable types.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/04_nat2_acc5.wav",
+      "expected_naturalness": 2,
+      "expected_accuracy": 5
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-05",
+      "reference_text": "the books so ornamented are amongst the most beautiful works of art that have ever been produced.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/05_nat5_acc3.wav",
+      "expected_naturalness": 5,
+      "expected_accuracy": 3
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-06",
+      "reference_text": "He left Newgate utterly corrupted, and after lapsing into crime, soon returned with a very different character.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/06_nat5_acc2.wav",
+      "expected_naturalness": 5,
+      "expected_accuracy": 2
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-07",
+      "reference_text": "Again, there was no regular allowance of fuel. Coals were purchased out of the garnish money and the charitable fund;",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/07_nat5_acc1.wav",
+      "expected_naturalness": 5,
+      "expected_accuracy": 1
+    }
+  },
+  {
+    "data": {
+      "task_uid": "tutorial-08",
+      "reference_text": "a week's allowance at a time, was abolished, and there was a regular scale of weekly rations adopted.",
+      "audio_url": "https://raw.githubusercontent.com/davidguzmanr/Multilingual-MOS/refs/heads/dev/tutorial/listening-study/tutorial/audios/08_nat3_acc3.wav",
+      "expected_naturalness": 3,
+      "expected_accuracy": 3
+    }
+  }
+]
