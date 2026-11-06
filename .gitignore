@@ -223,3 +223,9 @@ data/audios/
 checkpoints/
 research_notes/
 reports/
+# TTS model repos cloned by listening-study/env/setup_env_*.sh (not ours to version)
+listening-study/env/fish-speech/
+listening-study/env/MOSS-TTS/
+listening-study/env/sglang-omni/
+listening-study/env/yarngpt/
+listening-study/env/CosyVoice/

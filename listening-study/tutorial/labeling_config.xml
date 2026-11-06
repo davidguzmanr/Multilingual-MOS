@@ -1,5 +1,5 @@
 <View>
-  <Header value="Listen to the clip, then answer both questions." />
+  <HyperText name="instructions" value="$instructions_html" />
 
   <View style="background:#f5f5f5;border-left:4px solid #aaa;padding:10px 16px;margin:12px 0;border-radius:4px;">
     <Header value="Reference text" size="5" />
@@ -8,8 +8,7 @@
 
   <Audio name="audio" value="$audio_url" />
 
-  <Header value="1. Naturalness: how natural does the voice sound?" size="4" />
-  <Text name="nat_help" value="Judge rhythm, intonation and audio quality. Ignore whether the words match the text." />
+  <Header value="1. Naturalness: does the voice sound like a real person speaking?" size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
     <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
@@ -18,9 +17,8 @@
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Accuracy: does the audio say exactly the reference text?" size="4" />
-  <Text name="acc_help" value="Judge only which words are spoken. Ignore how natural or synthetic the voice sounds." />
-  <Choices name="accuracy" toName="audio" choice="single" showInline="true" required="true">
+  <Header value="2. Intelligibility: does the audio say exactly the reference text, word for word?" size="4" />
+  <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Mostly wrong" hint="Most of the text missing or wrong, a different sentence or language, or unintelligible." />
     <Choice value="2 - Several errors" hint="Several words wrong or missing, or part of the sentence cut off." />
     <Choice value="3 - One error" hint="One word wrong, missing, added, or mispronounced so it changes or hides the meaning." />

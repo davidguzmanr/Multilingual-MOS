@@ -6,7 +6,7 @@ Every example starts from a natural recording, then varies ONE axis at a time:
 
   naturalness ladder  same sentence, words untouched, increasingly synthetic-sounding
                       (Griffin-Lim at 100 and 16 iterations, robotization)
-  accuracy ladder     natural audio untouched, mismatch with the text shown
+  intelligibility ladder     natural audio untouched, mismatch with the text shown
                       (one substituted word, audio cut off at a pause, wrong sentence)
   combined            one example degraded on both axes, for practice
 
@@ -104,38 +104,38 @@ def main() -> None:
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     rows: list[dict] = []
 
-    def emit(name, audio, ref, shown_text, nat, acc, what, why_nat, why_acc, source):
+    def emit(name, audio, ref, shown_text, nat, intel, what, why_nat, why_int, source):
         sf.write(AUDIO_DIR / name, match_rms(audio, ref), SR, subtype="PCM_16")
         rows.append({
             "file": name, "source_utt": source, "duration_s": round(len(audio) / SR, 2),
-            "reference_text_shown": shown_text, "naturalness": nat, "accuracy": acc,
-            "manipulation": what, "why_naturalness": why_nat, "why_accuracy": why_acc,
+            "reference_text_shown": shown_text, "naturalness": nat, "intelligibility": intel,
+            "manipulation": what, "why_naturalness": why_nat, "why_intelligibility": why_int,
         })
 
     # 1-4  naturalness ladder: one sentence, words always correct
     x, text = load("LJ001-0009")
-    emit("01_nat5_acc5.wav", x, x, text, 5, 5, "original recording",
+    emit("01_nat5_int5.wav", x, x, text, 5, 5, "original recording",
          "A real person reading: smooth rhythm, natural intonation, no artifacts.",
          "Every word matches the text.", "LJ001-0009")
-    emit("02_nat4_acc5.wav", griffin_lim(x, 100), x, text, 4, 5,
+    emit("02_nat4_int5.wav", griffin_lim(x, 100), x, text, 4, 5,
          "Griffin-Lim phase reconstruction, 100 iterations",
          "Still sounds human, but slightly hollow or phasey if you listen closely.",
          "Every word matches the text.", "LJ001-0009")
-    emit("03_nat3_acc5.wav", griffin_lim(x, 16), x, text, 3, 5,
+    emit("03_nat3_int5.wav", griffin_lim(x, 16), x, text, 3, 5,
          "Griffin-Lim phase reconstruction, 16 iterations",
          "Clearly synthetic: metallic, buzzy texture throughout, but easy to follow.",
-         "Every word is still there and understandable, so accuracy stays at 5.", "LJ001-0009")
-    emit("04_nat2_acc5.wav", robotize(x), x, text, 2, 5,
+         "Every word is still there and understandable, so intelligibility stays at 5.", "LJ001-0009")
+    emit("04_nat2_int5.wav", robotize(x), x, text, 2, 5,
          "robotization (all STFT phases set to zero)",
          "Monotone robot voice with constant buzz; tiring to listen to.",
-         "Unnatural, but every word can be made out, so accuracy is still 5.", "LJ001-0009")
+         "Unnatural, but every word can be made out, so intelligibility is still 5.", "LJ001-0009")
 
-    # 5-7  accuracy ladder: natural audio, mismatch with the text shown
+    # 5-7  intelligibility ladder: natural audio, mismatch with the text shown
     rows_utt = _pick(by_id, "the books so ornamented are amongst the most delightful works of art")
     x, text = load(rows_utt)
     shown = text.replace("delightful", "beautiful")
     assert shown != text
-    emit("05_nat5_acc3.wav", x, x, shown, 5, 3,
+    emit("05_nat5_int3.wav", x, x, shown, 5, 3,
          "natural audio; text shown has one word changed (audio: 'delightful', text: 'beautiful')",
          "Natural recording, so naturalness is 5 even though a word is wrong.",
          "One word differs from the text.", rows_utt)
@@ -143,16 +143,16 @@ def main() -> None:
     utt = _pick(by_id, "He left Newgate utterly corrupted")
     x, text = load(utt)
     y, cut_s = truncate_at_pause(x, 0.6)
-    emit("06_nat5_acc2.wav", y, x, text, 5, 2,
+    emit("06_nat5_int2.wav", y, x, text, 5, 2,
          f"natural audio cut off at the pause at {cut_s:.2f} s of {len(x)/SR:.2f} s",
-         "The voice itself is natural; a cut-off is an accuracy problem, not a naturalness one.",
+         "The voice itself is natural; a cut-off is an intelligibility problem, not a naturalness one.",
          "The end of the sentence is missing (several words).", utt)
 
     utt_audio = _pick(by_id, "This was the pernicious plan of governing by prisoners")
     utt_text = _pick(by_id, "Again, there was no regular allowance of fuel")
     x, _ = load(utt_audio)
     _, wrong_text = load(utt_text)
-    emit("07_nat5_acc1.wav", x, x, wrong_text, 5, 1,
+    emit("07_nat5_int1.wav", x, x, wrong_text, 5, 1,
          "natural audio of a different sentence than the one shown",
          "Natural recording, so naturalness is 5.",
          "The audio is a completely different sentence.", f"{utt_audio} (text from {utt_text})")
@@ -162,7 +162,7 @@ def main() -> None:
     x, text = load(utt)
     shown = text.replace("daily", "weekly")
     assert shown != text
-    emit("08_nat3_acc3.wav", griffin_lim(x, 16), x, shown, 3, 3,
+    emit("08_nat3_int3.wav", griffin_lim(x, 16), x, shown, 3, 3,
          "Griffin-Lim 16 iterations AND one word changed in the text (audio: 'daily', text: 'weekly')",
          "Metallic and synthetic, same as example 3.",
          "One word differs from the text. Rate each axis on its own.", utt)
@@ -172,17 +172,19 @@ def main() -> None:
         w.writeheader()
         w.writerows(rows)
 
+    instructions = INSTRUCTIONS_HTML.format(language="English")
     tasks = [{"data": {"task_uid": f"tutorial-{i + 1:02d}",
+                       "instructions_html": instructions,
                        "reference_text": r["reference_text_shown"],
                        "audio_url": f"{base}/{r['file']}",
                        "expected_naturalness": r["naturalness"],
-                       "expected_accuracy": r["accuracy"]}}
+                       "expected_intelligibility": r["intelligibility"]}}
              for i, r in enumerate(rows)]
     (HERE / "tasks.json").write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
     (HERE / "labeling_config.xml").write_text(LABELING_CONFIG, encoding="utf-8")
 
     for r in rows:
-        print(f"{r['file']:20s} N{r['naturalness']} A{r['accuracy']} {r['duration_s']:5.2f}s  {r['manipulation']}")
+        print(f"{r['file']:20s} N{r['naturalness']} I{r['intelligibility']} {r['duration_s']:5.2f}s  {r['manipulation']}")
 
 
 def _pick(by_id: dict, prefix: str) -> str:
@@ -191,9 +193,18 @@ def _pick(by_id: dict, prefix: str) -> str:
     return hits[0]
 
 
+INSTRUCTIONS_HTML = (
+    "<p>You will hear a short speech clip in {language}, which may be a real recording or "
+    "computer-generated, together with the text it is supposed to say. Listen to the whole clip, "
+    "then answer two separate questions. <strong>Naturalness</strong> is about how human-like the voice "
+    "sounds: its rhythm, intonation and audio quality. <strong>Intelligibility</strong> is about the words: whether "
+    "the audio says exactly the text shown, with nothing missing, added or mispronounced. A clip can "
+    "score high on one question and low on the other, so answer each one on its own.</p>"
+)
+
 LABELING_CONFIG = """\
 <View>
-  <Header value="Listen to the clip, then answer both questions." />
+  <HyperText name="instructions" value="$instructions_html" />
 
   <View style="background:#f5f5f5;border-left:4px solid #aaa;padding:10px 16px;margin:12px 0;border-radius:4px;">
     <Header value="Reference text" size="5" />
@@ -202,8 +213,7 @@ LABELING_CONFIG = """\
 
   <Audio name="audio" value="$audio_url" />
 
-  <Header value="1. Naturalness: how natural does the voice sound?" size="4" />
-  <Text name="nat_help" value="Judge rhythm, intonation and audio quality. Ignore whether the words match the text." />
+  <Header value="1. Naturalness: does the voice sound like a real person speaking?" size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
     <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
@@ -212,9 +222,8 @@ LABELING_CONFIG = """\
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Accuracy: does the audio say exactly the reference text?" size="4" />
-  <Text name="acc_help" value="Judge only which words are spoken. Ignore how natural or synthetic the voice sounds." />
-  <Choices name="accuracy" toName="audio" choice="single" showInline="true" required="true">
+  <Header value="2. Intelligibility: does the audio say exactly the reference text, word for word?" size="4" />
+  <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Mostly wrong" hint="Most of the text missing or wrong, a different sentence or language, or unintelligible." />
     <Choice value="2 - Several errors" hint="Several words wrong or missing, or part of the sentence cut off." />
     <Choice value="3 - One error" hint="One word wrong, missing, added, or mispronounced so it changes or hides the meaning." />

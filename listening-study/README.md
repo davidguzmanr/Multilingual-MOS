@@ -55,9 +55,11 @@ Survey generator and configs: `~/scratch/Repositories/open-bible-surveys`.
   sets (k = 1, ~1,500-2,300 clips, ceiling 0.82, listener bias not separable from clip quality), or
   a balanced partial overlap (k = 2-3). More clips favours variety for training; more ratings per clip
   favours cleaner utterance-level targets. Whatever the choice, release hashed rater IDs.
-- **Two separate 1-5 questions**: naturalness ("ignore whether the words are correct") and
-  accuracy/faithfulness to the shown text ("ignore how natural it sounds"). Text stays visible, so the
-  second axis is content accuracy, not P.800 intelligibility. Expect +20-40% time per clip; pilot on 50 clips.
+- **Two separate 1-5 questions**: naturalness (how the voice sounds: rhythm, intonation, audio quality)
+  and intelligibility (whether the audio says exactly the shown text, word for word). The text stays
+  visible, so intelligibility here means faithfulness to the text rather than P.800 unaided
+  understanding. Expect +20-40% time per clip; pilot on 50 clips. Wording and examples:
+  [tutorial/](tutorial/).
 - **Widen the quality range cheaply** with degraded conditions (codec resynthesis, noise, speed) rather
   than more TTS systems. This was suggested by Erica.
 
