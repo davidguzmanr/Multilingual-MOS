@@ -50,11 +50,14 @@ Survey generator and configs: `~/scratch/Repositories/open-bible-surveys`.
 - **Metric: utterance-level SRCC**, reported per language and averaged (agreed with Erica Cooper).
   Low-resource languages have too few TTS systems for system-level correlation. VoiceMOS 2026
   already moved its primary metric to utterance-level SRCC.
-- **5 listeners per language; overlap not yet decided.** Options: all 5 rate every clip (k = 5,
-  ~300-450 clips per language, label ceiling 0.95, panel bias cancels within a language), disjoint
-  sets (k = 1, ~1,500-2,300 clips, ceiling 0.82, listener bias not separable from clip quality), or
-  a balanced partial overlap (k = 2-3). More clips favours variety for training; more ratings per clip
-  favours cleaner utterance-level targets. Whatever the choice, release hashed rater IDs.
+- **5 listeners per language, all rating the same ~300 clips (k = 5).** Decided 2026-11-13 after
+  discussion with Wen-Chin Huang and Erica Cooper, who want at least 5 ratings per clip for a
+  challenge set (a sparse SQuId-style design at ~1.4 ratings per clip was considered and dropped).
+  Gives ~1,500 ratings per language, ~4,200 clips and ~21,000 ratings over 14 languages. Spread the 300 clips 
+  over as many   sentences as possible (~33 sentences x 9 systems). Release hashed rater IDs.
+- **Training at this size is viable** because the predictor is fine-tuned from a pretrained encoder on
+  the pooled 14-language set plus OpenBibleTTS: VoiceMOS 2022 OOD trained on 136 Mandarin clips,
+  KOMOS on 810 Korean clips (utterance SRCC 0.90), West Frisian gains plateaued at ~66 clips.
 - **Two separate 1-5 questions**: naturalness (how the voice sounds: rhythm, intonation, audio quality)
   and intelligibility (whether the audio says exactly the shown text, word for word). The text stays
   visible, so intelligibility here means faithfulness to the text rather than P.800 unaided
@@ -75,8 +78,8 @@ Survey generator and configs: `~/scratch/Repositories/open-bible-surveys`.
 
 Use the median if paying per rating, the trimmed mean if paying per hour worked. Adjustments:
 slow languages (Oromo, Yoruba ~25 s median) give ~575 at 10 USD/h; a 33% platform fee (Prolific)
-cuts every figure by a quarter; two questions per clip cuts 20-40%. The budget buys roughly **1,500-2,300 ratings per language**; how many clips that
-covers depends on the overlap decision (k = 5: 300-450 clips; k = 1: 1,500-2,300 clips).
+cuts every figure by a quarter; two questions per clip cuts 20-40%. The budget buys roughly
+**1,500 ratings per language**, which at k = 5 is the ~300 clips per language in the plan above.
 
 ## Candidate languages
 
@@ -158,8 +161,6 @@ GPU jobs: `sbatch --partition=unkillable --gpus=l40s:1 --cpus-per-task=4 --mem=3
 
 ## Open questions and issues
 
-- **Annotator overlap.** Full overlap (k = 5): ~300-450 clips, label ceiling 0.95. Disjoint sets (k = 1): ~1,500-2,300
-  clips, ceiling 0.82, listener bias not separable. Leaning to mostly disjoint with a 10-20% shared subset; undecided.
 - **Top clustering in high-resource languages.** The strong models are near-human in fr/es/de/ja/ko (pilot: 4.7-4.9 in
   Swahili/Hindi vs 2.2-2.4 in Haitian Creole/Yoruba); little variance left to predict there.
 - **Bad samples.** Prefer weak real systems (MMS-TTS 3.06, F5 fine-tunes 2.74 in the pilot) and models run out of
