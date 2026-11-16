@@ -85,7 +85,7 @@ cuts every figure by a quarter; two questions per clip cuts 20-40%. The budget b
 
 TTS systems = pretrained models or commercial APIs that synthesize the language out of the box, from a
 64-model sweep checked 2026-11-06 (research_notes/tts_models_coverage.csv); every language also gets the
-3 trainable toolkits from the pilot (EveryVoice, F5-TTS fine-tune, VITS). Datasets = sources with
+2 trainable toolkits kept from the pilot (EveryVoice, VITS). Datasets = sources with
 sentences and human ground-truth audio: core = Open Bible (OB), FLEURS (FL), Common Voice (CV, counted
 only above ~1 h); BOUQuET is text only. Full names behind each count:
 [mos-datasets/target-languages.csv](../mos-datasets/target-languages.csv).
@@ -119,10 +119,35 @@ Spanish and German are not in Open Bible and need another ground-truth source.
 ## Candidate TTS systems per language
 
 Shortlist from the 64-model sweep (full lists in [mos-datasets/target-languages.csv](../mos-datasets/target-languages.csv)).
-Common core in every language: ground truth, Gemini TTS, ElevenLabs, OmniVoice, MMS-TTS (no Japanese), plus
-EveryVoice and F5-TTS fine-tunes. Gemini (Yoruba) and ElevenLabs (Haitian Creole) are unlisted but worked in the pilot.
-Target 9 systems per language, ~100 sentences each; keep MMS-TTS/Piper as genuinely weak systems and add
-text-corrupted or degraded conditions where high-resource languages cluster at the top.
+Common core in every language (6): ground truth, Gemini TTS, ElevenLabs, OmniVoice, VITS (MMS-TTS checkpoints; a
+self-trained VITS for Japanese, which MMS lacks) and an EveryVoice fine-tune. F5-TTS was dropped on 2026-11-16 (slow to
+train, weak in the pilot). Gemini (Yoruba) and ElevenLabs (Haitian Creole) are unlisted but worked in the pilot.
+Target 9 systems per language (core + 3 from the table below), ~33 sentences each; keep VITS/Piper as genuinely weak
+systems and add text-corrupted or degraded conditions where high-resource languages cluster at the top.
+
+Systems per language (GT = ground-truth source; MMS = facebook/mms-tts checkpoint; EveryVoice: pilot = fine-tune exists, to train = needed; extras: VoxCPM2, Fish S2-Pro, Higgs TTS 3, Sunbird Orpheus-3B (Yoruba, Hausa) as of 2026-11-16; unofficial/nominal entries count toward the total):
+
+| Language | GT | Gemini | ElevenLabs | OmniVoice | VITS | EveryVoice | VoxCPM2 | Fish S2-Pro | Higgs TTS 3 | Sunbird Orpheus-3B | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---:|
+| Japanese | FLEURS / CV | yes | yes | yes | own VITS (no MMS) | to train | yes | yes | yes | no | 9 |
+| Korean | FLEURS / CV | yes | yes | yes | MMS kor | to train | yes | yes | yes | no | 9 |
+| Hindi | Open Bible | yes | yes | yes | MMS hin | pilot | yes | yes | yes | no | 9 |
+| Vietnamese | Open Bible | yes | yes | yes | MMS vie | pilot | yes | yes | yes | no | 9 |
+| Indonesian | FLEURS / CV | yes | yes | yes | MMS ind | to train | yes | yes | yes | no | 9 |
+| Yoruba | Open Bible | unofficial | yes | yes | MMS yor | pilot | VoxCPM2-Yoruba (1) | yes | no | yes (2) | 9 |
+| Swahili | Open Bible | yes (Flash) | yes | yes | MMS swh | pilot | yes | yes | yes | no | 9 |
+| Hausa | Open Bible | yes | yes | yes | MMS hau | pilot | no | no | yes | yes (2) | 8 |
+| Haitian Creole | Open Bible | yes | unofficial | nominal | MMS hat | pilot | no | yes | yes | no | 8 |
+| French | FLEURS / CV | yes | yes | yes | MMS fra | to train | yes | yes | yes | no | 9 |
+| Spanish | FLEURS / CV | yes | yes | yes | MMS spa | to train | yes | yes | yes | no | 9 |
+| German | FLEURS / CV | yes | yes | yes | MMS deu | to train | yes | yes | yes | no | 9 |
+| Arabic | Open Bible (MSA) | yes (Egyptian, MSA) | yes | yes | MMS ara | to train | yes | yes | yes | no | 9 |
+| Turkish | Open Bible | yes | yes | yes | MMS tur | pilot | yes | yes | yes | no | 9 |
+
+(1) LyngualLabs/VoxCPM2-Yoruba: a community fine-tune of VoxCPM2, not the base model; CC-BY-NC-4.0.
+(2) Sunbird/orpheus-3b-tts-multilingual (Apache-2.0): 20 African-language configs; language is set by the speaker ID (`waxal_yor_*`, `waxal_hau_*`); quality unmeasured, audition first; not yet smoke-tested here.
+
+Menu for further extras:
 
 | Language | Open weights beyond the core | APIs |
 |---|---|---|
@@ -149,7 +174,7 @@ All six were verified by synthesizing audio on an L40S (2026-11-06).
 
 | Env | Models | Notes |
 |---|---|---|
-| `Multilingual-MOS` | OmniVoice, VoxCPM2, MMS-TTS, Kokoro, Piper, F5-TTS, Orpheus/SNAC, swa-csm, coqui-tts (OpenBible VITS), Gemini and ElevenLabs SDKs | py3.10, torch 2.8.0+cu128, transformers 5.19.0 |
+| `Multilingual-MOS` | OmniVoice, VoxCPM2, MMS-TTS, Kokoro, Piper, Orpheus/SNAC, swa-csm, coqui-tts (OpenBible VITS), Gemini and ElevenLabs SDKs (F5-TTS installed but unused) | py3.10, torch 2.8.0+cu128, transformers 5.19.0 |
 | `Multilingual-MOS-qwen3-tts` | Qwen3-TTS, YarnGPT | transformers 4.57.3 |
 | `Multilingual-MOS-fish-speech` | Fish S2-Pro | exact tokenizers/pydantic pins; CLI inference |
 | `Multilingual-MOS-moss-tts` | MOSS-TTS v1.5 | py3.12, torch 2.9.1, transformers 5.0.0 |
