@@ -230,3 +230,7 @@ listening-study/env/sglang-omni/
 listening-study/env/yarngpt/
 listening-study/env/CosyVoice/
 data/figures/
+# Common Voice releases downloaded from the Mozilla Data Collective (terms forbid re-hosting)
+data/Common-Voice/
+# Slurm job output logs
+jobs/**/*.out

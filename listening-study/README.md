@@ -116,6 +116,83 @@ Hausa, Haitian Creole, Turkish. Chinese, Tamil and Quechua were dropped on 2026-
 Haitian Creole has Open Bible as its only ground-truth audio. Japanese, Korean, Indonesian, French,
 Spanish and German are not in Open Bible and need another ground-truth source.
 
+## Candidate source datasets/domains per language
+
+Each language needs 34-38 sentences (300 ratings / 8-9 systems), ideally from 3 domains, each with a human recording
+to serve as the ground-truth system. Candidates with licences and URLs (166 corpora, checked 2026-11-16):
+[mos-datasets/gt-corpora.csv](../mos-datasets/gt-corpora.csv); notes in `research_notes/gt_corpora_group_{A,B}.md`.
+"crowd" = multi-speaker volunteer recordings (weaker GT); NC = non-commercial; redistribution flags refer to the GT audio.
+
+Core sources (scripture, Wikipedia, crowd-read sentences), all with human audio; cells give licence and GT quality.
+Scripture comes from the OpenBibleTTS release [davidguzmanr/open-bible-resources](https://huggingface.co/datasets/davidguzmanr/open-bible-resources)
+(Biblica audio via open.bible, CC BY-SA; fields audio, text, testament/book/chapter/verse, duration, speaker_id): take sentences only from
+the **test** split, since EveryVoice and VITS are trained on train, and keep one speaker_id where several narrators exist. Verses run
+7-12 s and 112-134 characters on average, longer than the pilot's 8 s clips, so filter by duration. Common Voice audio may be used as
+GT in the test but not re-hosted.
+
+| Language | Open Bible (scripture) | FLEURS (Wikipedia) | Common Voice (crowd sentences) | Total |
+|---|---|---|---|---:|
+| Japanese | no | yes (crowd) | yes (moderate) | 2 |
+| Korean | no | yes (crowd) | yes (10 h, 200 speakers) | 2 |
+| Hindi | yes: test 1,522 verses, 1 speaker, median 11.1 s | yes (crowd) | yes (small) | 3 |
+| Vietnamese | yes: test 1,523 verses, 2 speakers (1,459 + 64), median 7.7 s | yes (crowd) | yes (small) | 3 |
+| Indonesian | no | yes (crowd) | yes (66 h, 653 speakers) | 2 |
+| Yoruba | yes: test 1,532 verses, 1 speaker, median 9.9 s | yes (crowd) | yes (small) | 3 |
+| Swahili | yes: test 1,532 verses, 7 speakers (largest 557), median 10.6 s | yes (crowd) | yes (large) | 3 |
+| Hausa | yes: test 1,536 verses, 2 speakers (793 / 743), median 11.3 s | yes (crowd) | yes (moderate) | 3 |
+| Haitian Creole | yes: test 1,530 verses, 1 speaker, median 11.5 s | no (FLORES text only) | yes (29 clips, 3 speakers; ~10 usable) | 2 |
+| French | no | yes (crowd) | yes (very large) | 2 |
+| Spanish | no | yes (es_419, crowd) | yes (very large) | 2 |
+| German | no | yes (crowd) | yes (very large) | 2 |
+| Arabic | yes (MSA): test 1,526 verses, 2 speakers (1,094 / 432), median 9.3 s | yes (Egyptian, crowd) | yes (moderate) | 3 |
+| Turkish | yes: test 1,488 verses, 1 speaker, median 7.1 s (63.5 h in the paper; narrator identity unverified, rated 3.81 as GT in the pilot) | yes (crowd) | yes (moderate) | 3 |
+
+Common Voice Scripted Speech 27.0 per locale (Mozilla Data Collective, CC0; local copies under `data/Common-Voice/`,
+analysed 2026-11-17 with `listening-study/tools/analyze_common_voice_sentences.py`). Clips = validated recordings; each
+speaker reads a sentence once. Sentence sources come from the `source` column; the `sentence_domain` tags are empty
+except in Japanese. Target: ~35 sentences per language in total, a few speakers at most, so even small pools count.
+
+| Language | Locale | Clips | Speakers | Usable source | Domain/register | Verdict |
+|---|---|---:|---:|---|---|---|
+| Japanese | [ja](https://mozilladatacollective.com/datasets/cmu5xbhnf00fmnq07z9p3aa70) | 300,315 | 6,932 | sentence-collector; JSUT; Aozora Bunko | colloquial; JSUT sentences; literature | 3 domains; JSUT text also has studio GT |
+| Korean | [ko](https://mozilladatacollective.com/datasets/cmu5rwtaf003dnq07e7n3q6tf) | 1,773 | 114 | sentence-collector; Self Citation | public-domain fiction, some legal; colloquial | literature usable; colloquial only 69 clips, reserve |
+| Hindi | [hi](https://mozilladatacollective.com/datasets/cmu5vlext009to107ev1s9lk8) | 11,203 | 362 | sentence-collector | news headlines (often verbless) | news usable, pick full sentences |
+| Vietnamese | [vi](https://mozilladatacollective.com/datasets/cmu5vci3w00agnq07hy4nbauv) | 7,013 | 229 | sentence-collector | web-novel narrative/dialogue (1 speaker: 3,373 clips) | fiction usable; Hue dictionary fragments skip |
+| Indonesian | [id](https://mozilladatacollective.com/datasets/cmu5wcato00cknq07yjnu14e0) | 30,901 | 470 | sentence-collector | everyday / Tatoeba-style | everyday usable; CoVoST2 part is translated Wikipedia, skip |
+| Yoruba | [yo](https://mozilladatacollective.com/datasets/cmu5q07ui011gmi07vflkzmej) | 3,549 | 113 | sentence-collector | Nigerian news prose | news usable |
+| Swahili | [sw](https://mozilladatacollective.com/datasets/cmu5sgles002zo1071nphgtby) | 269,140 | 1,206 | batch-1 contributors; batch-3; agriculture set | East African news; everyday; farming | news + everyday usable; avoid dialect sets (Kimvita, Kibajuni, ...) |
+| Hausa | [ha](https://mozilladatacollective.com/datasets/cmu5u0ood006tnq07tmgdpgwi) | 3,582 | 22 | sentence-collector | everyday conversation (1 speaker: 2,048 clips) | conversational usable, near single-voice |
+| Haitian Creole | [ht](https://mozilladatacollective.com/datasets/cmu5o29ou00w3mh07e9heh8xv) | 29 | 3 | sentence-collector | informal workplace chat (translated Enron prompts) | ~10-12 clean sentences from 2-3 speakers; rest from Open Bible/CMU |
+| French | [fr](https://mozilladatacollective.com/datasets/cmu5kub4600pkmh078n7n5ogl) | 792,011 | 20,051 | sentence-collector; ofis_publik; untagged set | 19th-c. novels; short everyday; parliamentary | 3 domains beyond Wikipedia |
+| Spanish | [es](https://mozilladatacollective.com/datasets/cmu5kitx700pemi073feoiqqu) | 440,794 | 17,688 | sentence-collector; untagged set; Reina-Valera | novels and everyday lines; tokenised novel excerpts; scripture (44 clips, 35 speakers) | literature usable (1 speaker: 4,769 sentences); scripture too scattered; 87% of clips are Wikipedia |
+| German | [de](https://mozilladatacollective.com/datasets/cmu5ktqhe00pgmh07p1xamabd) | 953,365 | 19,748 | europarl; sentence-collector; jf99 | parliament; everyday; short narrative | 3 domains beyond Wikipedia |
+| Arabic | [ar](https://mozilladatacollective.com/datasets/cmu5wom3z00ceo107guxtg4xa) | 80,696 | 1,142 | sentence-collector | mixed MSA: everyday phrases, Quran verses, poetry; no tags | usable after manual filtering by content |
+| Turkish | [tr](https://mozilladatacollective.com/datasets/cmu5wkah500c2o10719lem8m8) | 121,612 | 1,720 | sentence-collector; setimes | conversational; Balkan news | 2 domains; Wikipedia is 11k clips only |
+
+Menu for further domains:
+
+| Language | Domain 1 | Domain 2 | Domain 3 |
+|---|---|---|---|
+| Hindi | scripture: Open Bible (CC BY-SA) | general prose: SYSPIN Hindi (1 studio voice, 48 kHz, CC BY 4.0) | conversational: IndicVoices (CC BY 4.0, crowd) |
+| Vietnamese | scripture: Open Bible (CC BY-SA, 48 kHz) | conversational: FOSD (FPT licence, crowd) | encyclopedic: FLEURS (crowd); InfoRe 25 h single speaker if licensed |
+| Indonesian | news: INDspeech_NEWS_TTS (1 speaker, NC-SA; own 40-sentence MOS list) | encyclopedic: FLEURS or Common Voice (crowd) | literature: LibriVox Indonesia (CC0, amateur multi-speaker) |
+| Yoruba | scripture: BibleTTS SLR129 (1 studio speaker, 48 kHz, CC BY-SA) | news/fiction: IroyinSpeech (2 studio voices; ELRA academic licence, GT likely not releasable) | general: OpenSLR SLR86 (CC BY-SA, crowd) or WAXAL yor_tts (studio, script-like text) |
+| Swahili | scripture: Open Bible (CC BY-SA) | general: WAXAL swa_tts (studio, CC BY/BY-SA) | conversational: SALT studio-swa (Sunbird, CC BY-SA, 3,988 sentences) |
+| Hausa | scripture: BibleTTS (CC BY-SA; one narrator) | encyclopedic: FLEURS (crowd) | conversational: Gamayun Hausa mini-kit (CC BY-NC, non-studio) or TWB Voice Hausa (studio, NC, on request) |
+| Haitian Creole | scripture: Open Bible Bib Sen An (CC BY-SA; needs alignment) | news/political: CMU 2010 single-speaker subset (1 male, 1,273 utts, 16 kHz, permissive) | manuals/primers: CMU 2010 multi-speaker set (crowd-like) |
+| Turkish | news: MediaSpeech SLR108 (CC BY 4.0, broadcast, multi-speaker) | encyclopedic: FLEURS (crowd) | scripture: Open Bible YTC audio (CC BY-ND; human vs synthetic narrator UNVERIFIED) or DFKI OT generic sentences (NC-SA) |
+| Japanese | conversational: Hi-Fi-CAPTAIN (NICT, 2 speakers; licence page down, NC-SA per snapshot) | literature: Kokoro Speech (public domain, 1 reader) | encyclopedic: FLEURS or JSUT basic5000 |
+| Korean | everyday: KSS (1 studio voice, NC-SA) | encyclopedic: FLEURS or Zeroth-Korean (CC BY 4.0, crowd) | user sentences: Common Voice ko (crowd) |
+| French | parliament: SIWIS parl (1 professional voice, 44.1 kHz, CC BY 4.0) | literature: SIWIS book/chap or SynPaFlex (NC-SA) | encyclopedic: Vibravox (CC BY 4.0, 48 kHz, multi-speaker) or FLEURS |
+| Spanish | everyday + weather: OpenSLR 61/71-75 Latin American (CC BY-SA, crowd) | literature: CSS10 es (1 reader) or M-AILABS | encyclopedic: FLEURS (es_419) |
+| German | everyday: Thorsten-Voice (CC0, 1 speaker, 44.1 kHz) | literature: HUI Clean, one reader (CC0) or CSS10 de | encyclopedic: Tuda-De (CC BY 4.0) or Spoken Wikipedia |
+| Arabic | scripture: Open Bible MSA (CC BY-SA) | news: ArVoice Part 2 (professional, CC BY 4.0 via data-use agreement) or FLEURS (Egyptian) | classical: ArVoice Part 1 or ClArTTS; conversational: SADA |
+
+Open items: Turkish Open Bible audio may be TTS (24 kHz mono mp3, no narrator credited; listen to
+https://ebible.org/turytc/mp3/1JN01.mp3); Korean has no open scripture/literature audio; Haitian Creole has no
+single-speaker third domain; Common Voice and CMU Wilderness audio cannot be re-hosted; corpora used to train
+EveryVoice/VITS (JSUT, KSS, INDspeech, CSS10) must contribute only held-out sentences.
+
 ## Candidate TTS systems per language
 
 Shortlist from the 64-model sweep (full lists in [mos-datasets/target-languages.csv](../mos-datasets/target-languages.csv)).
@@ -125,7 +202,7 @@ train, weak in the pilot). Gemini (Yoruba) and ElevenLabs (Haitian Creole) are u
 Target 9 systems per language (core + 3 from the table below), ~33 sentences each; keep VITS/Piper as genuinely weak
 systems and add text-corrupted or degraded conditions where high-resource languages cluster at the top.
 
-Systems per language (GT = ground-truth source; MMS = facebook/mms-tts checkpoint; EveryVoice: pilot = fine-tune exists, to train = needed; extras: VoxCPM2, Fish S2-Pro, Higgs TTS 3, Sunbird Orpheus-3B (Yoruba, Hausa) as of 2026-11-16; unofficial/nominal entries count toward the total):
+Systems per language (GT = ground-truth source; MMS = facebook/mms-tts checkpoint; EveryVoice: pilot = fine-tune exists and was rated in the pilot, OpenBibleTTS ckpt = trained but not rated (multilingual-tts org has EveryVoice, F5 and VITS checkpoints for all 37 Open Bible languages), to train = needed; extras: VoxCPM2, Fish S2-Pro, Higgs TTS 3, Sunbird Orpheus-3B (Yoruba, Hausa) as of 2026-11-16; unofficial/nominal entries count toward the total):
 
 | Language | GT | Gemini | ElevenLabs | OmniVoice | VITS | EveryVoice | VoxCPM2 | Fish S2-Pro | Higgs TTS 3 | Sunbird Orpheus-3B | Total |
 |---|---|---|---|---|---|---|---|---|---|---|---:|
@@ -141,7 +218,7 @@ Systems per language (GT = ground-truth source; MMS = facebook/mms-tts checkpoin
 | French | FLEURS / CV | yes | yes | yes | MMS fra | to train | yes | yes | yes | no | 9 |
 | Spanish | FLEURS / CV | yes | yes | yes | MMS spa | to train | yes | yes | yes | no | 9 |
 | German | FLEURS / CV | yes | yes | yes | MMS deu | to train | yes | yes | yes | no | 9 |
-| Arabic | Open Bible (MSA) | yes (Egyptian, MSA) | yes | yes | MMS ara | to train | yes | yes | yes | no | 9 |
+| Arabic | Open Bible (MSA) | yes (Egyptian, MSA) | yes | yes | MMS ara | OpenBibleTTS ckpt | yes | yes | yes | no | 9 |
 | Turkish | Open Bible | yes | yes | yes | MMS tur | pilot | yes | yes | yes | no | 9 |
 
 (1) LyngualLabs/VoxCPM2-Yoruba: a community fine-tune of VoxCPM2, not the base model; CC-BY-NC-4.0.
