@@ -130,22 +130,22 @@ the **test** split, since EveryVoice and VITS are trained on train, and keep one
 7-12 s and 112-134 characters on average, longer than the pilot's 8 s clips, so filter by duration. Common Voice audio may be used as
 GT in the test but not re-hosted.
 
-| Language | Open Bible (scripture) | FLEURS (Wikipedia) | Common Voice (crowd sentences) | Total |
+| Language | Open Bible (scripture) | FLEURS (Wikipedia) | Common Voice 27.0 (validated, crowd) | Total |
 |---|---|---|---|---:|
-| Japanese | no | yes (crowd) | yes (moderate) | 2 |
-| Korean | no | yes (crowd) | yes (10 h, 200 speakers) | 2 |
-| Hindi | yes: test 1,522 verses, 1 speaker, median 11.1 s | yes (crowd) | yes (small) | 3 |
-| Vietnamese | yes: test 1,523 verses, 2 speakers (1,459 + 64), median 7.7 s | yes (crowd) | yes (small) | 3 |
-| Indonesian | no | yes (crowd) | yes (66 h, 653 speakers) | 2 |
-| Yoruba | yes: test 1,532 verses, 1 speaker, median 9.9 s | yes (crowd) | yes (small) | 3 |
-| Swahili | yes: test 1,532 verses, 7 speakers (largest 557), median 10.6 s | yes (crowd) | yes (large) | 3 |
-| Hausa | yes: test 1,536 verses, 2 speakers (793 / 743), median 11.3 s | yes (crowd) | yes (moderate) | 3 |
-| Haitian Creole | yes: test 1,530 verses, 1 speaker, median 11.5 s | no (FLORES text only) | yes (29 clips, 3 speakers; ~10 usable) | 2 |
-| French | no | yes (crowd) | yes (very large) | 2 |
-| Spanish | no | yes (es_419, crowd) | yes (very large) | 2 |
-| German | no | yes (crowd) | yes (very large) | 2 |
-| Arabic | yes (MSA): test 1,526 verses, 2 speakers (1,094 / 432), median 9.3 s | yes (Egyptian, crowd) | yes (moderate) | 3 |
-| Turkish | yes: test 1,488 verses, 1 speaker, median 7.1 s (63.5 h in the paper; narrator identity unverified, rated 3.81 as GT in the pilot) | yes (crowd) | yes (moderate) | 3 |
+| Japanese | no | yes (crowd) | yes: 300,315 clips, 6,932 speakers; colloquial, JSUT, literature | 2 |
+| Korean | no | yes (crowd) | yes: 1,773 clips, 114 speakers; fiction | 2 |
+| Hindi | yes: test 1,522 verses, 1 speaker, median 11.1 s | yes (crowd) | yes: 11,203 clips, 362 speakers; news headlines | 3 |
+| Vietnamese | yes: test 1,523 verses, 2 speakers (1,459 + 64), median 7.7 s | yes (crowd) | yes: 7,013 clips, 229 speakers; web fiction | 3 |
+| Indonesian | no | yes (crowd) | yes: 30,901 clips, 470 speakers; everyday | 2 |
+| Yoruba | yes: test 1,532 verses, 1 speaker, median 9.9 s | yes (crowd) | yes: 3,549 clips, 113 speakers; news | 3 |
+| Swahili | yes: test 1,532 verses, 7 speakers (largest 557), median 10.6 s | yes (crowd) | yes: 269,140 clips, 1,206 speakers; news, everyday | 3 |
+| Hausa | yes: test 1,536 verses, 2 speakers (793 / 743), median 11.3 s | yes (crowd) | yes: 3,582 clips, 22 speakers; conversational | 3 |
+| Haitian Creole | yes: test 1,530 verses, 1 speaker, median 11.5 s | no (FLORES text only) | yes: 29 clips, 3 speakers; chat (~10 usable) | 2 |
+| French | no | yes (crowd) | yes: 792,011 clips, 20,051 speakers; novels, everyday, parliament | 2 |
+| Spanish | no | yes (es_419, crowd) | yes: 440,794 clips, 17,688 speakers; literature | 2 |
+| German | no | yes (crowd) | yes: 953,365 clips, 19,748 speakers; parliament, everyday | 2 |
+| Arabic | yes (MSA): test 1,526 verses, 2 speakers (1,094 / 432), median 9.3 s | yes (Egyptian, crowd) | yes: 80,696 clips, 1,142 speakers; mixed MSA | 3 |
+| Turkish | yes: test 1,488 verses, 1 speaker, median 7.1 s (63.5 h in the paper; narrator identity unverified, rated 3.81 as GT in the pilot) | yes (crowd) | yes: 121,612 clips, 1,720 speakers; conversational, news | 3 |
 
 Common Voice Scripted Speech 27.0 per locale (Mozilla Data Collective, CC0; local copies under `data/Common-Voice/`,
 analysed 2026-11-17 with `listening-study/tools/analyze_common_voice_sentences.py`). Clips = validated recordings; each

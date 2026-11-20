@@ -217,6 +217,8 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+audios/dev.ipynb
+
 repositories/
 papers/
 data/audios/
@@ -234,3 +236,9 @@ data/figures/
 data/Common-Voice/
 # Slurm job output logs
 jobs/**/*.out
+data/FLEURS/
+data/Open-Bible/
+# ground-truth and TTS audio live on Hugging Face, only metadata CSVs are tracked
+audios/**/*.wav
+audios/**/*.mp3
+audios/**/*.flac
