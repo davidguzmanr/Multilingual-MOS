@@ -4,14 +4,18 @@ metadata.csv per dataset plus a merged one. Deterministic (SEED); list orig_ids 
 audios/Hausa/ground-truth/exclude.txt to swap out bad clips without reshuffling the rest.
     python "src/Hausa/sampler.py"
 """
-import glob, hashlib, os, shutil
+import glob, hashlib, os, shutil, sys
 import pandas as pd, soundfile as sf
 
 LANG, CODE = "Hausa", "ha"
 REPO = "/network/scratch/g/guzmand/Repositories/Multilingual-MOS"
 OUT = f"{REPO}/audios/{LANG}/ground-truth"
 SEED = 0
-MIN_S, MAX_S = 5.0, 20.0                      # only filter: clip duration in seconds
+MIN_S, MAX_S = 5.0, 20.0                      # clip duration in seconds
+QUALITY = dict(min_loudness_lufs=-38.0, min_peak_dbfs=-20.0,     # skip (never modify) clips that are too quiet,
+               min_snr_db=22.0, max_noise_floor_dbfs=-48.0,      # noisy, or padded with silence; calibrated
+               max_edge_silence_s=1.0, max_total_edge_s=1.5,     # 2026-11-21 on the ha/yo/sw pools, see
+               min_speech_ratio=0.45, max_clip_ratio=0.001)      # src/audio_quality.py
 N_OPEN_BIBLE, N_FLEURS, N_COMMON_VOICE = 13, 13, 12   # 38 sentences for 8 systems
 OPEN_BIBLE_NAME, OB_SPEAKERS = "Hausa", 2             # test split has 2 narrators -> use both
 FLEURS_CONFIG = "ha_ng"                                  # FLEURS test is female-only (1 male clip), no speaker ids
@@ -25,6 +29,23 @@ COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "t
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]
 LICENCE = {"Open Bible": "CC BY-SA 4.0 (Biblica via open.bible)", "FLEURS": "CC BY 4.0", "Common Voice": "CC0 (MDC terms: no re-hosting)"}
 DATA = f"{REPO}/data"
+sys.path.insert(0, f"{REPO}/src"); from audio_quality import measure, passes, METRIC_COLUMNS   # noqa: E402
+CACHE = f"{DATA}/quality-cache/{CODE}.csv"                        # measured clips (keyed by dataset + orig_id), reused across runs
+_cache = pd.read_csv(CACHE, dtype={"key": str}).set_index("key").to_dict("index") if os.path.exists(CACHE) else {}
+_rejected = []
+
+
+def quality(row, audio_of, dataset):
+    """Metrics for one candidate (cached). Returns the metrics dict plus _ok / _why."""
+    key = f"{dataset}|{row.orig_id}"
+    if key not in _cache:
+        m = measure(audio_of(row)); ok, why = passes(m, QUALITY)
+        _cache[key] = {**{c: m[c] for c in METRIC_COLUMNS}, "ok": ok, "why": "; ".join(why)}
+        os.makedirs(os.path.dirname(CACHE), exist_ok=True)
+        pd.DataFrame.from_dict(_cache, orient="index").rename_axis("key").to_csv(CACHE)
+    m = _cache[key]
+    if not m["ok"]: _rejected.append((dataset, row.orig_id, m["why"]))
+    return m
 
 
 def excluded():
@@ -39,28 +60,33 @@ def shuffled(df):
     return df.assign(_key=key).sort_values("_key").drop(columns="_key")
 
 
-def spread(df, n, by, k, quiet=False):
-    """Take n rows spread over up to k values of `by` (the ones with most rows), round-robin, in `shuffled` order."""
-    if len(df) == 0: return pd.DataFrame(columns=df.columns)
+def spread(df, n, by, k, audio_of, dataset, quiet=False):
+    """Take n rows spread over up to k values of `by` (the ones with most rows), round-robin, in `shuffled` order.
+    Each candidate is measured lazily; clips failing QUALITY are skipped and the next one of that speaker is tried."""
+    if len(df) == 0: return pd.DataFrame(columns=list(df.columns) + METRIC_COLUMNS)
     df = shuffled(df)
     groups = [g for _, g in sorted(df.groupby(by), key=lambda kv: (-len(kv[1]), kv[0]))][:k]
     picked, i = [], 0
     while len(picked) < n and any(len(g) for g in groups):
         g = groups[i % len(groups)]
-        if len(g): picked.append(g.iloc[0]); groups[i % len(groups)] = g.iloc[1:]
+        if len(g):
+            row = g.iloc[0]; groups[i % len(groups)] = g.iloc[1:]
+            m = quality(row, audio_of, dataset)
+            if m["ok"]: picked.append(pd.concat([row, pd.Series({c: m[c] for c in METRIC_COLUMNS})]))
+            else: continue                                   # same speaker gets the next turn: i is not advanced
         i += 1
     if len(picked) < n and not quiet: print(f"   WARNING: only {len(picked)} of {n} available")
-    return pd.DataFrame(picked, columns=df.columns)
+    return pd.DataFrame(picked, columns=list(df.columns) + METRIC_COLUMNS)
 
 
-def gender_balanced(df, n, by, k):
+def gender_balanced(df, n, by, k, audio_of, dataset):
     """Half female / half male when both genders have enough clips; whatever is missing is filled from the rest of the pool."""
-    f = spread(df[df.gender == "female"], n // 2, by, k, quiet=True)
-    m = spread(df[df.gender == "male"], n - n // 2, by, k, quiet=True)
+    f = spread(df[df.gender == "female"], n // 2, by, k, audio_of, dataset, quiet=True)
+    m = spread(df[df.gender == "male"], n - n // 2, by, k, audio_of, dataset, quiet=True)
     picked = pd.concat([x for x in (f, m) if len(x)], ignore_index=True) if len(f) + len(m) else f
     if len(picked) < n:                                                        # e.g. FLEURS ha (female only), yo (male only)
         rest = df[~df.orig_id.isin(picked.orig_id)] if len(picked) else df
-        picked = pd.concat([picked, spread(rest, n - len(picked), by, k)], ignore_index=True)
+        picked = pd.concat([picked, spread(rest, n - len(picked), by, k, audio_of, dataset)], ignore_index=True)
     return picked
 
 
@@ -75,11 +101,11 @@ def write(dataset, picks, audio_of):
         clip_id = f"{CODE}-{tag}-{i:03d}"; path = f"{d}/{clip_id}{ext}"
         if isinstance(a, bytes): open(path, "wb").write(a)
         else: shutil.copyfile(a, path)
-        row = {c: r.get(c, "") for c in COLUMNS}
+        row = {c: r.get(c, "") for c in COLUMNS + METRIC_COLUMNS}
         row.update(clip_id=clip_id, language=LANG, lang_code=CODE, dataset=dataset, licence=LICENCE[dataset],
                    sample_rate=sf.info(path).samplerate, audio_path=os.path.relpath(path, REPO), duration_s=round(float(r.duration_s), 2))
         rows.append(row)
-    out = pd.DataFrame(rows, columns=COLUMNS); out.to_csv(f"{d}/metadata.csv", index=False)
+    out = pd.DataFrame(rows, columns=COLUMNS + METRIC_COLUMNS); out.to_csv(f"{d}/metadata.csv", index=False)
     print(f"== {dataset}: {len(out)} clips | speakers {out.speaker_id.value_counts().to_dict()} | gender {out.gender.value_counts().to_dict()} "
           f"| {out.duration_s.mean():.1f} s mean")
     return out
@@ -93,8 +119,9 @@ def sample_open_bible(n):
                    orig_id=df.book + " " + df.chapter + ":" + df.verse + "/" + df.audio.map(lambda a: a["path"]))
     df = df[df.duration_s.between(MIN_S, MAX_S)].drop_duplicates("text")
     df = df[~df.orig_id.isin(excluded()) & ~df.text.isin(excluded())]
-    picks = spread(df, n, "speaker_id", OB_SPEAKERS)
-    return write("Open Bible", picks, lambda r: r.audio["bytes"])
+    audio_of = lambda r: r.audio["bytes"]
+    picks = spread(df, n, "speaker_id", OB_SPEAKERS, audio_of, "Open Bible")
+    return write("Open Bible", picks, audio_of)
 
 
 def sample_fleurs(n):
@@ -107,8 +134,9 @@ def sample_fleurs(n):
     df = df[df.duration_s.between(MIN_S, MAX_S) & df.text.map(text_ok)]
     df = df[~df.orig_id.isin(excluded()) & ~df.text.isin(excluded())]
     df = shuffled(df).drop_duplicates("sentence_id")                             # one reading per sentence
-    picks = gender_balanced(df, n, "gender", 2)                                    # no speaker ids: balance gender only
-    return write("FLEURS", picks, lambda r: f"{d}/test/{r.path}")
+    audio_of = lambda r: f"{d}/test/{r.path}"
+    picks = gender_balanced(df, n, "gender", 2, audio_of, "FLEURS")                 # no speaker ids: balance gender only
+    return write("FLEURS", picks, audio_of)
 
 
 def sample_common_voice(n):
@@ -124,13 +152,14 @@ def sample_common_voice(n):
             & (df.up_votes.astype(int) >= 2) & (df.down_votes.astype(int) == 0) & df.text.map(text_ok)]
     df = df[~df.orig_id.isin(excluded()) & ~df.text.isin(excluded())]
     df = shuffled(df).drop_duplicates("sentence_id")                             # one clip per sentence
+    audio_of = lambda r: f"{d}/clips/{r.path}"
     picks = []                                                                     # n split evenly over the sources
     for i, src in enumerate(CV_DOMAIN):
         n_src = n // len(CV_DOMAIN) + (i < n % len(CV_DOMAIN))
         k = CV_SPEAKERS_PER_GENDER[src] if isinstance(CV_SPEAKERS_PER_GENDER, dict) else CV_SPEAKERS_PER_GENDER
-        picks.append(gender_balanced(df[df.source == "Common Voice: " + src], n_src, "speaker_id", k))
+        picks.append(gender_balanced(df[df.source == "Common Voice: " + src], n_src, "speaker_id", k, audio_of, "Common Voice"))
     picks = pd.concat(picks, ignore_index=True)
-    return write("Common Voice", picks, lambda r: f"{d}/clips/{r.path}")
+    return write("Common Voice", picks, audio_of)
 
 
 def main():
@@ -139,6 +168,10 @@ def main():
     parts += [sample_fleurs(N_FLEURS)] if N_FLEURS else []
     parts += [sample_common_voice(N_COMMON_VOICE)] if N_COMMON_VOICE else []
     all_ = pd.concat(parts, ignore_index=True); all_.to_csv(f"{OUT}/metadata.csv", index=False)
+    if _rejected:
+        rej = pd.DataFrame(_rejected, columns=["dataset", "orig_id", "why"]).drop_duplicates()
+        print(f"\nskipped {len(rej)} candidate clips on quality: " + ", ".join(f"{k} {v}" for k, v in rej.dataset.value_counts().items()))
+        rej.to_csv(f"{OUT}/quality-rejected.csv", index=False)
     print(f"\n{LANG}: {len(all_)} ground-truth clips -> {OUT}/metadata.csv")
     print(all_.groupby("dataset").agg(clips=("clip_id", "size"), speakers=("speaker_id", "nunique"), mean_s=("duration_s", "mean")).round(1).to_string())
 

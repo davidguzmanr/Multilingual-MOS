@@ -7,19 +7,24 @@ import argparse, glob, html, os
 import pandas as pd
 
 REPO = "/network/scratch/g/guzmand/Repositories/Multilingual-MOS"
-ap = argparse.ArgumentParser(); ap.add_argument("--language", required=True); args = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("--language", required=True)
+ap.add_argument("--exclude", default="", help="comma-separated system folders to leave out (e.g. a system whose synthesis is incomplete)")
+args = ap.parse_args(); exclude = set(filter(None, args.exclude.split(",")))
 root = f"{REPO}/audios/{args.language}"
 gt = pd.read_csv(f"{root}/ground-truth/metadata.csv", dtype=str).sort_values("clip_id")
 systems = {}                                                           # name -> {clip_id: (relpath, label)}
 for m in sorted(glob.glob(f"{root}/*/metadata.csv")):
     name = m.split("/")[-2]
-    if name in ("ground-truth", "reference-voices"): continue
+    if name in ("ground-truth", "reference-voices") or name in exclude: continue
     d = pd.read_csv(m, dtype=str)
     systems[name] = {r.clip_id: (os.path.relpath(f"{REPO}/{r.audio_path}", root), f"{r.voice_id} · {float(r.duration_s):.1f} s") for r in d.itertuples()}
 refs = pd.read_csv(f"{root}/reference-voices/metadata.csv", dtype=str) if os.path.exists(f"{root}/reference-voices/metadata.csv") else None
 
 def player(rel, label):
-    return f'<audio controls preload="none" src="{html.escape(rel)}"></audio><div class="lab">{html.escape(label)}</div>'
+    """The ?v= query string is the file's mtime: clip ids are reused when the ground truth is re-sampled, and without it the
+    browser keeps playing the cached old audio under the new text."""
+    v = int(os.path.getmtime(os.path.join(root, rel)))
+    return f'<audio controls preload="none" src="{html.escape(rel)}?v={v}"></audio><div class="lab">{html.escape(label)}</div>'
 
 cols = ["ground-truth"] + list(systems)
 rows = []

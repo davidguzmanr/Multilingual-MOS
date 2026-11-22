@@ -70,12 +70,12 @@ def run(system, model_id, language, synth, voices, params, limit=None, overwrite
         for r, v in zip(sents.itertuples(), assigned): print(f"{r.clip_id}  {v['gender']:7s} {v['voice_id']:24s} {r.text[:70]}")
         print(f"\n{len(sents)} sentences, voices: {[v['voice_id'] for v in voices]}"); return
     d = out_dir(language, system); rows, t0 = [], time.time()
-    prev = {}                                                   # clip_id -> (voice_id, text) of clips already on disk
+    prev = {}                                                   # clip_id -> (model_id, voice_id, text) of clips already on disk
     if os.path.exists(f"{d}/metadata.csv"):
-        prev = {r.clip_id: (r.voice_id, r.text) for r in pd.read_csv(f"{d}/metadata.csv", dtype=str).itertuples()}
+        prev = {r.clip_id: (r.model_id, r.voice_id, r.text) for r in pd.read_csv(f"{d}/metadata.csv", dtype=str).itertuples()}
     for i, (r, v) in enumerate(zip(sents.itertuples(), assigned), 1):
         path = f"{d}/{r.clip_id}.wav"
-        same = prev.get(r.clip_id) == (v["voice_id"], r.text)   # keep only if voice and text are unchanged
+        same = prev.get(r.clip_id) == (model_id, v["voice_id"], r.text)   # keep only if model, voice and text are unchanged
         if os.path.exists(path) and not overwrite and same:
             info = sf.info(path); dur, sr = info.duration, info.samplerate; status = "kept"
         else:
