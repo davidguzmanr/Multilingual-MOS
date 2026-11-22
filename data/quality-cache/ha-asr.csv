@@ -1,0 +1,40 @@
+key,asr_hyp,wer,cer,cer_plain
+WaxalNLP|Hausa_F3_002_0189.mp3,buta mazubi ne da ake zuba ruwa don yin ibada,0.0,0.0,0.0
+WaxalNLP|Hausa_F4_002_0102.mp3,doka ta goma sha bakwai kuwa doka ce da ta ba wa kowa yancin mallakar dukiya shi kaɗai ko ta hanyar haɗin gwiwa kuma babu wanda za a ƙwace wa dukiya ba tare da haƙƙi ba,0.4333,0.1589,0.1589
+WaxalNLP|Hausa_F3_002_0161.mp3,dutsen zuma yana garin abuja dutse ne da yake da siffar fuskar mutum,0.1667,0.0149,0.0149
+WaxalNLP|Hausa_F4_002_0204.mp3,ke ma a watan fabrera aka haife ki ne,0.375,0.1081,0.1081
+WaxalNLP|Hausa_F3_002_0179.mp3,wane abinci ne ya fi shahara a birnin kano da ke najeriya abincin da ya fi shahara shi ne gurasa shin a najeriya kowanne yake cin awara a'a iyayen arewacin najeriya ne yake cin awara,0.5429,0.1257,0.1257
+WaxalNLP|Hausa_F4_002_0113.mp3,daga cbn kuwa za'a taho ne zuwa mtd police station round about zuwa central hotel round about kuma zuwa titin audu baƙo da ke kano,0.0385,0.0077,0.0077
+WaxalNLP|Hausa_M1_002_0153.mp3,gidan rediyo dutsen dala yankari jami'ar bayero da ke kano gadar sama da gidan makama,0.2667,0.0482,0.0482
+WaxalNLP|Hausa_M3_001_0033.mp3,lema mai launukan ja da shuɗi da fari da launin kore,0.1667,0.0377,0.0377
+WaxalNLP|Hausa_M3_001_0020.mp3,siffar mutum mai launin baƙi tare da ƙwallon ƙafa,0.4,0.08,0.08
+WaxalNLP|Hausa_M3_001_0030.mp3,bishiyar ayaba mai launin kore da ayaba mai launin rawaya,0.0,0.0,0.0
+WaxalNLP|Hausa_F3_002_0099.mp3,doka ta bakwai tana nuni da yanayin hukunci wajibi ne a hukunta masu laifi daidai da abin da suka aikata a hukunta duk wanda ya aikata laifi ko wane ko ɗan wane,0.2903,0.044,0.044
+WaxalNLP|Hausa_F3_002_0196.mp3,sallah ibada ce da dukkan musulmi ke yi a kowace rana,0.2,0.0192,0.0192
+WaxalNLP|Hausa_F3_002_0131.mp3,ingozi ta gudu ƙasar waje bayan ban kaɗo bada ƙalarta shekarun baya,0.6,0.0938,0.0938
+FLEURS|1846/12738311798280873455.wav,a lissafin wannan tsarin idan aka raba 12 domin samun adadi mafi karancin lamba zai kasance a daidaiton uku rabo biyu,0.2381,0.177,0.177
+FLEURS|1821/10275407413289163724.wav,halin da ke tsakanin cututtukan kwakwalwa da hadaya yana tallafawa masana kimiyya a cikin binciken musu,0.125,0.0485,0.0485
+FLEURS|1814/1192731836953490144.wav,sinadiran hydrogen sune proton waɗanda suka cire wa electrons tunda sinadiran hydrogen sun ƙunshi proton ɗaya da electron ɗaya,0.2632,0.0476,0.0476
+FLEURS|1784/6421885390463997126.wav,an zaune a greenland a warwatse a cikin yankin north sun ce an kori eric da red daga iceland saboda kisan kai kuma lokacin da ya kaɗa ya yi yamma sai ya gano greenland kuma ya ba ta suna greenland,0.1,0.0355,0.0355
+FLEURS|1826/10642781891041506444.wav,bayan hadaran ya faru an ɗauki giftan zuwa asibiti amma ya mutu jim kaɗan bayan haka,0.25,0.0714,0.0714
+FLEURS|1827/18108829053037760591.wav,kaurin shimfidar saman kasa ya kai kilomita saba'in a gefen kusa da kaurin kilomita ɗari a gefen nesa,0.3889,0.3494,0.3494
+FLEURS|1856/5153420622149111720.wav,filman babban wurin zuwa kwale-kwale ne ƙasa mai tafkuna dubu suna kuma da dabban tsibirai a cikin tafkuna da kuma a cikin ruk,0.3913,0.1667,0.1667
+FLEURS|1829/17270196760396945812.wav,matafiya zuwa ƙasashe masu tsananin haraji za su iya adana wani adadin kuɗin mai yawa a wasu lokutan musamman a kan abubuwa kamar barasa da taba,0.1538,0.0139,0.0139
+FLEURS|1983/8254874112429573011.wav,kalmar civilization ta zo ne daga kalmar latin civilize ma'ana farar huna mai dangantaka da civilize na latin ma'ana ƴan ƙasa da capitas ma'ana birni ko birnin jiha kuma yana ba da adadin yawan jama'a,0.1538,0.051,0.051
+FLEURS|1907/4431888523499117111.wav,chim kaɗan bayan ɓarkewar tashin hankali biritaniya ta fara toshe mashigan ruwa na jamus,0.2143,0.046,0.046
+FLEURS|1975/5974062191390076524.wav,yawan al'ummar birnin vatican ya kai kimanin mutane ɗari takwas ita ce kasa mafi kankanta cikin ƙasashen masu yancin kansu kuma mafi ƙarancin yawan jama'a,0.1538,0.0966,0.0966
+FLEURS|1928/15975109526570914188.wav,zuwa shekarar 1976 an farfaɗo da kashi 30 na gine-ginen machu picchu kuma har yanzu ana ci gaba da aikin,0.0952,0.0734,0.0734
+FLEURS|1942/18436584342901020058.wav,muna gina gidajen mu ne daga itatuwa kuma muna yin sitirin mu daga itatuwa mafi yawan abincin da muke ci daga tsirrai ne idan babu tsirrai mutane da dabbobi ba za su rayu ba,0.125,0.0175,0.0175
+FLEURS|1869/14590479293331927632.wav,dogon haɓan sa sun cika da haƙora masu ci kamar reza sama da saba'in tare da ƙarin saiti a cikin rufin bakin sa ma'ana babu mafaka ga wani abu wanda ya ƙetare hanyar sa,0.2059,0.0679,0.0679
+Common Voice|common_voice_ha_28665475.mp3,habibu ya kunna kyandir a shirin ƙarshe na jarabawarsa ta ƙarshe,0.0,0.0,0.0
+Common Voice|common_voice_ha_28665460.mp3,banda kayan ɗaki da shagon ke sayarwa suna sayar da wasu abubuwan,0.0,0.0,0.0
+Common Voice|common_voice_ha_26874596.mp3,yan bindiga sun kai masa hari sun doke shi suka kwashewa latti,0.1667,0.0667,0.0667
+Common Voice|common_voice_ha_26878740.mp3,wannan ƙaton dam ɗin akwai abin mamaki wajen gudanar da aikinsa,0.0,0.0,0.0
+Common Voice|common_voice_ha_26873693.mp3,lokacin bazara a ƙasar italiya rana ba ta faɗuwa sai wajen ƙarfe tara na dare,0.1429,0.0132,0.0132
+Common Voice|common_voice_ha_26838614.mp3,kada ka zuba ruwan zafi cikin kofin gilashi ko kuma ya fashe,0.0,0.0,0.0
+Common Voice|common_voice_ha_28491146.mp3,ƙasar amurka ta kusan zama ƙasa ta huɗu a duniya mai yawan fursunoni,0.0769,0.0147,0.0147
+Common Voice|common_voice_ha_30358278.mp3,jalal ya ce ya yi zaton akwai bukatar falmarta za ta yi hakan yau,0.0714,0.0156,0.0156
+Common Voice|common_voice_ha_30604553.mp3,babu abubuwa da yawa da suka fi wawa mai girman kai abin tausayi,0.0,0.0,0.0
+Common Voice|common_voice_ha_30330860.mp3,an daki ne zirga-zirgar wasu ta hanyar kulle wurare da dama,0.1818,0.0345,0.0345
+Common Voice|common_voice_ha_28480479.mp3,x ba ya tare da tarin b saboda yana tare da tarin a,0.1667,0.02,0.02
+Common Voice|common_voice_ha_30358274.mp3,tijjani da falmata sun ce suna fatan zaka kuma yin irin haka,0.1538,0.0164,0.0164

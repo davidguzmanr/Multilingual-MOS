@@ -1,0 +1,44 @@
+key,asr_hyp,wer,cer,cer_plain
+FLEURS|1820/13020825511908771006.wav,àwọn ènìyàn tí ń tẹ̀le àtẹ̀jíṣẹ́ lórí ẹ̀rọ kọ̀m̀pútà wọn wọn kò nílò láti súnmọ́ ohun mímu mọ́,0.4444,0.1429,0.0471
+FLEURS|1897/10938303637360632544.wav,ní àríwá shire ní ó yí ẹkùn náà ká omi òkun ní ó yí gúúsù àti ìwọ̀ oòrùn ká,0.1053,0.0667,0.0541
+FLEURS|1748/9445163144462669892.wav,àwọn panápaná pa pa pa iná náà ní 1135pm,0.6667,0.2703,0.1892
+FLEURS|1773/10833634857119806741.wav,dídá oorun mọ́ yàn lójú ni ètò ìtají nígbà tí ó bá ń sun oorun tàbí nígbà tí ó bá ń tòògbé tó bá yá ìsẹ́jú mẹ́wàá sí ọgọ́ta,0.75,0.1293,0.0796
+FLEURS|1909/12338324765884602911.wav,àwọn ẹgbẹ́ afojúrí ní a gbé papọ̀ bí i ẹgbẹ́ tí a kàn ní ìgbàgbọ́ nínú rẹ̀ ṣùgbọ́n ìyàtọ̀ díẹ̀ wà nínú rẹ̀,0.1818,0.0583,0.0316
+FLEURS|1677/12681166023889977977.wav,loni kọkọrọ kan ṣoṣo ti ko le kan iye rẹ papọ ni kọkọrọ ti a mọ si dragoni ati maafele,0.75,0.2889,0.0581
+FLEURS|1661/2682553980721083308.wav,kò sàgbékalẹ̀ iye kankan fún ẹ̀gẹ́ náà sọ wípé wọn yóò ṣe é ní ìbámu abájáde ọ̀rọ̀ ajé ilẹ̀ saina,0.4,0.1398,0.0562
+FLEURS|1834/17561298494776051754.wav,ẹwẹ̀ sàbẹ̀wò sí ẹkùn àríwá ní ilé ìsìn àwàlédí ọf fatima ojúbọ ibi tí gbajúmọ̀ káàkiri àgbáyé fún ǹkan abàmì,0.3333,0.1081,0.0748
+FLEURS|1866/10784908037959383188.wav,lakoko ọpọlọpọ awọn agun kẹkẹ ma n wọ bata giga pẹlu itẹlẹ bata to n dan to si tinrin,0.8824,0.3333,0.0595
+FLEURS|1673/1562841145081641121.wav,lákòókò ogun àyípadà àwọn ìpínlẹ̀ mẹ́tàlá sèdásílẹ̀ ìjọba tí kò lágbára pẹ̀lú níní ìgbìmọ̀ asòfin bi ẹ̀ka kan lábẹ́ àkọlé gbogbogbò,0.3182,0.087,0.0462
+FLEURS|1854/1162938190546252471.wav,wayo oko boosi gangan kuro ni oju ibi ti ijamba naa ti sele ni bi aago mejila gmt lojo naa,0.6,0.3294,0.2353
+Common Voice|common_voice_yo_36952787.mp3,wọ́n kéde pé kí gbogbo èèyàn máa jìnnà sí ara wọn ní ìta gbangba,0.0714,0.0159,0.0161
+Common Voice|common_voice_yo_36923618.mp3,àkójọpọ̀ àwọn nǹkan tó ṣẹlẹ̀ lágbo tíátà yorùbá lọ́sẹ̀ yìí,0.4,0.1034,0.0189
+Common Voice|common_voice_yo_36952819.mp3,àwọn ẹlẹ́ṣẹ̀ náà yóò wà ní ìkáwọ́ ọlọ́pàá títí di ọ̀la,0.2727,0.1228,0.0
+Common Voice|common_voice_yo_36952732.mp3,dare wa lara awọn pasitọ jankọ jankọ ni naijiria,1.0,0.3922,0.08
+Common Voice|common_voice_yo_36952884.mp3,ọ́físà tó lu awakọ̀ kan níbi ìwọ́de náà ti gba ìwé máa lọ ilé,0.0714,0.0317,0.0169
+Common Voice|common_voice_yo_36969599.mp3,adékúnlé ajáṣin ti ibẹ babájídé olúwaṣeun nípa owó tó jẹ,0.8,0.3485,0.0182
+Common Voice|common_voice_yo_36913927.mp3,akíntọ́lá ni adarí gbogbo ìpínlẹ̀ ọ̀yọ́ ní àsìkò yìí,0.6667,0.3492,0.0
+Common Voice|common_voice_yo_36892280.mp3,adéṣínà ló ti ilé ẹ̀kọ́ fásitì ifẹ̀ pa lórí akẹ́kọ̀ọ́ tó gbẹ̀mí mì,0.2308,0.1429,0.0
+Common Voice|common_voice_yo_36840851.mp3,gbogbo ọjà tí ìyá àgbà rà ni àwọn adigunjalè náà gbà lọ́wọ́ wọn,0.7692,0.3289,0.0
+Common Voice|common_voice_yo_36548525.mp3,abiamọ̀ kàn ni òníṣègùn kò lè sọ bóyá akọni ọmọ òun tàbí abo,0.4286,0.1846,0.0328
+Common Voice|common_voice_yo_36892202.mp3,obìnrin òyìnbó kan tó gbé ní òṣogbo ni orúkọ ẹ̀ ń jẹ́ àdùnní,0.5385,0.2609,0.0
+WaxalNLP|Yoruba_F1_001_0044.mp3,ní aago márùn ìrọ̀lẹ́ òrun ràn títí di aago mẹ́fà ìrọ̀lẹ́ òru mú ní ìwọ̀n 20 celsius orun yóò tètè yọ ní ọjọ́ ìsinmi àti sátidé,0.1852,0.1181,0.1
+WaxalNLP|Yoruba_M2_001_0066.mp3,meje ni isode pupo nipase mejo dogba ni aadota mefa,1.0,0.4286,0.04
+WaxalNLP|Yoruba_M3_001_0069.mp3,ẹgbẹ̀rún lọ́nà ọgọ́rùn-ún,0.0,0.0,0.0
+WaxalNLP|Yoruba_M2_001_0012.mp3,àpẹrẹ onígun mẹ́ta aláwọ̀ ewé wà lórí àpẹrẹ ìyíká búlù,0.5,0.1404,0.0545
+WaxalNLP|Yoruba_M3_002_0184.mp3,ọjọ́ tuesday ni iṣẹ́ ń pọ̀ ní ọ́fíìsì,0.2222,0.2,0.175
+WaxalNLP|Yoruba_M3_001_0084.mp3,ọ̀kan àti èjì kò jọra wọn,0.0,0.0,0.0
+WaxalNLP|Yoruba_F4_001_0001.mp3,màlúù jẹ oko nínú oòrùn ọ̀sán oòrùn ràn màlúù jẹ oko lábẹ́ igi,0.4444,0.2676,0.1884
+WaxalNLP|Yoruba_M4_002_0138.mp3,bola tinubu are orile ede nigeria ti fi igba kan je gomina lagos state,0.6429,0.3243,0.0556
+WaxalNLP|Yoruba_M4_002_0158.mp3,asorok jẹ́ ọ́fíìsì àti ilé ìgbé ààrẹ orílẹ̀-èdè nàìjíríà,0.1818,0.0345,0.0364
+WaxalNLP|Yoruba_M4_001_0069.mp3,mokanla lona ogorun ati mewa je egberun ati igba ole mewa,0.9231,0.4714,0.0952
+WaxalNLP|Yoruba_M4_002_0176.mp3,ẹgbẹ́ òṣèlú apc ló jáwé olúborí nínú ìdìbò sí ipò ààrẹ tí ọdún 2023 ní nàìjíríà,0.125,0.0253,0.0
+Common Voice|common_voice_yo_36912618.mp3,agbẹjọ́rò ti kéde ọjọ́ tó ṣeéṣe kí àwọn afurasí kúrò lọ́gbà ẹ̀wọ̀n,0.1667,0.0588,0.0
+Common Voice|common_voice_yo_36881823.mp3,búlọ̀kù igba náírà ti di ọgọ́rin náírà ní ìpínlẹ̀ ọ̀yọ́,0.3,0.2131,0.0
+Common Voice|common_voice_yo_36912676.mp3,ǹjẹ́ lẹ́sìn mẹ́sìn ló bẹ́ sílẹ̀ nítorí ọmọ ọdún mẹ́jọ tó tọ̀ sí ilé kéwú,0.2857,0.125,0.0615
+WaxalNLP|Yoruba_F2_001_0023.mp3,aworan onigun merin ni aworan irawo ti o ni awo iyeye ninu ati omi ni isale,0.9375,0.3467,0.0
+WaxalNLP|Yoruba_F1_002_0113.mp3,wọ ọ̀kadà láti yemẹtu ó máa gbé ẹ gba àwọn kọ̀rọ̀ àdúgbò ní apá ọ̀tún yàní ìyànà kejì ó máa dé láyípo,0.1739,0.0294,0.0102
+WaxalNLP|Yoruba_F2_001_0026.mp3,àwòrán ọsàn ó didi méjì àti ọsàn ààbọ̀ tí ó ní àwọ̀ ìyeyè,0.4167,0.0926,0.0185
+WaxalNLP|Yoruba_F2_001_0040.mp3,ìjàpá tí ẹ̀yìn rẹ̀ jẹ́ tòmátì tí ó ní àwọ̀ pupa pẹ̀lú ẹsẹ̀ kan tí ó yọ jáde láti ara rẹ̀,0.381,0.122,0.0244
+WaxalNLP|Yoruba_M2_001_0063.mp3,ọgọ́ta pín pẹ̀lú méjì dọ́gba ọgbọ̀n,0.1667,0.0286,0.0
+WaxalNLP|Yoruba_M3_002_0125.mp3,àgbàlá benin royal ti albomi jẹ́ ẹ̀yà páláàsì tó pọ̀ ní benin,0.25,0.082,0.0517
+WaxalNLP|Yoruba_M3_002_0143.mp3,biichi ẹlẹ́gùsí máa ń kún ní opin ọ̀sẹ̀,0.375,0.2632,0.1111

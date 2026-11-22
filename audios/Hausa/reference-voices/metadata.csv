@@ -1,0 +1,4 @@
+ref_id,language,lang_code,dataset,source,speaker_id,gender,age,text,duration_s,sample_rate,orig_id,audio_path
+ha-ref-f1,Hausa,ha,Common Voice,Common Voice: sentence-collector,cad132618c6e,female,twenties,Bitrus ya fara farin ciki bayan ya harba ƙwallon a ragar sa.,6.88,32000,common_voice_ha_26738820.mp3,audios/Hausa/reference-voices/ha-ref-f1.wav
+ha-ref-m1,Hausa,ha,Common Voice,Common Voice: sentence-collector,ce307e95436d,male,twenties,Haduwa ta jiki kai tsaye tare da mai yiwuwa ko tabbataccen cutar;,7.74,32000,common_voice_ha_28477511.mp3,audios/Hausa/reference-voices/ha-ref-m1.wav
+ha-ref-m2,Hausa,ha,Common Voice,Common Voice: sentence-collector,2d064b1d76cc,male,twenties,Sarauniyar Ingila na da dangantaka da sarkin Sweden.,7.49,32000,common_voice_ha_32855259.mp3,audios/Hausa/reference-voices/ha-ref-m2.wav

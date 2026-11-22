@@ -1,0 +1,216 @@
+dataset,orig_id,why
+WaxalNLP,Hausa_F3_001_0047.mp3,trail silence 2.77 s; edge silence total 3.03 s
+WaxalNLP,Hausa_F4_001_0094.mp3,trail silence 3.85 s; edge silence total 4.02 s; speech ratio 0.423
+WaxalNLP,Hausa_F4_001_0064.mp3,stationary noise -31.6 dB
+WaxalNLP,Hausa_F3_002_0133.mp3,edge silence total 1.56 s
+WaxalNLP,Hausa_F3_001_0074.mp3,lead silence 3.28 s; trail silence 2.17 s; edge silence total 5.45 s; speech ratio 0.334
+WaxalNLP,Hausa_F4_002_0195.mp3,speech ratio 0.423; DNSMOS OVRL 2.982
+WaxalNLP,Hausa_F4_001_0071.mp3,trail silence 4.03 s; edge silence total 4.14 s; speech ratio 0.326
+WaxalNLP,Hausa_M1_002_0189.mp3,trail silence 1.11 s; edge silence total 1.90 s
+WaxalNLP,Hausa_M1_002_0143.mp3,trail silence 2.25 s; edge silence total 2.83 s
+WaxalNLP,Hausa_M1_001_0036.mp3,trail silence 1.33 s; edge silence total 2.09 s
+WaxalNLP,Hausa_M1_002_0158.mp3,lead silence 1.09 s; edge silence total 1.82 s; speech ratio 0.443
+WaxalNLP,Hausa_M1_002_0121.mp3,edge silence total 1.89 s; speech ratio 0.3; DNSMOS BAK 3.505; DNSMOS OVRL 2.813
+WaxalNLP,Hausa_M1_002_0160.mp3,trail silence 1.42 s; edge silence total 2.21 s; speech ratio 0.379
+WaxalNLP,Hausa_M1_002_0164.mp3,lead silence 1.13 s; trail silence 1.08 s; edge silence total 2.21 s; speech ratio 0.404
+WaxalNLP,Hausa_M1_002_0205.mp3,trail silence 1.58 s; edge silence total 2.01 s; speech ratio 0.358; DNSMOS BAK 3.67; DNSMOS OVRL 2.897
+WaxalNLP,Hausa_M1_001_0094.mp3,trail silence 1.19 s; edge silence total 1.52 s; speech ratio 0.435
+WaxalNLP,Hausa_M1_002_0145.mp3,trail silence 1.31 s; edge silence total 2.16 s
+WaxalNLP,Hausa_M3_002_0188.mp3,lead silence 1.88 s; trail silence 1.54 s; edge silence total 3.42 s; speech ratio 0.404
+WaxalNLP,Hausa_M3_002_0123.mp3,lead silence 2.38 s; trail silence 2.83 s; edge silence total 5.21 s
+WaxalNLP,Hausa_M3_002_0108.mp3,trail silence 1.51 s; edge silence total 2.17 s; speech ratio 0.436
+WaxalNLP,Hausa_M3_002_0117.mp3,lead silence 1.96 s; edge silence total 2.86 s
+WaxalNLP,Hausa_M3_002_0145.mp3,lead silence 3.31 s; trail silence 1.97 s; edge silence total 5.28 s
+WaxalNLP,Hausa_M3_002_0155.mp3,lead silence 2.4 s; trail silence 2.47 s; edge silence total 4.87 s; speech ratio 0.391
+WaxalNLP,Hausa_M3_001_0009.mp3,DNSMOS BAK 3.532; DNSMOS OVRL 2.751
+WaxalNLP,Hausa_M3_001_0066.mp3,trail silence 1.35 s; edge silence total 1.80 s; speech ratio 0.385
+WaxalNLP,Hausa_M1_002_0149.mp3,trail silence 1.61 s; edge silence total 2.08 s
+WaxalNLP,Hausa_M1_002_0201.mp3,edge silence total 1.53 s
+WaxalNLP,Hausa_M1_001_0021.mp3,trail silence 1.56 s; edge silence total 2.22 s
+WaxalNLP,Hausa_M1_002_0200.mp3,trail silence 1.08 s; edge silence total 1.60 s; speech ratio 0.357
+WaxalNLP,Hausa_M1_001_0078.mp3,trail silence 1.53 s; edge silence total 2.32 s; speech ratio 0.421
+WaxalNLP,Hausa_M1_002_0174.mp3,speech ratio 0.369; DNSMOS BAK 3.681; DNSMOS OVRL 2.962
+WaxalNLP,Hausa_M1_001_0079.mp3,lead silence 1.19 s; edge silence total 2.16 s; speech ratio 0.42
+WaxalNLP,Hausa_M1_001_0031.mp3,lead silence 1.37 s; trail silence 1.06 s; edge silence total 2.43 s; speech ratio 0.428
+WaxalNLP,Hausa_M1_002_0192.mp3,lead silence 1.49 s; edge silence total 2.03 s; speech ratio 0.428
+WaxalNLP,Hausa_M1_002_0100.mp3,edge silence total 1.53 s
+WaxalNLP,Hausa_M3_002_0197.mp3,lead silence 2.47 s; trail silence 2.03 s; edge silence total 4.50 s; speech ratio 0.276
+WaxalNLP,Hausa_M3_002_0102.mp3,lead silence 1.76 s; trail silence 1.69 s; edge silence total 3.45 s
+WaxalNLP,Hausa_M3_002_0169.mp3,lead silence 2.2 s; trail silence 1.74 s; edge silence total 3.94 s; speech ratio 0.287; DNSMOS OVRL 2.966
+WaxalNLP,Hausa_M3_002_0189.mp3,lead silence 2.14 s; trail silence 2.41 s; edge silence total 4.55 s
+WaxalNLP,Hausa_M3_001_0060.mp3,trail silence 1.39 s; edge silence total 2.16 s
+WaxalNLP,Hausa_F3_001_0075.mp3,lead silence 1.65 s; trail silence 1.7 s; edge silence total 3.35 s
+WaxalNLP,Hausa_F3_002_0129.mp3,DNSMOS BAK 3.308; DNSMOS OVRL 2.733
+WaxalNLP,Hausa_F3_002_0175.mp3,DNSMOS BAK 3.518
+WaxalNLP,Hausa_F3_001_0037.mp3,lead silence 1.2 s; trail silence 2.35 s; edge silence total 3.55 s; speech ratio 0.374; DNSMOS BAK 3.769; DNSMOS OVRL 2.976
+WaxalNLP,Hausa_F3_002_0122.mp3,trail silence 1.36 s; edge silence total 1.95 s
+FLEURS,1956/6292216075785573823.wav,quiet -35.81 LUFS; low peak -16.77 dBFS; stationary noise -27.3 dB; DNSMOS BAK 3.721
+FLEURS,1794/14216528348590870779.wav,quiet -31.45 LUFS; trail silence 1.4 s; edge silence total 1.57 s
+FLEURS,1833/1011451118830394019.wav,quiet -30.69 LUFS; low peak -12.16 dBFS; trail silence 1.39 s; edge silence total 2.08 s
+FLEURS,1769/13726966783546139273.wav,quiet -30.82 LUFS; trail silence 1.05 s; DNSMOS BAK 3.636; DNSMOS OVRL 2.699
+FLEURS,1941/3270647669429564351.wav,quiet -40.07 LUFS; low peak -20.93 dBFS; stationary noise -22.7 dB; DNSMOS BAK 3.299; DNSMOS OVRL 2.688
+FLEURS,1841/15150426497744983199.wav,quiet -32.97 LUFS; low peak -15.31 dBFS; stationary noise -30.1 dB
+FLEURS,1754/14052584176060525172.wav,quiet -36.76 LUFS; low peak -18.53 dBFS; stationary noise -24.6 dB; DNSMOS BAK 3.693
+FLEURS,1797/14724371702485943516.wav,quiet -32.65 LUFS; low peak -15.09 dBFS; stationary noise -31.9 dB; DNSMOS BAK 3.547
+FLEURS,1807/3028405742706565091.wav,DNSMOS BAK 3.73
+FLEURS,1696/5610276111113616729.wav,quiet -37.16 LUFS; low peak -17.29 dBFS; stationary noise -23.4 dB; DNSMOS BAK 3.671; DNSMOS OVRL 2.943
+FLEURS,1672/12556525955510371506.wav,quiet -32.52 LUFS; low peak -14.4 dBFS; stationary noise -27.7 dB; DNSMOS BAK 3.604; DNSMOS OVRL 2.89
+FLEURS,1917/18033113157933563052.wav,quiet -33.08 LUFS
+FLEURS,1766/18403523512349470285.wav,quiet -30.48 LUFS; low peak -14.29 dBFS; trail silence 1.34 s; edge silence total 1.59 s
+FLEURS,1878/7830174508070117492.wav,trail silence 1.62 s; edge silence total 1.76 s
+FLEURS,1970/9170359716188352783.wav,low peak -12.56 dBFS
+FLEURS,1849/1902240603049084587.wav,quiet -36.93 LUFS; low peak -16.97 dBFS; stationary noise -25.2 dB; DNSMOS BAK 3.7; DNSMOS OVRL 2.993
+FLEURS,1679/6355234573126155249.wav,DNSMOS BAK 1.54; DNSMOS OVRL 1.439
+FLEURS,1946/2495865362092952533.wav,trail silence 2.42 s; edge silence total 2.85 s
+FLEURS,1687/2657238194351249075.wav,quiet -44.92 LUFS; low peak -27.42 dBFS; stationary noise -24.0 dB; DNSMOS BAK 3.466; DNSMOS OVRL 2.481
+FLEURS,1953/8787440457291868488.wav,trail silence 1.18 s
+FLEURS,1870/4494489382005760981.wav,quiet -39.39 LUFS; stationary noise -22.6 dB; DNSMOS BAK 3.613; DNSMOS OVRL 2.785
+FLEURS,1783/4371442235519091161.wav,quiet -37.98 LUFS; low peak -19.78 dBFS; stationary noise -24.6 dB; DNSMOS BAK 3.68
+FLEURS,1969/438977401848917811.wav,quiet -36.53 LUFS; low peak -19.54 dBFS; stationary noise -21.9 dB; DNSMOS BAK 3.499; DNSMOS OVRL 2.837
+FLEURS,1817/1904465916621457036.wav,quiet -33.53 LUFS; low peak -16.55 dBFS; stationary noise -23.7 dB
+FLEURS,1803/14981206778593743723.wav,stationary noise -27.5 dB
+FLEURS,1709/11069537965002543376.wav,quiet -32.44 LUFS; low peak -16.36 dBFS; stationary noise -27.9 dB
+FLEURS,1820/11063621148654676212.wav,quiet -34.42 LUFS; low peak -15.47 dBFS; stationary noise -28.3 dB; DNSMOS BAK 3.691
+FLEURS,2000/9612334234672295529.wav,trail silence 1.35 s; edge silence total 2.32 s
+FLEURS,1813/15768614222553905209.wav,low peak -13.21 dBFS; stationary noise -34.7 dB
+FLEURS,1876/13511530504592908691.wav,quiet -40.89 LUFS; low peak -20.4 dBFS; stationary noise -19.6 dB; DNSMOS BAK 3.799; DNSMOS OVRL 2.581
+FLEURS,1747/7607541665157418708.wav,quiet -37.36 LUFS; low peak -20.14 dBFS; stationary noise -25.9 dB; DNSMOS BAK 3.298; DNSMOS OVRL 2.768
+FLEURS,1831/16478200867165490397.wav,quiet -33.85 LUFS; low peak -14.24 dBFS; stationary noise -34.2 dB
+FLEURS,1732/84880528671798458.wav,DNSMOS BAK 3.784
+FLEURS,1790/5160009966720049674.wav,DNSMOS BAK 3.637
+FLEURS,1839/4143817490035736563.wav,quiet -34.9 LUFS; low peak -16.36 dBFS; stationary noise -29.1 dB; DNSMOS BAK 3.585; DNSMOS OVRL 2.92
+FLEURS,1802/454057298356140721.wav,low peak -12.85 dBFS; edge silence total 1.64 s
+FLEURS,1816/11531021338270715694.wav,quiet -35.01 LUFS; low peak -13.78 dBFS; stationary noise -29.9 dB; DNSMOS BAK 3.653
+FLEURS,1902/330839719228983546.wav,quiet -42.42 LUFS; low peak -20.66 dBFS; stationary noise -19.0 dB; DNSMOS BAK 3.668; DNSMOS OVRL 2.858
+FLEURS,1945/7586738946398855870.wav,quiet -38.25 LUFS; low peak -19.66 dBFS; stationary noise -27.7 dB
+FLEURS,1868/5874308742384146901.wav,quiet -30.92 LUFS; low peak -14.71 dBFS; trail silence 1.64 s; edge silence total 1.79 s
+FLEURS,1703/2607961374052170405.wav,lead silence 1.04 s; DNSMOS BAK 3.599
+FLEURS,1858/14023058738075461451.wav,quiet -32.76 LUFS; low peak -16.45 dBFS; DNSMOS BAK 3.509; DNSMOS OVRL 2.654
+FLEURS,1853/13852736494447575089.wav,quiet -30.83 LUFS; low peak -13.36 dBFS; DNSMOS BAK 3.528; DNSMOS OVRL 2.91
+FLEURS,1995/5407038963286038683.wav,stationary noise -33.5 dB; DNSMOS BAK 3.46; DNSMOS OVRL 2.962
+FLEURS,1954/15789058615397136397.wav,low peak -12.13 dBFS; trail silence 2.12 s; edge silence total 2.25 s
+FLEURS,1910/2117229127302006742.wav,quiet -37.78 LUFS; low peak -22.32 dBFS; stationary noise -21.7 dB; DNSMOS BAK 3.765; DNSMOS OVRL 2.858
+FLEURS,1761/14691715102571960046.wav,quiet -31.22 LUFS; low peak -12.71 dBFS; trail silence 1.35 s; edge silence total 1.70 s
+FLEURS,1916/15205555459213094178.wav,lead silence 1.08 s
+FLEURS,1909/16803120524235105125.wav,quiet -32.95 LUFS
+FLEURS,1855/5243530770057715488.wav,quiet -34.69 LUFS; low peak -16.31 dBFS
+FLEURS,1693/12562595895268343214.wav,stationary noise -22.5 dB; DNSMOS BAK 3.762
+FLEURS,1825/1633757724613583565.wav,DNSMOS BAK 3.303; DNSMOS OVRL 2.862
+FLEURS,1885/14161080964935482250.wav,trail silence 1.11 s; edge silence total 1.78 s
+FLEURS,1978/7879763963468911751.wav,low peak -13.36 dBFS; DNSMOS OVRL 2.899
+FLEURS,1991/10291405143076270704.wav,low peak -14.24 dBFS; lead silence 1.49 s; trail silence 1.25 s; edge silence total 2.74 s
+FLEURS,1959/11080780960077631228.wav,quiet -33.86 LUFS; DNSMOS BAK 3.741; DNSMOS OVRL 2.867
+FLEURS,1737/11814257496960207856.wav,quiet -36.19 LUFS; low peak -16.09 dBFS; stationary noise -25.8 dB; DNSMOS BAK 3.707
+FLEURS,1808/15597508867364715209.wav,quiet -35.07 LUFS; low peak -14.25 dBFS; stationary noise -26.6 dB; DNSMOS BAK 3.634
+FLEURS,1694/2899380414631046202.wav,quiet -32.35 LUFS; stationary noise -28.4 dB; DNSMOS BAK 3.445; DNSMOS OVRL 2.978
+FLEURS,1892/4431438073450297996.wav,lead silence 1.13 s; trail silence 1.24 s; edge silence total 2.37 s
+FLEURS,1666/12694784408222281116.wav,quiet -37.84 LUFS; low peak -18.04 dBFS; stationary noise -25.0 dB; DNSMOS BAK 3.729; DNSMOS OVRL 2.982
+FLEURS,1919/11574624762486864858.wav,stationary noise -34.6 dB; DNSMOS BAK 3.69
+FLEURS,1800/9021786441132108285.wav,DNSMOS OVRL 2.943
+FLEURS,1890/2886377945799080727.wav,quiet -35.44 LUFS; stationary noise -22.6 dB; DNSMOS BAK 3.664; DNSMOS OVRL 2.973
+FLEURS,1778/7291254243199108494.wav,quiet -39.06 LUFS; low peak -23.5 dBFS; stationary noise -24.6 dB; DNSMOS BAK 3.785
+FLEURS,1957/11740088430791068923.wav,low peak -12.5 dBFS; stationary noise -30.1 dB; DNSMOS BAK 3.593; DNSMOS OVRL 2.727
+FLEURS,1793/9103066521759223333.wav,quiet -31.95 LUFS; low peak -13.08 dBFS
+FLEURS,1677/3851067558810418259.wav,quiet -30.54 LUFS; low peak -13.44 dBFS; trail silence 1.72 s; edge silence total 2.04 s
+FLEURS,1823/9868966291470224770.wav,low peak -13.84 dBFS; stationary noise -31.7 dB; DNSMOS BAK 3.745
+FLEURS,1875/12012531221349839854.wav,stationary noise -34.6 dB
+FLEURS,1723/2922504713143647805.wav,quiet -32.41 LUFS; low peak -12.42 dBFS; stationary noise -34.2 dB
+FLEURS,1757/17403446742573894448.wav,quiet -30.66 LUFS
+FLEURS,1889/15722554259594954145.wav,quiet -35.74 LUFS; low peak -17.83 dBFS; stationary noise -23.7 dB; DNSMOS BAK 3.681
+FLEURS,1879/11379486668254365204.wav,quiet -39.07 LUFS; low peak -17.61 dBFS; stationary noise -23.6 dB; DNSMOS BAK 3.144; DNSMOS OVRL 2.539
+FLEURS,1667/12486459717175247092.wav,quiet -30.81 LUFS; low peak -14.88 dBFS; stationary noise -25.5 dB; DNSMOS BAK 3.675; DNSMOS OVRL 2.529
+FLEURS,1748/9601585702676263468.wav,quiet -30.26 LUFS; trail silence 1.57 s; edge silence total 1.88 s
+FLEURS,1674/5757009952877666440.wav,quiet -30.38 LUFS; DNSMOS BAK 3.015; DNSMOS OVRL 2.568
+FLEURS,1776/16750529125476399000.wav,quiet -31.75 LUFS; low peak -16.42 dBFS
+FLEURS,1999/6796506543211793661.wav,quiet -30.48 LUFS; low peak -14.15 dBFS; stationary noise -30.2 dB
+FLEURS,1906/14317496480699568926.wav,quiet -35.65 LUFS; low peak -15.67 dBFS; stationary noise -23.1 dB; DNSMOS BAK 3.556; DNSMOS OVRL 2.969
+FLEURS,1874/9246723369085368226.wav,quiet -32.85 LUFS; low peak -16.36 dBFS
+FLEURS,1697/5137660577680298143.wav,edge silence total 1.71 s; DNSMOS OVRL 2.925
+FLEURS,1884/10435630491638189387.wav,quiet -30.58 LUFS; low peak -14.19 dBFS; stationary noise -34.9 dB
+FLEURS,1913/7649758862248586875.wav,trail silence 1.37 s; stationary noise -34.0 dB
+FLEURS,1881/9393821507671206401.wav,quiet -33.83 LUFS; low peak -18.42 dBFS
+FLEURS,1947/16927364448154791068.wav,quiet -36.72 LUFS; stationary noise -22.5 dB; DNSMOS BAK 3.475; DNSMOS OVRL 2.895
+FLEURS,1845/13399237990667942211.wav,quiet -40.41 LUFS; low peak -23.28 dBFS; stationary noise -19.9 dB; DNSMOS OVRL 2.862
+FLEURS,1894/13908459596789892374.wav,quiet -36.8 LUFS; low peak -18.85 dBFS; stationary noise -27.7 dB; DNSMOS BAK 3.669; DNSMOS OVRL 2.999
+FLEURS,1765/6660746511698176906.wav,quiet -37.43 LUFS; low peak -19.25 dBFS; stationary noise -26.3 dB; DNSMOS BAK 3.725
+FLEURS,1676/3085196410770478328.wav,quiet -34.5 LUFS; low peak -17.1 dBFS; stationary noise -26.1 dB; DNSMOS BAK 3.546; DNSMOS OVRL 2.964
+FLEURS,1717/3326803267139074789.wav,quiet -30.52 LUFS; low peak -13.49 dBFS; stationary noise -31.6 dB; DNSMOS BAK 3.699; DNSMOS OVRL 2.971
+FLEURS,1705/5994012744990607640.wav,quiet -30.75 LUFS; low peak -13.61 dBFS; stationary noise -27.9 dB
+FLEURS,1744/17785669742948948705.wav,quiet -30.62 LUFS; low peak -15.0 dBFS; trail silence 1.47 s; edge silence total 1.75 s
+FLEURS,1837/8526770904996869958.wav,DNSMOS OVRL 2.969
+FLEURS,1987/2362857940658459415.wav,DNSMOS BAK 3.602; DNSMOS OVRL 2.953
+FLEURS,1770/4508814698812565933.wav,stationary noise -34.9 dB; DNSMOS BAK 3.555; DNSMOS OVRL 2.955
+FLEURS,1844/4846585640770699867.wav,quiet -36.96 LUFS; low peak -17.44 dBFS; stationary noise -24.2 dB; DNSMOS BAK 3.576; DNSMOS OVRL 2.992
+FLEURS,1827/18108829053037760591.wav,text mismatch: CER 0.35 (kaurin shimfidar saman kasa ya kai kilomita saba'i)
+FLEURS,1981/4607931699457881061.wav,DNSMOS BAK 3.54; DNSMOS OVRL 2.99
+Common Voice,common_voice_ha_26738820.mp3,trail silence 1.87 s; edge silence total 2.61 s
+Common Voice,common_voice_ha_26738817.mp3,trail silence 1.02 s
+Common Voice,common_voice_ha_26720813.mp3,lead silence 1.11 s; edge silence total 1.85 s
+Common Voice,common_voice_ha_26720873.mp3,trail silence 1.51 s; edge silence total 2.41 s
+Common Voice,common_voice_ha_26738810.mp3,DNSMOS OVRL 2.747
+Common Voice,common_voice_ha_26720750.mp3,lead silence 1.27 s; edge silence total 2.17 s
+Common Voice,common_voice_ha_26804806.mp3,edge silence total 1.65 s
+Common Voice,common_voice_ha_28657764.mp3,DNSMOS OVRL 2.855
+Common Voice,common_voice_ha_26842997.mp3,trail silence 1.14 s; edge silence total 2.07 s
+Common Voice,common_voice_ha_26798037.mp3,trail silence 1.15 s; edge silence total 2.14 s
+Common Voice,common_voice_ha_26796954.mp3,lead silence 1.21 s; trail silence 1.23 s; edge silence total 2.44 s
+Common Voice,common_voice_ha_26807485.mp3,lead silence 1.23 s; trail silence 1.05 s; edge silence total 2.28 s
+Common Voice,common_voice_ha_26797896.mp3,trail silence 1.14 s
+Common Voice,common_voice_ha_26709383.mp3,trail silence 1.12 s; edge silence total 1.75 s
+Common Voice,common_voice_ha_28497020.mp3,trail silence 2.94 s; edge silence total 3.93 s; DNSMOS BAK 3.792; DNSMOS OVRL 2.346
+Common Voice,common_voice_ha_28497084.mp3,trail silence 1.15 s; edge silence total 1.74 s; DNSMOS BAK 3.734; DNSMOS OVRL 2.217
+Common Voice,common_voice_ha_28497015.mp3,lead silence 2.0 s; edge silence total 2.24 s; DNSMOS BAK 3.748; DNSMOS OVRL 2.097
+Common Voice,common_voice_ha_28496977.mp3,trail silence 1.36 s; DNSMOS BAK 3.582; DNSMOS OVRL 2.385
+Common Voice,common_voice_ha_28496995.mp3,edge silence total 1.68 s; DNSMOS OVRL 2.493
+Common Voice,common_voice_ha_28477402.mp3,DNSMOS BAK 3.398; DNSMOS OVRL 2.42
+Common Voice,common_voice_ha_28486414.mp3,edge silence total 1.59 s; DNSMOS BAK 3.676; DNSMOS OVRL 2.234
+Common Voice,common_voice_ha_28477356.mp3,trail silence 1.92 s; edge silence total 2.86 s; DNSMOS BAK 3.739; DNSMOS OVRL 2.496
+Common Voice,common_voice_ha_28497045.mp3,lead silence 1.63 s; edge silence total 2.21 s; DNSMOS BAK 3.719; DNSMOS OVRL 2.363
+Common Voice,common_voice_ha_28486352.mp3,lead silence 1.33 s; trail silence 1.09 s; edge silence total 2.42 s; DNSMOS BAK 3.689; DNSMOS OVRL 2.188
+Common Voice,common_voice_ha_28496996.mp3,DNSMOS BAK 3.643; DNSMOS OVRL 2.175
+Common Voice,common_voice_ha_28497033.mp3,lead silence 1.75 s; edge silence total 2.26 s; DNSMOS BAK 3.432; DNSMOS OVRL 2.453
+Common Voice,common_voice_ha_28497053.mp3,lead silence 1.38 s; trail silence 1.04 s; edge silence total 2.42 s; DNSMOS OVRL 2.849
+Common Voice,common_voice_ha_28497066.mp3,DNSMOS OVRL 2.731
+Common Voice,common_voice_ha_28477403.mp3,edge silence total 1.53 s; DNSMOS BAK 3.763; DNSMOS OVRL 2.425
+Common Voice,common_voice_ha_28486396.mp3,lead silence 1.04 s; edge silence total 1.87 s; DNSMOS BAK 3.363; DNSMOS OVRL 2.3
+Common Voice,common_voice_ha_28486413.mp3,trail silence 1.18 s; DNSMOS BAK 3.424; DNSMOS OVRL 2.22
+Common Voice,common_voice_ha_28486417.mp3,DNSMOS BAK 2.894; DNSMOS OVRL 1.86
+Common Voice,common_voice_ha_28486380.mp3,edge silence total 1.59 s; DNSMOS BAK 3.126; DNSMOS OVRL 2.015
+Common Voice,common_voice_ha_28486415.mp3,lead silence 1.21 s; edge silence total 1.99 s; DNSMOS BAK 3.704; DNSMOS OVRL 2.548
+Common Voice,common_voice_ha_28497067.mp3,DNSMOS OVRL 2.855
+Common Voice,common_voice_ha_28486397.mp3,DNSMOS BAK 3.462; DNSMOS OVRL 2.078
+Common Voice,common_voice_ha_28477391.mp3,trail silence 1.23 s; DNSMOS BAK 3.779; DNSMOS OVRL 2.333
+Common Voice,common_voice_ha_28496982.mp3,edge silence total 1.67 s; DNSMOS BAK 3.425; DNSMOS OVRL 2.216
+Common Voice,common_voice_ha_28496983.mp3,trail silence 1.24 s; edge silence total 2.08 s; DNSMOS BAK 3.782; DNSMOS OVRL 2.461
+Common Voice,common_voice_ha_28477411.mp3,DNSMOS BAK 3.745; DNSMOS OVRL 2.41
+Common Voice,common_voice_ha_28497023.mp3,DNSMOS BAK 2.694; DNSMOS OVRL 1.865
+Common Voice,common_voice_ha_28486379.mp3,DNSMOS BAK 3.496; DNSMOS OVRL 2.258
+Common Voice,common_voice_ha_28486378.mp3,DNSMOS BAK 3.516; DNSMOS OVRL 2.392
+Common Voice,common_voice_ha_28496998.mp3,edge silence total 1.65 s; DNSMOS OVRL 2.451
+Common Voice,common_voice_ha_28497060.mp3,lead silence 1.23 s; trail silence 1.28 s; edge silence total 2.51 s; DNSMOS OVRL 2.479
+Common Voice,common_voice_ha_28497003.mp3,lead silence 1.91 s; edge silence total 2.71 s; DNSMOS OVRL 2.395
+Common Voice,common_voice_ha_28477511.mp3,lead silence 1.09 s; trail silence 1.17 s; edge silence total 2.26 s; DNSMOS OVRL 2.841
+Common Voice,common_voice_ha_28497065.mp3,DNSMOS BAK 3.562; DNSMOS OVRL 2.223
+Common Voice,common_voice_ha_28486353.mp3,lead silence 1.51 s; trail silence 1.27 s; edge silence total 2.78 s; DNSMOS BAK 3.601; DNSMOS OVRL 2.559
+Common Voice,common_voice_ha_28486307.mp3,lead silence 1.03 s; trail silence 1.15 s; edge silence total 2.18 s; DNSMOS OVRL 2.475
+Common Voice,common_voice_ha_28477358.mp3,trail silence 1.14 s; DNSMOS BAK 3.229; DNSMOS OVRL 2.195
+Common Voice,common_voice_ha_28497051.mp3,lead silence 1.06 s; edge silence total 1.85 s; DNSMOS OVRL 2.54
+Common Voice,common_voice_ha_28486445.mp3,DNSMOS BAK 3.225; DNSMOS OVRL 2.572
+Common Voice,common_voice_ha_28497017.mp3,DNSMOS BAK 3.632; DNSMOS OVRL 2.144
+Common Voice,common_voice_ha_30358320.mp3,lead silence 1.01 s; trail silence 1.59 s; edge silence total 2.60 s; DNSMOS BAK 3.781
+Common Voice,common_voice_ha_30358430.mp3,lead silence 1.01 s; edge silence total 1.66 s
+Common Voice,common_voice_ha_30330861.mp3,trail silence 1.46 s; edge silence total 2.42 s
+Common Voice,common_voice_ha_30331272.mp3,lead silence 1.15 s; edge silence total 1.86 s
+Common Voice,common_voice_ha_30358228.mp3,edge silence total 1.71 s; DNSMOS BAK 3.593
+Common Voice,common_voice_ha_30358240.mp3,lead silence 1.19 s; edge silence total 2.18 s
+Common Voice,common_voice_ha_30330899.mp3,edge silence total 1.52 s
+Common Voice,common_voice_ha_27798895.mp3,DNSMOS BAK 3.171; DNSMOS OVRL 2.523
+Common Voice,common_voice_ha_28491190.mp3,DNSMOS BAK 3.765
+Common Voice,common_voice_ha_28480442.mp3,edge silence total 1.69 s
+Common Voice,common_voice_ha_27016261.mp3,DNSMOS BAK 3.747
+Common Voice,common_voice_ha_27016157.mp3,DNSMOS OVRL 2.93
+Common Voice,common_voice_ha_27008564.mp3,DNSMOS BAK 3.109; DNSMOS OVRL 2.689
+Common Voice,common_voice_ha_27789420.mp3,DNSMOS BAK 3.768
+Common Voice,common_voice_ha_28411073.mp3,DNSMOS OVRL 2.996
+Common Voice,common_voice_ha_30358471.mp3,edge silence total 1.64 s; DNSMOS BAK 3.427
+Common Voice,common_voice_ha_30358263.mp3,edge silence total 1.55 s

@@ -240,3 +240,4 @@ audios/**/*.wav
 audios/**/*.mp3
 audios/**/*.flac
 synthesis_output/
+data/WaxalNLP/

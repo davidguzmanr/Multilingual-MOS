@@ -1,0 +1,528 @@
+dataset,orig_id,why
+WaxalNLP,Yoruba_F1_001_0094.mp3,stationary noise -30.7 dB; DNSMOS BAK 3.737
+WaxalNLP,Yoruba_F2_002_0187.mp3,trail silence 4.42 s
+WaxalNLP,Yoruba_F2_001_0016.mp3,trail silence 5.41 s
+WaxalNLP,Yoruba_F2_002_0133.mp3,trail silence 6.02 s
+WaxalNLP,Yoruba_F2_001_0005.mp3,trail silence 6.43 s
+WaxalNLP,Yoruba_F2_001_0030.mp3,lead silence 5.28 s; edge silence total 8.79 s
+WaxalNLP,Yoruba_F2_002_0132.mp3,trail silence 6.04 s; edge silence total 7.38 s; DNSMOS BAK 3.635; DNSMOS OVRL 2.946
+WaxalNLP,Yoruba_F2_002_0137.mp3,lead silence 4.24 s
+WaxalNLP,Yoruba_F2_001_0089.mp3,trail silence 6.05 s; stationary noise -34.4 dB
+WaxalNLP,Yoruba_F2_002_0127.mp3,trail silence 5.12 s
+WaxalNLP,Yoruba_F1_001_0030.mp3,quiet -28.6 LUFS; stationary noise -29.5 dB; DNSMOS BAK 3.571
+WaxalNLP,Yoruba_F1_002_0140.mp3,trail silence 7.92 s; edge silence total 8.72 s
+WaxalNLP,Yoruba_F1_001_0071.mp3,quiet -28.23 LUFS; stationary noise -29.3 dB
+WaxalNLP,Yoruba_F1_002_0192.mp3,DNSMOS BAK 3.795; DNSMOS OVRL 2.825
+WaxalNLP,Yoruba_F1_002_0200.mp3,DNSMOS BAK 3.684; DNSMOS OVRL 2.904
+WaxalNLP,Yoruba_F1_002_0145.mp3,quiet -30.61 LUFS; stationary noise -31.1 dB; DNSMOS BAK 3.395; DNSMOS OVRL 2.954
+WaxalNLP,Yoruba_F1_001_0060.mp3,trail silence 10.94 s; edge silence total 11.80 s; DNSMOS OVRL 2.824
+WaxalNLP,Yoruba_F1_002_0129.mp3,quiet -30.76 LUFS; stationary noise -29.5 dB; DNSMOS BAK 3.476; DNSMOS OVRL 2.955
+WaxalNLP,Yoruba_F1_001_0072.mp3,quiet -28.29 LUFS; stationary noise -28.0 dB; DNSMOS BAK 3.709; DNSMOS OVRL 2.999
+WaxalNLP,Yoruba_F1_001_0075.mp3,stationary noise -29.4 dB; DNSMOS BAK 3.52; DNSMOS OVRL 2.958
+WaxalNLP,Yoruba_F1_002_0116.mp3,quiet -30.51 LUFS; stationary noise -28.9 dB
+WaxalNLP,Yoruba_F4_002_0118.mp3,trail silence 6.31 s; edge silence total 7.21 s; DNSMOS OVRL 2.661
+WaxalNLP,Yoruba_F4_002_0158.mp3,trail silence 4.31 s
+WaxalNLP,Yoruba_F4_001_0050.mp3,lead silence 5.93 s; trail silence 6.02 s; edge silence total 11.95 s; DNSMOS BAK 3.348; DNSMOS OVRL 2.355
+WaxalNLP,Yoruba_F4_002_0122.mp3,lead silence 4.05 s; trail silence 6.48 s; edge silence total 10.53 s; DNSMOS OVRL 2.872
+WaxalNLP,Yoruba_F4_002_0168.mp3,trail silence 4.07 s; edge silence total 7.26 s; DNSMOS OVRL 2.775
+WaxalNLP,Yoruba_F2_001_0028.mp3,trail silence 4.39 s; edge silence total 8.35 s
+WaxalNLP,Yoruba_M2_002_0138.mp3,trail silence 4.61 s; edge silence total 8.61 s
+WaxalNLP,Yoruba_M3_002_0172.mp3,DNSMOS BAK 3.66; DNSMOS OVRL 2.913
+WaxalNLP,Yoruba_M2_002_0155.mp3,lead silence 5.13 s; trail silence 5.98 s; edge silence total 11.11 s; DNSMOS OVRL 2.996
+WaxalNLP,Yoruba_M2_001_0039.mp3,stationary noise -31.0 dB
+WaxalNLP,Yoruba_M2_001_0013.mp3,DNSMOS BAK 3.784
+WaxalNLP,Yoruba_M3_002_0168.mp3,trail silence 6.66 s; edge silence total 7.42 s
+FLEURS,1923/16659441271389229770.wav,quiet -33.04 LUFS; low peak -14.22 dBFS; stationary noise -24.5 dB; DNSMOS BAK 3.685; DNSMOS OVRL 2.95
+FLEURS,1713/14133964894177720405.wav,quiet -38.94 LUFS; low peak -16.08 dBFS; lead silence 1.54 s; trail silence 2.21 s; edge silence total 3.75 s; stationary noise -34.2 dB
+FLEURS,1832/5082444753916412809.wav,quiet -40.62 LUFS; low peak -17.36 dBFS; snr 18.35 dB; stationary noise -17.7 dB; DNSMOS OVRL 2.476
+FLEURS,2000/3110908202033410715.wav,quiet -42.66 LUFS; low peak -22.83 dBFS; snr 21.99 dB; stationary noise -18.7 dB; DNSMOS OVRL 2.791
+FLEURS,1706/16859988821489258668.wav,quiet -33.96 LUFS; low peak -16.04 dBFS; stationary noise -19.8 dB; DNSMOS BAK 3.788
+FLEURS,1745/7494492315359580794.wav,quiet -39.82 LUFS; low peak -23.08 dBFS; snr 17.72 dB; stationary noise -19.6 dB; DNSMOS BAK 3.554; DNSMOS OVRL 2.979
+FLEURS,1792/4023639688649905588.wav,quiet -29.01 LUFS; trail silence 1.48 s; edge silence total 2.09 s
+FLEURS,2006/9509326855151319058.wav,quiet -31.06 LUFS; low peak -11.53 dBFS; trail silence 1.22 s
+FLEURS,1874/1082547587225714470.wav,quiet -30.05 LUFS; low peak -13.18 dBFS; lead silence 1.09 s; trail silence 1.68 s; edge silence total 2.77 s
+FLEURS,1903/14665336663567200613.wav,quiet -30.52 LUFS; low peak -11.26 dBFS; trail silence 1.32 s; edge silence total 1.71 s
+FLEURS,1986/17855268110065466903.wav,quiet -32.37 LUFS; low peak -13.2 dBFS; stationary noise -22.4 dB; DNSMOS BAK 3.685; DNSMOS OVRL 2.944
+FLEURS,1956/8590763890523204103.wav,quiet -36.88 LUFS; low peak -20.84 dBFS; stationary noise -30.9 dB; DNSMOS OVRL 2.634
+FLEURS,1700/12740356764383036172.wav,quiet -30.52 LUFS; low peak -12.79 dBFS; stationary noise -20.9 dB; DNSMOS OVRL 2.987
+FLEURS,1873/16260137652912824047.wav,quiet -32.51 LUFS; low peak -11.19 dBFS; trail silence 2.07 s; edge silence total 2.80 s
+FLEURS,1861/7314613060768308181.wav,quiet -28.95 LUFS; low peak -10.35 dBFS
+FLEURS,1692/3896063012362812923.wav,quiet -41.38 LUFS; low peak -23.06 dBFS; stationary noise -19.8 dB; DNSMOS OVRL 2.891
+FLEURS,1788/18354564672730315397.wav,quiet -41.23 LUFS; low peak -10.15 dBFS; snr 15.7 dB; noise floor -47.94 dBFS; stationary noise -17.3 dB; DNSMOS OVRL 2.791
+FLEURS,1907/16723939500908485082.wav,quiet -41.39 LUFS; low peak -24.79 dBFS; snr 21.14 dB; stationary noise -16.5 dB
+FLEURS,1887/15701913870040163820.wav,quiet -34.74 LUFS; low peak -17.9 dBFS; stationary noise -28.3 dB; DNSMOS OVRL 2.915
+FLEURS,2005/3036469706815196425.wav,lead silence 1.15 s
+FLEURS,1916/2644223136760089281.wav,quiet -40.41 LUFS; snr 13.57 dB; stationary noise -17.3 dB; DNSMOS BAK 3.648; DNSMOS OVRL 2.303
+FLEURS,1731/14894228473215166728.wav,quiet -31.8 LUFS; low peak -15.26 dBFS; stationary noise -21.8 dB
+FLEURS,1786/1517830768745180669.wav,quiet -29.96 LUFS; low peak -10.73 dBFS; trail silence 1.93 s; edge silence total 2.86 s
+FLEURS,1947/7454507890292702229.wav,quiet -31.47 LUFS; low peak -14.48 dBFS; stationary noise -23.8 dB; DNSMOS BAK 3.657; DNSMOS OVRL 2.994
+FLEURS,1685/1418440024630245775.wav,quiet -28.29 LUFS; lead silence 1.24 s; edge silence total 1.88 s
+FLEURS,1815/14259373320910637452.wav,quiet -28.32 LUFS; lead silence 1.57 s; trail silence 1.04 s; edge silence total 2.61 s
+FLEURS,1754/1431465803257217897.wav,lead silence 1.13 s; edge silence total 1.58 s
+FLEURS,1881/8600312830814552592.wav,quiet -38.85 LUFS; low peak -17.26 dBFS; trail silence 1.5 s; edge silence total 2.25 s
+FLEURS,1756/10379015920335788956.wav,quiet -31.04 LUFS; low peak -15.15 dBFS; stationary noise -29.6 dB
+FLEURS,1927/18068970684349227697.wav,quiet -37.35 LUFS; low peak -19.54 dBFS; stationary noise -30.8 dB
+FLEURS,1724/13737893198017085321.wav,quiet -32.62 LUFS; low peak -13.16 dBFS; lead silence 1.03 s; trail silence 1.49 s; edge silence total 2.52 s
+FLEURS,1750/4431974352016432123.wav,quiet -39.18 LUFS; snr 18.73 dB; stationary noise -13.5 dB; DNSMOS BAK 3.769; DNSMOS OVRL 1.906
+FLEURS,1876/11992440148161661621.wav,quiet -29.09 LUFS; low peak -10.33 dBFS; trail silence 1.81 s; edge silence total 2.62 s
+FLEURS,1698/3564680886158909821.wav,DNSMOS OVRL 2.895
+FLEURS,1676/6602425106769145255.wav,quiet -29.28 LUFS; low peak -10.72 dBFS; trail silence 2.31 s; edge silence total 3.26 s
+FLEURS,1865/2745715172969924132.wav,quiet -41.08 LUFS; low peak -25.3 dBFS; snr 19.72 dB; stationary noise -15.4 dB; DNSMOS BAK 3.714; DNSMOS OVRL 2.668
+FLEURS,1922/7885454923436528859.wav,lead silence 1.26 s; edge silence total 1.77 s
+FLEURS,1844/4470252482051065901.wav,quiet -37.36 LUFS
+FLEURS,1703/11038309460653441365.wav,quiet -37.14 LUFS; low peak -20.31 dBFS; stationary noise -27.4 dB; DNSMOS OVRL 2.697
+FLEURS,1837/7289134423150670530.wav,quiet -32.42 LUFS; low peak -12.85 dBFS; lead silence 3.19 s; trail silence 2.05 s; edge silence total 5.24 s
+FLEURS,1863/12571775008462455545.wav,lead silence 1.67 s; trail silence 1.65 s; edge silence total 3.32 s
+FLEURS,1930/7112093153851457077.wav,lead silence 1.54 s; edge silence total 2.02 s
+FLEURS,1998/9624146296415990618.wav,quiet -29.33 LUFS; low peak -11.58 dBFS; trail silence 2.29 s; edge silence total 2.45 s
+FLEURS,1953/5379783470413256930.wav,DNSMOS BAK 3.383; DNSMOS OVRL 2.714
+FLEURS,1720/5555032332691767777.wav,quiet -29.42 LUFS; low peak -12.49 dBFS
+FLEURS,1830/10370968216531623982.wav,lead silence 1.94 s; trail silence 1.74 s; edge silence total 3.68 s
+FLEURS,1904/14451512708628401654.wav,quiet -35.73 LUFS; low peak -18.26 dBFS; snr 21.27 dB; stationary noise -22.7 dB; DNSMOS BAK 3.62; DNSMOS OVRL 2.929
+FLEURS,1890/13463506825786764563.wav,quiet -31.51 LUFS; low peak -13.61 dBFS; stationary noise -25.9 dB
+FLEURS,1721/3772832622507018979.wav,trail silence 2.71 s; edge silence total 2.81 s
+FLEURS,1990/16588035387684546430.wav,quiet -30.84 LUFS; trail silence 1.72 s; edge silence total 2.48 s; DNSMOS BAK 3.681
+FLEURS,1939/10731945229947186833.wav,quiet -30.22 LUFS; trail silence 2.11 s; edge silence total 2.92 s; DNSMOS BAK 3.705
+FLEURS,1776/8430817925060514576.wav,DNSMOS BAK 3.787; DNSMOS OVRL 2.935
+FLEURS,1994/15268675513450562068.wav,quiet -33.92 LUFS; low peak -15.11 dBFS; trail silence 1.49 s; edge silence total 2.46 s
+FLEURS,1853/9375457015809320092.wav,quiet -32.28 LUFS; low peak -12.21 dBFS; lead silence 1.13 s; trail silence 1.51 s; edge silence total 2.64 s
+FLEURS,1734/7182177784648908086.wav,quiet -37.21 LUFS; low peak -21.7 dBFS
+FLEURS,1963/5634747347611890578.wav,quiet -29.9 LUFS; lead silence 1.15 s; trail silence 2.04 s; edge silence total 3.19 s
+FLEURS,1934/12372108166549464587.wav,low peak -10.04 dBFS; lead silence 2.35 s; trail silence 1.97 s; edge silence total 4.32 s
+FLEURS,1752/5453307844564936923.wav,lead silence 1.05 s
+FLEURS,1740/1825059594456516693.wav,quiet -35.07 LUFS; stationary noise -25.6 dB
+FLEURS,1917/11330209961425296573.wav,quiet -37.82 LUFS; low peak -19.85 dBFS
+FLEURS,1744/16188376167287917485.wav,low peak -10.81 dBFS
+FLEURS,1801/8135913772331037662.wav,quiet -28.76 LUFS; lead silence 1.47 s; trail silence 1.49 s; edge silence total 2.96 s
+FLEURS,1675/12200756295182983661.wav,DNSMOS BAK 3.68
+FLEURS,1892/17081533068021555328.wav,quiet -34.46 LUFS; low peak -19.05 dBFS; stationary noise -29.1 dB; DNSMOS OVRL 2.889
+FLEURS,2007/3131207218474368123.wav,quiet -34.46 LUFS; low peak -15.3 dBFS; stationary noise -22.4 dB
+FLEURS,1668/15384181987178609214.wav,quiet -39.8 LUFS; low peak -21.67 dBFS; stationary noise -23.3 dB; DNSMOS OVRL 2.999
+FLEURS,1973/11184263470774072074.wav,quiet -30.71 LUFS; trail silence 2.01 s; edge silence total 2.02 s
+FLEURS,1849/1297094442477970950.wav,quiet -35.37 LUFS; low peak -20.73 dBFS; stationary noise -29.6 dB; DNSMOS OVRL 2.959
+FLEURS,1925/11850244744169119711.wav,quiet -44.2 LUFS; low peak -14.17 dBFS; snr 14.24 dB; stationary noise -16.0 dB; DNSMOS OVRL 2.415
+FLEURS,1822/662860491491940804.wav,quiet -31.82 LUFS; low peak -12.98 dBFS; trail silence 1.53 s; edge silence total 2.35 s
+FLEURS,1826/12459112451610143506.wav,trail silence 1.91 s; edge silence total 2.28 s
+FLEURS,1802/17275473253987360864.wav,quiet -43.14 LUFS; low peak -19.47 dBFS; snr 12.99 dB; stationary noise -15.3 dB; DNSMOS BAK 3.602; DNSMOS OVRL 2.681
+FLEURS,1841/16614134172462368047.wav,lead silence 1.16 s; trail silence 2.24 s; edge silence total 3.40 s
+FLEURS,1723/17670226735959770519.wav,quiet -33.49 LUFS; low peak -18.56 dBFS; stationary noise -23.5 dB
+FLEURS,1931/15685310924193398793.wav,lead silence 1.42 s; trail silence 2.95 s; edge silence total 4.37 s
+FLEURS,1737/10909267119549283568.wav,low peak -10.35 dBFS; lead silence 2.06 s; trail silence 1.9 s; edge silence total 3.96 s
+FLEURS,1929/4389936240616060469.wav,lead silence 1.02 s; trail silence 1.55 s; edge silence total 2.57 s
+FLEURS,1739/11676558779915894633.wav,quiet -35.25 LUFS; low peak -18.87 dBFS; snr 16.93 dB; stationary noise -23.2 dB; DNSMOS BAK 2.518; DNSMOS OVRL 1.989
+FLEURS,1726/308186235224520709.wav,quiet -38.62 LUFS; stationary noise -17.6 dB; DNSMOS OVRL 2.904
+FLEURS,1781/13309704035346055578.wav,quiet -33.08 LUFS; low peak -16.25 dBFS; stationary noise -31.3 dB
+FLEURS,1701/10012525983487564904.wav,trail silence 1.35 s; edge silence total 2.31 s
+FLEURS,1763/6623683700743223570.wav,lead silence 1.27 s; trail silence 1.86 s; edge silence total 3.13 s
+FLEURS,1942/3206176132233520966.wav,quiet -38.21 LUFS; low peak -13.69 dBFS; lead silence 1.65 s; trail silence 2.43 s; edge silence total 4.08 s
+FLEURS,1915/10857724880607491341.wav,quiet -43.91 LUFS; low peak -21.85 dBFS; snr 21.06 dB; stationary noise -16.4 dB; DNSMOS OVRL 2.541
+FLEURS,1938/395975889365109270.wav,quiet -31.39 LUFS; low peak -13.45 dBFS; stationary noise -25.2 dB
+FLEURS,1889/13310551888618333759.wav,quiet -35.69 LUFS; low peak -18.33 dBFS; trail silence 1.04 s; DNSMOS OVRL 2.942
+FLEURS,1783/4254169438285539777.wav,quiet -29.91 LUFS; trail silence 1.95 s; edge silence total 2.74 s
+FLEURS,1823/13521805350040674963.wav,quiet -29.43 LUFS; trail silence 1.46 s; edge silence total 2.17 s; DNSMOS BAK 3.54; DNSMOS OVRL 2.969
+FLEURS,1858/9645034295775413092.wav,quiet -31.01 LUFS; low peak -10.67 dBFS; trail silence 1.24 s; edge silence total 1.70 s
+FLEURS,1845/14309390431473870871.wav,quiet -42.33 LUFS; low peak -22.81 dBFS; stationary noise -34.0 dB
+FLEURS,1859/4107348406023597190.wav,quiet -31.2 LUFS; low peak -12.54 dBFS; trail silence 1.2 s; edge silence total 2.05 s
+FLEURS,1914/17681217663084773275.wav,quiet -33.11 LUFS; low peak -14.78 dBFS; stationary noise -28.8 dB; DNSMOS OVRL 2.782
+FLEURS,1993/15690756967054489971.wav,quiet -35.66 LUFS; stationary noise -28.8 dB
+FLEURS,1950/5830571976018770598.wav,quiet -31.5 LUFS; stationary noise -34.9 dB
+FLEURS,1976/3744157531413999274.wav,quiet -38.15 LUFS; low peak -17.35 dBFS; lead silence 1.79 s; trail silence 1.08 s; edge silence total 2.87 s
+FLEURS,1827/8277489670541516519.wav,quiet -37.28 LUFS; low peak -19.13 dBFS; stationary noise -28.3 dB
+FLEURS,1888/12613819584480170343.wav,DNSMOS OVRL 2.885
+FLEURS,1662/2444159335678690751.wav,quiet -35.03 LUFS; snr 17.41 dB; noise floor -45.38 dBFS; stationary noise -15.5 dB; DNSMOS BAK 3.46; DNSMOS OVRL 2.222
+FLEURS,1839/6373745047885054096.wav,quiet -43.92 LUFS; low peak -15.74 dBFS; snr 16.81 dB; stationary noise -11.9 dB; DNSMOS BAK 3.284; DNSMOS OVRL 2.118
+FLEURS,1902/6720421525615220657.wav,quiet -34.97 LUFS; low peak -19.49 dBFS; stationary noise -29.3 dB
+FLEURS,1705/6224732314463094332.wav,quiet -36.98 LUFS; low peak -20.18 dBFS; stationary noise -34.7 dB
+FLEURS,1879/16041836661636963999.wav,quiet -31.18 LUFS; low peak -14.59 dBFS; stationary noise -25.4 dB
+FLEURS,1977/18273545244807706595.wav,quiet -29.81 LUFS; low peak -10.59 dBFS; trail silence 1.65 s; edge silence total 2.47 s
+FLEURS,1669/17036110962643543789.wav,lead silence 1.42 s; trail silence 1.66 s; edge silence total 3.08 s
+FLEURS,1996/10926467362593597688.wav,quiet -41.82 LUFS; low peak -11.82 dBFS; snr 17.78 dB; stationary noise -15.4 dB; DNSMOS BAK 3.782; DNSMOS OVRL 2.465
+FLEURS,1719/5000764354281608794.wav,quiet -38.26 LUFS; low peak -17.7 dBFS; lead silence 1.16 s; trail silence 1.38 s; edge silence total 2.54 s
+FLEURS,1962/13739178675007123814.wav,quiet -32.43 LUFS; low peak -11.72 dBFS; lead silence 1.41 s; trail silence 1.77 s; edge silence total 3.18 s
+FLEURS,1755/9598915742941172623.wav,quiet -37.01 LUFS; low peak -22.22 dBFS; DNSMOS OVRL 2.969
+FLEURS,1884/7539907723695211185.wav,quiet -35.95 LUFS; low peak -17.94 dBFS; stationary noise -29.6 dB; DNSMOS BAK 3.798; DNSMOS OVRL 2.853
+FLEURS,2001/10347105456079071418.wav,quiet -28.14 LUFS; lead silence 3.18 s; edge silence total 3.23 s
+FLEURS,1722/11558968614796943565.wav,quiet -32.37 LUFS; lead silence 1.15 s; trail silence 1.33 s; edge silence total 2.48 s
+FLEURS,1704/14785206693770604597.wav,quiet -34.72 LUFS; low peak -17.18 dBFS; stationary noise -28.1 dB
+FLEURS,1843/7904799189215631423.wav,lead silence 1.37 s; trail silence 1.25 s; edge silence total 2.62 s
+FLEURS,1691/14591299157575218740.wav,quiet -33.75 LUFS; low peak -15.92 dBFS; stationary noise -24.0 dB
+FLEURS,1952/995340707822200758.wav,quiet -30.16 LUFS; low peak -12.51 dBFS; trail silence 1.24 s; edge silence total 1.75 s
+FLEURS,1793/8051205996520093199.wav,quiet -33.89 LUFS; low peak -16.77 dBFS; snr 21.18 dB; stationary noise -18.1 dB; DNSMOS BAK 3.774
+FLEURS,1985/9640574946726898820.wav,quiet -38.16 LUFS; low peak -21.22 dBFS; stationary noise -22.8 dB; DNSMOS OVRL 2.898
+FLEURS,1736/7242291617793817610.wav,trail silence 2.24 s; edge silence total 2.26 s
+FLEURS,1747/4357908926984909607.wav,quiet -40.27 LUFS; snr 20.5 dB; stationary noise -19.4 dB; DNSMOS BAK 3.69; DNSMOS OVRL 2.592
+FLEURS,1787/2922669227345316692.wav,trail silence 1.84 s; edge silence total 2.33 s
+FLEURS,1918/1695460435170505516.wav,quiet -37.56 LUFS; low peak -21.07 dBFS
+FLEURS,1741/778116548567198603.wav,lead silence 1.37 s; edge silence total 1.91 s
+FLEURS,1809/5677631026366447962.wav,quiet -43.56 LUFS; low peak -15.43 dBFS; snr 11.94 dB; noise floor -46.69 dBFS; stationary noise -14.2 dB; DNSMOS BAK 3.498; DNSMOS OVRL 2.146
+FLEURS,1818/15755446153792049706.wav,quiet -39.81 LUFS; low peak -23.27 dBFS; stationary noise -23.7 dB
+FLEURS,1769/1576494392607908717.wav,quiet -36.91 LUFS; low peak -18.75 dBFS; stationary noise -24.8 dB; DNSMOS OVRL 2.787
+FLEURS,1775/1051154324778723638.wav,trail silence 2.29 s; edge silence total 2.86 s
+FLEURS,1965/5399790238542225623.wav,quiet -36.9 LUFS; low peak -19.31 dBFS; stationary noise -27.0 dB; DNSMOS OVRL 2.83
+FLEURS,1847/10761694821558708488.wav,quiet -33.98 LUFS; low peak -10.74 dBFS; snr 19.73 dB; stationary noise -17.3 dB; DNSMOS BAK 3.494; DNSMOS OVRL 2.835
+FLEURS,1808/1543710322984860827.wav,quiet -30.36 LUFS; low peak -13.55 dBFS; stationary noise -25.7 dB; DNSMOS BAK 3.692
+FLEURS,1764/3806386995626924464.wav,quiet -37.55 LUFS; low peak -16.45 dBFS; trail silence 1.19 s; edge silence total 1.88 s; stationary noise -33.8 dB
+FLEURS,1707/1329480388595273443.wav,lead silence 1.37 s; edge silence total 1.93 s
+FLEURS,1840/10416675910211939177.wav,quiet -33.71 LUFS; low peak -14.76 dBFS; stationary noise -21.4 dB; DNSMOS BAK 3.704
+FLEURS,1893/12373298331872281778.wav,quiet -29.59 LUFS; lead silence 1.7 s; trail silence 1.9 s; edge silence total 3.60 s
+FLEURS,1980/16061698727631819347.wav,quiet -41.08 LUFS; snr 13.66 dB; stationary noise -15.1 dB; DNSMOS BAK 3.762; DNSMOS OVRL 2.425
+FLEURS,1679/16139958905405482892.wav,quiet -32.37 LUFS; low peak -13.96 dBFS; lead silence 2.0 s; trail silence 2.19 s; edge silence total 4.19 s
+FLEURS,1762/6316391942274848961.wav,quiet -31.66 LUFS; low peak -15.58 dBFS; DNSMOS OVRL 2.904
+FLEURS,1935/726150217970195246.wav,quiet -36.7 LUFS; low peak -16.96 dBFS; stationary noise -32.9 dB
+FLEURS,1814/5058656536342974163.wav,quiet -28.96 LUFS; low peak -10.97 dBFS; stationary noise -24.1 dB; DNSMOS BAK 3.783
+FLEURS,1794/15319762854077554090.wav,quiet -38.96 LUFS; low peak -20.15 dBFS; lead silence 1.49 s; trail silence 3.41 s; edge silence total 4.90 s; speech ratio 0.381; stationary noise -33.6 dB
+FLEURS,1804/407934639896621919.wav,quiet -28.89 LUFS; trail silence 2.05 s; edge silence total 3.00 s
+FLEURS,1761/7672469065898014317.wav,quiet -32.74 LUFS; low peak -14.75 dBFS; lead silence 1.59 s; trail silence 2.15 s; edge silence total 3.74 s
+FLEURS,1798/11811333240071060267.wav,quiet -37.44 LUFS; low peak -14.33 dBFS
+FLEURS,1771/16512730335981271860.wav,quiet -29.48 LUFS; low peak -10.6 dBFS; trail silence 1.81 s; edge silence total 2.37 s
+FLEURS,1709/12510285797419939479.wav,quiet -32.09 LUFS; low peak -13.21 dBFS; lead silence 1.59 s; trail silence 1.47 s; edge silence total 3.06 s
+FLEURS,1851/1393559108840776538.wav,quiet -35.3 LUFS; low peak -17.75 dBFS
+FLEURS,1974/9096284191751577898.wav,quiet -38.84 LUFS; low peak -21.3 dBFS; trail silence 1.21 s; edge silence total 2.13 s; DNSMOS OVRL 2.891
+FLEURS,1765/8837961317978773910.wav,lead silence 1.19 s
+FLEURS,1979/8229707653058313484.wav,quiet -28.39 LUFS; trail silence 2.61 s; edge silence total 2.77 s
+FLEURS,1836/9113772741738047224.wav,quiet -30.49 LUFS; low peak -11.11 dBFS; trail silence 1.7 s; edge silence total 1.71 s
+FLEURS,1850/12925409769225209983.wav,quiet -35.7 LUFS; snr 18.01 dB; stationary noise -22.5 dB
+FLEURS,1702/2163391878818351224.wav,quiet -40.23 LUFS; snr 15.67 dB; stationary noise -15.4 dB; DNSMOS BAK 3.743; DNSMOS OVRL 2.641
+FLEURS,1860/5079754199913869962.wav,lead silence 1.02 s
+FLEURS,1821/14767853972783211072.wav,quiet -38.4 LUFS; low peak -17.69 dBFS; lead silence 1.41 s; trail silence 1.09 s; edge silence total 2.50 s
+FLEURS,2008/6480969090978341770.wav,quiet -30.17 LUFS; low peak -10.62 dBFS; lead silence 1.11 s; trail silence 2.06 s; edge silence total 3.17 s
+FLEURS,1926/17236596923545193798.wav,quiet -32.9 LUFS; low peak -14.45 dBFS
+FLEURS,1958/12029932364260799005.wav,quiet -36.5 LUFS; low peak -17.87 dBFS; lead silence 1.38 s; trail silence 1.53 s; edge silence total 2.91 s
+FLEURS,1870/1587476253278720651.wav,quiet -40.28 LUFS; snr 16.98 dB; stationary noise -15.3 dB; DNSMOS BAK 3.743; DNSMOS OVRL 2.42
+FLEURS,1928/11082198282849714331.wav,quiet -35.02 LUFS; low peak -16.88 dBFS; snr 21.99 dB; stationary noise -17.0 dB; DNSMOS OVRL 2.915
+FLEURS,1900/18249180391052457284.wav,quiet -31.1 LUFS; low peak -11.59 dBFS; edge silence total 1.60 s
+FLEURS,1910/3463263478394400152.wav,lead silence 3.68 s; trail silence 2.48 s; edge silence total 6.16 s; speech ratio 0.445
+FLEURS,1693/13851199131075946159.wav,quiet -42.39 LUFS; low peak -15.18 dBFS; snr 15.63 dB; stationary noise -17.2 dB; DNSMOS OVRL 2.848
+FLEURS,1835/17547605332782321273.wav,quiet -29.97 LUFS; trail silence 2.13 s; edge silence total 2.67 s
+FLEURS,1665/386298712102771378.wav,quiet -29.25 LUFS; lead silence 1.28 s; trail silence 1.99 s; edge silence total 3.27 s
+FLEURS,1799/10954766746853250702.wav,DNSMOS BAK 3.664; DNSMOS OVRL 2.747
+FLEURS,1666/13697842781656229317.wav,quiet -29.2 LUFS; trail silence 2.08 s; edge silence total 2.11 s; DNSMOS BAK 3.732
+FLEURS,1964/5626893801331948172.wav,trail silence 1.47 s; edge silence total 1.66 s
+FLEURS,1790/633798355551713057.wav,quiet -30.13 LUFS; trail silence 1.63 s; edge silence total 2.33 s
+FLEURS,1992/915638944424089670.wav,quiet -28.71 LUFS; low peak -12.55 dBFS; trail silence 1.7 s; edge silence total 2.12 s
+FLEURS,1694/3886331747917838486.wav,quiet -36.53 LUFS; low peak -18.54 dBFS; stationary noise -24.5 dB; DNSMOS OVRL 2.905
+FLEURS,1898/5240604375111757186.wav,quiet -31.28 LUFS; low peak -12.13 dBFS; trail silence 1.29 s; edge silence total 2.00 s
+Common Voice,common_voice_yo_36917172.mp3,quiet -51.97 LUFS; low peak -34.56 dBFS; stationary noise -28.8 dB; DNSMOS BAK 3.746; DNSMOS OVRL 2.504
+Common Voice,common_voice_yo_36917371.mp3,quiet -41.81 LUFS; low peak -26.15 dBFS; stationary noise -32.4 dB; DNSMOS OVRL 2.906
+Common Voice,common_voice_yo_36840470.mp3,quiet -42.47 LUFS; low peak -23.1 dBFS; DNSMOS OVRL 2.648
+Common Voice,common_voice_yo_36840465.mp3,quiet -40.11 LUFS; low peak -17.2 dBFS; stationary noise -29.8 dB; DNSMOS OVRL 2.584
+Common Voice,common_voice_yo_36840611.mp3,quiet -39.02 LUFS; low peak -19.64 dBFS; DNSMOS OVRL 2.936
+Common Voice,common_voice_yo_36916788.mp3,quiet -33.66 LUFS; low peak -14.06 dBFS; DNSMOS BAK 3.629; DNSMOS OVRL 2.818
+Common Voice,common_voice_yo_36922359.mp3,quiet -53.55 LUFS; low peak -32.5 dBFS; stationary noise -25.8 dB; DNSMOS OVRL 2.387
+Common Voice,common_voice_yo_36922348.mp3,quiet -52.74 LUFS; low peak -33.7 dBFS; stationary noise -24.8 dB; DNSMOS OVRL 2.44
+Common Voice,common_voice_yo_36922188.mp3,quiet -43.21 LUFS; low peak -26.1 dBFS; DNSMOS OVRL 2.871
+Common Voice,common_voice_yo_36917376.mp3,quiet -44.48 LUFS; low peak -25.6 dBFS; stationary noise -30.1 dB; DNSMOS OVRL 2.469
+Common Voice,common_voice_yo_36908450.mp3,quiet -48.48 LUFS; low peak -30.94 dBFS; DNSMOS OVRL 2.395
+Common Voice,common_voice_yo_36916932.mp3,quiet -54.66 LUFS; low peak -33.1 dBFS; stationary noise -21.6 dB; DNSMOS OVRL 2.43
+Common Voice,common_voice_yo_36917383.mp3,quiet -51.94 LUFS; low peak -34.44 dBFS; stationary noise -25.6 dB; DNSMOS OVRL 2.365
+Common Voice,common_voice_yo_36916915.mp3,quiet -48.05 LUFS; low peak -28.15 dBFS; stationary noise -32.4 dB; DNSMOS OVRL 2.771
+Common Voice,common_voice_yo_36916922.mp3,quiet -53.01 LUFS; low peak -34.22 dBFS; stationary noise -31.8 dB; DNSMOS OVRL 2.475
+Common Voice,common_voice_yo_36916784.mp3,quiet -32.86 LUFS; low peak -12.53 dBFS
+Common Voice,common_voice_yo_36916902.mp3,quiet -51.89 LUFS; low peak -31.39 dBFS; stationary noise -32.6 dB; DNSMOS OVRL 2.43
+Common Voice,common_voice_yo_36916933.mp3,quiet -50.0 LUFS; low peak -31.04 dBFS; stationary noise -33.5 dB; DNSMOS BAK 3.715; DNSMOS OVRL 2.273
+Common Voice,common_voice_yo_36908441.mp3,quiet -47.52 LUFS; low peak -28.38 dBFS; DNSMOS OVRL 2.83
+Common Voice,common_voice_yo_36916870.mp3,quiet -46.42 LUFS; low peak -26.51 dBFS; DNSMOS OVRL 2.594
+Common Voice,common_voice_yo_36908496.mp3,quiet -51.67 LUFS; low peak -33.04 dBFS; DNSMOS OVRL 2.357
+Common Voice,common_voice_yo_36855396.mp3,quiet -47.24 LUFS; low peak -29.02 dBFS; snr 16.83 dB; stationary noise -19.0 dB; DNSMOS BAK 3.386; DNSMOS OVRL 1.96
+Common Voice,common_voice_yo_36916822.mp3,quiet -44.46 LUFS; low peak -18.92 dBFS; stationary noise -31.7 dB; DNSMOS OVRL 2.643
+Common Voice,common_voice_yo_36908426.mp3,quiet -50.1 LUFS; low peak -31.21 dBFS; stationary noise -34.3 dB; DNSMOS OVRL 2.235
+Common Voice,common_voice_yo_36916827.mp3,quiet -45.06 LUFS; low peak -25.9 dBFS; stationary noise -34.5 dB; DNSMOS OVRL 2.586
+Common Voice,common_voice_yo_36922384.mp3,quiet -52.16 LUFS; low peak -35.53 dBFS; stationary noise -25.6 dB; DNSMOS BAK 3.777; DNSMOS OVRL 2.504
+Common Voice,common_voice_yo_36917396.mp3,quiet -49.67 LUFS; low peak -32.7 dBFS; stationary noise -28.4 dB; DNSMOS OVRL 2.433
+Common Voice,common_voice_yo_36840609.mp3,quiet -39.48 LUFS; low peak -18.68 dBFS; DNSMOS OVRL 2.715
+Common Voice,common_voice_yo_36922358.mp3,quiet -53.58 LUFS; low peak -35.23 dBFS; stationary noise -25.9 dB; DNSMOS OVRL 2.554
+Common Voice,common_voice_yo_36922323.mp3,quiet -41.64 LUFS; low peak -23.84 dBFS; DNSMOS BAK 3.659; DNSMOS OVRL 2.511
+Common Voice,common_voice_yo_36908389.mp3,quiet -56.34 LUFS; low peak -38.9 dBFS; stationary noise -28.4 dB; DNSMOS OVRL 2.228
+Common Voice,common_voice_yo_36916793.mp3,quiet -34.3 LUFS; low peak -17.26 dBFS
+Common Voice,common_voice_yo_36916837.mp3,quiet -51.4 LUFS; low peak -29.59 dBFS; stationary noise -27.4 dB; DNSMOS OVRL 2.385
+Common Voice,common_voice_yo_36922352.mp3,quiet -49.87 LUFS; low peak -28.9 dBFS; stationary noise -25.1 dB; DNSMOS OVRL 2.45
+Common Voice,common_voice_yo_36840467.mp3,quiet -43.82 LUFS; low peak -26.12 dBFS; DNSMOS BAK 3.78; DNSMOS OVRL 2.568
+Common Voice,common_voice_yo_36908379.mp3,quiet -54.59 LUFS; low peak -35.47 dBFS; stationary noise -31.3 dB; DNSMOS OVRL 2.406
+Common Voice,common_voice_yo_36917359.mp3,quiet -42.6 LUFS; low peak -27.32 dBFS; DNSMOS OVRL 2.799
+Common Voice,common_voice_yo_36916858.mp3,quiet -51.23 LUFS; low peak -29.57 dBFS; stationary noise -31.6 dB; DNSMOS BAK 3.747; DNSMOS OVRL 2.36
+Common Voice,common_voice_yo_36917362.mp3,quiet -41.33 LUFS; low peak -18.99 dBFS; stationary noise -31.1 dB; DNSMOS BAK 3.433; DNSMOS OVRL 2.561
+Common Voice,common_voice_yo_36908448.mp3,quiet -45.28 LUFS; low peak -28.04 dBFS; DNSMOS BAK 3.754; DNSMOS OVRL 2.275
+Common Voice,common_voice_yo_36916919.mp3,quiet -49.13 LUFS; low peak -30.95 dBFS; stationary noise -32.0 dB; DNSMOS OVRL 2.726
+Common Voice,common_voice_yo_36916888.mp3,quiet -49.85 LUFS; low peak -29.0 dBFS; DNSMOS OVRL 2.504
+Common Voice,common_voice_yo_36840510.mp3,quiet -43.57 LUFS; low peak -25.58 dBFS; DNSMOS OVRL 2.767
+Common Voice,common_voice_yo_36916817.mp3,quiet -38.7 LUFS; low peak -16.52 dBFS; DNSMOS BAK 3.685; DNSMOS OVRL 2.922
+Common Voice,common_voice_yo_36916925.mp3,quiet -50.87 LUFS; low peak -29.23 dBFS; stationary noise -31.8 dB; DNSMOS BAK 3.694; DNSMOS OVRL 2.462
+Common Voice,common_voice_yo_36840404.mp3,quiet -40.99 LUFS; low peak -23.76 dBFS; stationary noise -32.3 dB; DNSMOS BAK 3.628; DNSMOS OVRL 2.435
+Common Voice,common_voice_yo_36916818.mp3,quiet -42.31 LUFS; low peak -20.74 dBFS; DNSMOS OVRL 2.694
+Common Voice,common_voice_yo_36855397.mp3,quiet -48.96 LUFS; low peak -32.03 dBFS; snr 18.66 dB; stationary noise -19.4 dB; DNSMOS BAK 3.659; DNSMOS OVRL 2.007
+Common Voice,common_voice_yo_36916783.mp3,quiet -37.89 LUFS; low peak -18.59 dBFS
+Common Voice,common_voice_yo_36917398.mp3,quiet -45.99 LUFS; low peak -27.83 dBFS; DNSMOS OVRL 2.967
+Common Voice,common_voice_yo_36840406.mp3,quiet -40.28 LUFS; low peak -23.14 dBFS; stationary noise -32.7 dB; DNSMOS BAK 3.614; DNSMOS OVRL 2.475
+Common Voice,common_voice_yo_36916828.mp3,quiet -45.99 LUFS; low peak -25.16 dBFS; DNSMOS BAK 3.733; DNSMOS OVRL 2.749
+Common Voice,common_voice_yo_36916872.mp3,quiet -46.31 LUFS; low peak -25.78 dBFS; DNSMOS OVRL 2.601
+Common Voice,common_voice_yo_36908442.mp3,quiet -48.82 LUFS; low peak -28.75 dBFS; DNSMOS OVRL 2.754
+Common Voice,common_voice_yo_36908443.mp3,quiet -51.44 LUFS; low peak -34.49 dBFS; stationary noise -32.5 dB; DNSMOS OVRL 2.78
+Common Voice,common_voice_yo_36840507.mp3,quiet -48.28 LUFS; low peak -29.68 dBFS; stationary noise -33.2 dB; DNSMOS OVRL 2.527
+Common Voice,common_voice_yo_36916876.mp3,quiet -43.4 LUFS; low peak -25.04 dBFS; DNSMOS OVRL 2.821
+Common Voice,common_voice_yo_36922310.mp3,quiet -38.37 LUFS; low peak -19.53 dBFS; DNSMOS BAK 3.727; DNSMOS OVRL 2.735
+Common Voice,common_voice_yo_36922184.mp3,quiet -48.13 LUFS; low peak -30.0 dBFS; stationary noise -25.2 dB; DNSMOS OVRL 2.601
+Common Voice,common_voice_yo_36916855.mp3,quiet -50.79 LUFS; low peak -27.17 dBFS; stationary noise -32.5 dB; DNSMOS BAK 3.647; DNSMOS OVRL 2.392
+Common Voice,common_voice_yo_36917357.mp3,quiet -46.44 LUFS; low peak -32.01 dBFS; stationary noise -27.7 dB; DNSMOS OVRL 2.5
+Common Voice,common_voice_yo_36917174.mp3,quiet -48.06 LUFS; low peak -28.88 dBFS; stationary noise -32.6 dB; DNSMOS BAK 3.261; DNSMOS OVRL 2.017
+Common Voice,common_voice_yo_36840571.mp3,quiet -41.4 LUFS; low peak -19.88 dBFS; DNSMOS OVRL 2.86
+Common Voice,common_voice_yo_36922351.mp3,quiet -50.4 LUFS; low peak -31.43 dBFS; stationary noise -34.1 dB; DNSMOS OVRL 2.49
+Common Voice,common_voice_yo_36916838.mp3,quiet -50.57 LUFS; low peak -28.89 dBFS; stationary noise -26.4 dB; DNSMOS BAK 3.72; DNSMOS OVRL 2.288
+Common Voice,common_voice_yo_36840569.mp3,quiet -42.98 LUFS; low peak -24.27 dBFS; stationary noise -34.8 dB; DNSMOS BAK 3.56; DNSMOS OVRL 2.471
+Common Voice,common_voice_yo_36908465.mp3,quiet -50.53 LUFS; low peak -34.35 dBFS; stationary noise -34.5 dB; DNSMOS OVRL 2.548
+Common Voice,common_voice_yo_36917453.mp3,quiet -51.0 LUFS; low peak -33.56 dBFS; stationary noise -25.8 dB; DNSMOS OVRL 2.429
+Common Voice,common_voice_yo_36917369.mp3,quiet -42.17 LUFS; low peak -25.84 dBFS; stationary noise -29.6 dB; DNSMOS BAK 3.787; DNSMOS OVRL 2.641
+Common Voice,common_voice_yo_36916923.mp3,quiet -50.49 LUFS; low peak -31.54 dBFS; stationary noise -28.7 dB; DNSMOS OVRL 2.561
+Common Voice,common_voice_yo_36916937.mp3,quiet -54.4 LUFS; low peak -35.19 dBFS; stationary noise -27.6 dB; DNSMOS OVRL 2.128
+Common Voice,common_voice_yo_36917412.mp3,quiet -52.43 LUFS; low peak -32.74 dBFS; stationary noise -26.1 dB; DNSMOS OVRL 2.287
+Common Voice,common_voice_yo_36908421.mp3,quiet -52.97 LUFS; low peak -35.96 dBFS; stationary noise -32.0 dB; DNSMOS OVRL 2.425
+Common Voice,common_voice_yo_36922346.mp3,quiet -49.67 LUFS; low peak -31.02 dBFS; stationary noise -29.0 dB; DNSMOS OVRL 2.459
+Common Voice,common_voice_yo_36917356.mp3,quiet -43.97 LUFS; low peak -27.07 dBFS; stationary noise -32.3 dB; DNSMOS OVRL 2.749
+Common Voice,common_voice_yo_36922329.mp3,quiet -47.97 LUFS; low peak -28.44 dBFS; stationary noise -32.1 dB; DNSMOS OVRL 2.541
+Common Voice,common_voice_yo_36916900.mp3,quiet -51.6 LUFS; low peak -37.6 dBFS; stationary noise -27.3 dB; DNSMOS BAK 3.786; DNSMOS OVRL 2.146
+Common Voice,common_voice_yo_36922383.mp3,quiet -53.16 LUFS; low peak -33.2 dBFS; stationary noise -25.4 dB; DNSMOS OVRL 2.261
+Common Voice,common_voice_yo_36916885.mp3,quiet -44.74 LUFS; low peak -24.1 dBFS; DNSMOS OVRL 2.678
+Common Voice,common_voice_yo_36908436.mp3,quiet -46.07 LUFS; low peak -27.43 dBFS; DNSMOS BAK 3.754; DNSMOS OVRL 2.421
+Common Voice,common_voice_yo_36922321.mp3,quiet -45.62 LUFS; low peak -27.88 dBFS; stationary noise -30.9 dB; DNSMOS OVRL 2.508
+Common Voice,common_voice_yo_36908391.mp3,quiet -54.25 LUFS; low peak -33.28 dBFS; stationary noise -30.0 dB; DNSMOS OVRL 2.228
+Common Voice,common_voice_yo_36916795.mp3,quiet -37.13 LUFS; low peak -16.34 dBFS
+Common Voice,common_voice_yo_36922333.mp3,quiet -49.01 LUFS; low peak -28.64 dBFS; stationary noise -29.3 dB; DNSMOS OVRL 2.655
+Common Voice,common_voice_yo_36916797.mp3,quiet -35.99 LUFS; low peak -15.93 dBFS; DNSMOS BAK 3.754; DNSMOS OVRL 2.871
+Common Voice,common_voice_yo_36917173.mp3,quiet -50.46 LUFS; low peak -33.26 dBFS; stationary noise -33.6 dB; DNSMOS OVRL 2.652
+Common Voice,common_voice_yo_36917455.mp3,quiet -42.79 LUFS; low peak -24.52 dBFS; stationary noise -28.5 dB; DNSMOS OVRL 2.816
+Common Voice,common_voice_yo_36908507.mp3,quiet -58.24 LUFS; low peak -38.66 dBFS; stationary noise -29.0 dB; DNSMOS OVRL 2.306
+Common Voice,common_voice_yo_36840517.mp3,quiet -40.19 LUFS; low peak -23.24 dBFS; edge silence total 1.62 s; DNSMOS OVRL 2.725
+Common Voice,common_voice_yo_36916831.mp3,quiet -44.56 LUFS; low peak -23.27 dBFS; stationary noise -33.6 dB; DNSMOS OVRL 2.743
+Common Voice,common_voice_yo_36922330.mp3,quiet -50.29 LUFS; low peak -31.95 dBFS; stationary noise -27.9 dB; DNSMOS OVRL 2.535
+Common Voice,common_voice_yo_36916809.mp3,quiet -38.68 LUFS; low peak -22.11 dBFS; DNSMOS OVRL 2.884
+Common Voice,common_voice_yo_36916867.mp3,quiet -50.56 LUFS; low peak -32.86 dBFS; stationary noise -34.9 dB; DNSMOS OVRL 2.545
+Common Voice,common_voice_yo_36917351.mp3,quiet -43.78 LUFS; low peak -25.09 dBFS; DNSMOS OVRL 2.67
+Common Voice,common_voice_yo_36916862.mp3,quiet -51.09 LUFS; low peak -32.84 dBFS; stationary noise -27.6 dB; DNSMOS BAK 3.798; DNSMOS OVRL 2.111
+Common Voice,common_voice_yo_36908433.mp3,quiet -47.86 LUFS; low peak -25.88 dBFS; DNSMOS OVRL 2.2
+Common Voice,common_voice_yo_36916829.mp3,quiet -48.35 LUFS; low peak -30.86 dBFS; stationary noise -33.5 dB; DNSMOS OVRL 2.68
+Common Voice,common_voice_yo_36855395.mp3,quiet -46.18 LUFS; low peak -26.87 dBFS; snr 17.46 dB; stationary noise -22.6 dB; DNSMOS BAK 3.098; DNSMOS OVRL 2.043
+Common Voice,common_voice_yo_36840570.mp3,quiet -37.32 LUFS; low peak -20.12 dBFS; trail silence 1.28 s; edge silence total 1.75 s; DNSMOS BAK 3.521; DNSMOS OVRL 2.493
+Common Voice,common_voice_yo_36916874.mp3,quiet -43.58 LUFS; low peak -23.18 dBFS; stationary noise -33.4 dB; DNSMOS OVRL 2.554
+Common Voice,common_voice_yo_36855398.mp3,quiet -44.98 LUFS; low peak -26.22 dBFS; snr 20.11 dB; stationary noise -22.0 dB; DNSMOS BAK 3.629; DNSMOS OVRL 2.196
+Common Voice,common_voice_yo_36908366.mp3,quiet -55.67 LUFS; low peak -36.16 dBFS; stationary noise -34.1 dB; DNSMOS OVRL 2.284
+Common Voice,common_voice_yo_36916906.mp3,quiet -48.66 LUFS; low peak -29.06 dBFS; stationary noise -31.7 dB; DNSMOS BAK 3.531; DNSMOS OVRL 2.391
+Common Voice,common_voice_yo_36922387.mp3,quiet -53.78 LUFS; low peak -34.75 dBFS; stationary noise -21.5 dB; DNSMOS OVRL 2.315
+Common Voice,common_voice_yo_36922326.mp3,quiet -53.18 LUFS; low peak -36.11 dBFS; stationary noise -21.2 dB; DNSMOS OVRL 2.41
+Common Voice,common_voice_yo_36916794.mp3,quiet -35.99 LUFS; low peak -17.1 dBFS; DNSMOS OVRL 2.929
+Common Voice,common_voice_yo_36916886.mp3,quiet -46.65 LUFS; low peak -27.18 dBFS; stationary noise -26.7 dB; DNSMOS BAK 3.746; DNSMOS OVRL 2.495
+Common Voice,common_voice_yo_36917200.mp3,quiet -51.55 LUFS; low peak -33.81 dBFS; stationary noise -30.8 dB; DNSMOS OVRL 2.532
+Common Voice,common_voice_yo_36922189.mp3,quiet -42.31 LUFS; low peak -22.35 dBFS; DNSMOS OVRL 2.776
+Common Voice,common_voice_yo_36916807.mp3,quiet -41.1 LUFS; low peak -18.66 dBFS; stationary noise -34.8 dB; DNSMOS OVRL 2.699
+Common Voice,common_voice_yo_36922325.mp3,quiet -41.79 LUFS; low peak -22.26 dBFS; stationary noise -34.1 dB
+Common Voice,common_voice_yo_36916816.mp3,quiet -43.06 LUFS; low peak -26.17 dBFS
+Common Voice,common_voice_yo_36922347.mp3,quiet -50.34 LUFS; low peak -33.36 dBFS; stationary noise -30.9 dB; DNSMOS OVRL 2.692
+Common Voice,common_voice_yo_36840472.mp3,quiet -43.32 LUFS; low peak -24.14 dBFS; DNSMOS OVRL 2.74
+Common Voice,common_voice_yo_36922313.mp3,quiet -39.84 LUFS; low peak -17.89 dBFS; stationary noise -33.2 dB; DNSMOS OVRL 2.866
+Common Voice,common_voice_yo_36916803.mp3,quiet -36.75 LUFS; low peak -18.41 dBFS; DNSMOS BAK 3.622; DNSMOS OVRL 2.628
+Common Voice,common_voice_yo_36922311.mp3,quiet -41.04 LUFS; low peak -20.22 dBFS; DNSMOS BAK 3.79; DNSMOS OVRL 2.897
+Common Voice,common_voice_yo_36917349.mp3,quiet -35.85 LUFS; DNSMOS OVRL 2.71
+Common Voice,common_voice_yo_36917360.mp3,quiet -42.07 LUFS; low peak -27.23 dBFS; stationary noise -28.2 dB; DNSMOS OVRL 2.632
+Common Voice,common_voice_yo_36922353.mp3,quiet -52.5 LUFS; low peak -35.76 dBFS; stationary noise -28.5 dB; DNSMOS OVRL 2.405
+Common Voice,common_voice_yo_36916836.mp3,quiet -45.84 LUFS; low peak -27.4 dBFS; stationary noise -32.0 dB; DNSMOS OVRL 2.875
+Common Voice,common_voice_yo_36917155.mp3,quiet -45.15 LUFS; low peak -26.44 dBFS; stationary noise -31.6 dB; DNSMOS BAK 3.705; DNSMOS OVRL 2.741
+Common Voice,common_voice_yo_36917372.mp3,quiet -45.69 LUFS; low peak -30.97 dBFS; stationary noise -27.8 dB; DNSMOS OVRL 2.716
+Common Voice,common_voice_yo_36908497.mp3,quiet -52.46 LUFS; low peak -32.43 dBFS; stationary noise -33.9 dB; DNSMOS OVRL 2.135
+Common Voice,common_voice_yo_36916806.mp3,quiet -38.19 LUFS; low peak -17.76 dBFS; DNSMOS BAK 3.584; DNSMOS OVRL 2.729
+Common Voice,common_voice_yo_36916832.mp3,quiet -44.56 LUFS; low peak -25.9 dBFS
+Common Voice,common_voice_yo_36922342.mp3,quiet -46.93 LUFS; low peak -27.91 dBFS; stationary noise -30.4 dB; DNSMOS OVRL 2.744
+Common Voice,common_voice_yo_36922332.mp3,quiet -48.02 LUFS; low peak -31.24 dBFS; stationary noise -29.1 dB; DNSMOS OVRL 2.533
+Common Voice,common_voice_yo_36916921.mp3,quiet -53.2 LUFS; low peak -36.54 dBFS; stationary noise -22.4 dB; DNSMOS BAK 3.766; DNSMOS OVRL 2.161
+Common Voice,common_voice_yo_36916887.mp3,quiet -45.9 LUFS; low peak -25.29 dBFS; DNSMOS BAK 3.707; DNSMOS OVRL 2.381
+Common Voice,common_voice_yo_36917354.mp3,quiet -44.74 LUFS; low peak -24.82 dBFS; stationary noise -27.9 dB; DNSMOS OVRL 2.784
+Common Voice,common_voice_yo_36840516.mp3,quiet -40.07 LUFS; low peak -19.1 dBFS; DNSMOS BAK 3.775; DNSMOS OVRL 2.505
+Common Voice,common_voice_yo_36917201.mp3,quiet -48.83 LUFS; low peak -29.86 dBFS; DNSMOS OVRL 2.307
+Common Voice,common_voice_yo_36917199.mp3,quiet -48.77 LUFS; low peak -30.34 dBFS; stationary noise -29.5 dB; DNSMOS BAK 3.758; DNSMOS OVRL 2.127
+Common Voice,common_voice_yo_36917380.mp3,quiet -49.24 LUFS; low peak -31.9 dBFS; stationary noise -27.5 dB; DNSMOS BAK 3.747; DNSMOS OVRL 2.546
+Common Voice,common_voice_yo_36922339.mp3,quiet -48.47 LUFS; low peak -29.09 dBFS; stationary noise -28.7 dB; DNSMOS BAK 3.713; DNSMOS OVRL 2.542
+Common Voice,common_voice_yo_36917350.mp3,quiet -38.43 LUFS; low peak -21.33 dBFS; DNSMOS OVRL 2.853
+Common Voice,common_voice_yo_36917378.mp3,quiet -51.42 LUFS; low peak -34.19 dBFS; stationary noise -20.1 dB; DNSMOS OVRL 2.376
+Common Voice,common_voice_yo_36917197.mp3,quiet -50.73 LUFS; low peak -28.16 dBFS; stationary noise -28.8 dB; DNSMOS BAK 3.658; DNSMOS OVRL 2.486
+Common Voice,common_voice_yo_36917400.mp3,quiet -52.45 LUFS; low peak -36.74 dBFS; stationary noise -31.8 dB; DNSMOS OVRL 2.489
+Common Voice,common_voice_yo_36840402.mp3,quiet -43.91 LUFS; low peak -22.94 dBFS; stationary noise -26.6 dB; DNSMOS BAK 3.62; DNSMOS OVRL 2.359
+Common Voice,common_voice_yo_36922322.mp3,quiet -49.63 LUFS; low peak -26.48 dBFS; stationary noise -28.9 dB; DNSMOS OVRL 2.458
+Common Voice,common_voice_yo_36908446.mp3,quiet -49.16 LUFS; low peak -26.23 dBFS; stationary noise -33.8 dB; DNSMOS OVRL 2.305
+Common Voice,common_voice_yo_36916868.mp3,quiet -47.53 LUFS; low peak -28.03 dBFS; DNSMOS OVRL 2.735
+Common Voice,common_voice_yo_36908464.mp3,quiet -52.56 LUFS; low peak -34.65 dBFS; stationary noise -32.8 dB; DNSMOS OVRL 2.16
+Common Voice,common_voice_yo_36922373.mp3,quiet -47.94 LUFS; low peak -28.04 dBFS; DNSMOS BAK 3.744; DNSMOS OVRL 2.655
+Common Voice,common_voice_yo_36840610.mp3,quiet -40.75 LUFS; low peak -23.56 dBFS; trail silence 1.39 s; edge silence total 1.62 s; DNSMOS OVRL 2.671
+Common Voice,common_voice_yo_36908407.mp3,quiet -54.24 LUFS; low peak -36.3 dBFS; stationary noise -29.2 dB; DNSMOS OVRL 2.33
+Common Voice,common_voice_yo_36916894.mp3,quiet -46.07 LUFS; low peak -27.17 dBFS; DNSMOS BAK 3.768; DNSMOS OVRL 2.814
+Common Voice,common_voice_yo_36922340.mp3,quiet -45.76 LUFS; low peak -26.12 dBFS; DNSMOS BAK 3.618; DNSMOS OVRL 2.488
+Common Voice,common_voice_yo_36916871.mp3,quiet -45.35 LUFS; low peak -27.08 dBFS; stationary noise -33.3 dB; DNSMOS BAK 3.594; DNSMOS OVRL 2.315
+Common Voice,common_voice_yo_36916929.mp3,quiet -50.83 LUFS; low peak -29.83 dBFS; stationary noise -30.5 dB; DNSMOS OVRL 2.569
+Common Voice,common_voice_yo_36916815.mp3,quiet -40.35 LUFS; low peak -20.93 dBFS
+Common Voice,common_voice_yo_36840567.mp3,quiet -40.71 LUFS; low peak -19.71 dBFS; DNSMOS BAK 3.795; DNSMOS OVRL 2.677
+Common Voice,common_voice_yo_36922377.mp3,quiet -48.7 LUFS; low peak -31.46 dBFS; stationary noise -31.1 dB; DNSMOS OVRL 2.672
+Common Voice,common_voice_yo_36923368.mp3,quiet -38.17 LUFS; low peak -21.79 dBFS; stationary noise -20.8 dB
+Common Voice,common_voice_yo_36892745.mp3,quiet -46.38 LUFS; low peak -29.04 dBFS; stationary noise -34.2 dB; DNSMOS OVRL 2.779
+Common Voice,common_voice_yo_36892742.mp3,quiet -47.48 LUFS; low peak -32.04 dBFS; DNSMOS OVRL 2.724
+Common Voice,common_voice_yo_36893207.mp3,quiet -46.06 LUFS; low peak -31.07 dBFS; trail silence 1.28 s; edge silence total 2.21 s; stationary noise -28.2 dB; DNSMOS OVRL 2.247
+Common Voice,common_voice_yo_36893154.mp3,quiet -44.48 LUFS; low peak -26.88 dBFS; trail silence 1.53 s; edge silence total 2.31 s; stationary noise -34.8 dB; DNSMOS OVRL 2.712
+Common Voice,common_voice_yo_36892819.mp3,quiet -44.58 LUFS; low peak -32.06 dBFS; stationary noise -32.3 dB; DNSMOS OVRL 2.506
+Common Voice,common_voice_yo_36893216.mp3,quiet -45.44 LUFS; low peak -29.77 dBFS; trail silence 1.45 s; edge silence total 2.32 s; DNSMOS OVRL 2.779
+Common Voice,common_voice_yo_36893227.mp3,quiet -47.74 LUFS; low peak -33.54 dBFS; trail silence 1.35 s; edge silence total 2.12 s; stationary noise -31.0 dB; DNSMOS BAK 3.713; DNSMOS OVRL 2.347
+Common Voice,common_voice_yo_36893147.mp3,quiet -43.41 LUFS; low peak -27.32 dBFS; trail silence 1.33 s; edge silence total 2.09 s; DNSMOS OVRL 2.598
+Common Voice,common_voice_yo_36893221.mp3,quiet -43.61 LUFS; low peak -28.57 dBFS; trail silence 1.25 s; stationary noise -30.3 dB; DNSMOS OVRL 2.892
+Common Voice,common_voice_yo_36893146.mp3,quiet -42.19 LUFS; low peak -28.58 dBFS; trail silence 1.49 s; edge silence total 1.68 s; stationary noise -34.8 dB; DNSMOS OVRL 2.75
+Common Voice,common_voice_yo_36893138.mp3,quiet -47.55 LUFS; low peak -30.21 dBFS; DNSMOS OVRL 2.699
+Common Voice,common_voice_yo_36893141.mp3,quiet -47.87 LUFS; low peak -32.75 dBFS; trail silence 1.27 s; edge silence total 2.05 s; stationary noise -29.6 dB; DNSMOS OVRL 2.505
+Common Voice,common_voice_yo_36893163.mp3,quiet -43.25 LUFS; low peak -27.71 dBFS; stationary noise -30.4 dB; DNSMOS OVRL 2.865
+Common Voice,common_voice_yo_36893162.mp3,quiet -41.86 LUFS; low peak -25.65 dBFS; trail silence 1.5 s; edge silence total 2.31 s; DNSMOS OVRL 2.916
+Common Voice,common_voice_yo_36892810.mp3,quiet -48.73 LUFS; low peak -30.87 dBFS; trail silence 1.51 s; edge silence total 2.31 s; stationary noise -28.0 dB; DNSMOS OVRL 2.395
+Common Voice,common_voice_yo_36892808.mp3,quiet -49.26 LUFS; low peak -24.39 dBFS; stationary noise -26.4 dB; DNSMOS OVRL 2.575
+Common Voice,common_voice_yo_36893188.mp3,quiet -45.9 LUFS; low peak -27.36 dBFS; stationary noise -33.1 dB; DNSMOS OVRL 2.703
+Common Voice,common_voice_yo_36893133.mp3,quiet -44.17 LUFS; low peak -26.05 dBFS; DNSMOS OVRL 2.686
+Common Voice,common_voice_yo_36893191.mp3,quiet -45.77 LUFS; low peak -29.73 dBFS; lead silence 1.07 s; edge silence total 1.63 s; stationary noise -32.3 dB; DNSMOS OVRL 2.606
+Common Voice,common_voice_yo_36893214.mp3,quiet -43.19 LUFS; low peak -26.8 dBFS; trail silence 1.32 s; edge silence total 2.13 s; stationary noise -28.5 dB; DNSMOS OVRL 2.81
+Common Voice,common_voice_yo_36892743.mp3,quiet -45.06 LUFS; low peak -27.57 dBFS; DNSMOS OVRL 2.592
+Common Voice,common_voice_yo_36893117.mp3,quiet -41.85 LUFS; low peak -25.51 dBFS; stationary noise -31.7 dB; DNSMOS BAK 3.799; DNSMOS OVRL 2.702
+Common Voice,common_voice_yo_36893126.mp3,quiet -42.49 LUFS; low peak -27.18 dBFS; trail silence 1.44 s; edge silence total 1.85 s
+Common Voice,common_voice_yo_36892769.mp3,quiet -49.57 LUFS; low peak -34.0 dBFS; stationary noise -29.3 dB; DNSMOS BAK 3.613; DNSMOS OVRL 2.346
+Common Voice,common_voice_yo_36893186.mp3,quiet -43.53 LUFS; low peak -28.12 dBFS; trail silence 1.48 s; edge silence total 2.14 s
+Common Voice,common_voice_yo_36893116.mp3,quiet -44.9 LUFS; low peak -24.79 dBFS; trail silence 1.69 s; edge silence total 1.99 s; stationary noise -33.8 dB; DNSMOS OVRL 2.993
+Common Voice,common_voice_yo_36892805.mp3,quiet -46.05 LUFS; low peak -30.93 dBFS; stationary noise -33.2 dB; DNSMOS OVRL 2.943
+Common Voice,common_voice_yo_36892795.mp3,quiet -45.05 LUFS; low peak -27.72 dBFS; DNSMOS OVRL 2.542
+Common Voice,common_voice_yo_36893168.mp3,quiet -45.03 LUFS; low peak -27.93 dBFS; stationary noise -32.6 dB; DNSMOS OVRL 2.629
+Common Voice,common_voice_yo_36893158.mp3,quiet -43.55 LUFS; low peak -26.01 dBFS; trail silence 1.2 s; edge silence total 1.75 s; stationary noise -34.5 dB
+Common Voice,common_voice_yo_36893123.mp3,quiet -42.47 LUFS; low peak -28.01 dBFS; trail silence 1.58 s; edge silence total 1.98 s; stationary noise -30.7 dB; DNSMOS OVRL 2.866
+Common Voice,common_voice_yo_36893120.mp3,quiet -44.12 LUFS; low peak -27.0 dBFS; stationary noise -30.0 dB; DNSMOS OVRL 2.714
+Common Voice,common_voice_yo_36892786.mp3,quiet -45.57 LUFS; low peak -28.03 dBFS; DNSMOS OVRL 2.434
+Common Voice,common_voice_yo_36893177.mp3,quiet -49.04 LUFS; low peak -32.39 dBFS; stationary noise -28.0 dB; DNSMOS OVRL 2.411
+Common Voice,common_voice_yo_36893217.mp3,quiet -48.76 LUFS; low peak -27.99 dBFS; stationary noise -33.4 dB; DNSMOS OVRL 2.961
+Common Voice,common_voice_yo_36893222.mp3,quiet -42.67 LUFS; low peak -26.68 dBFS; stationary noise -32.5 dB
+Common Voice,common_voice_yo_36893174.mp3,quiet -48.55 LUFS; low peak -31.79 dBFS; trail silence 1.33 s; edge silence total 1.89 s; DNSMOS OVRL 2.481
+Common Voice,common_voice_yo_36892705.mp3,quiet -46.02 LUFS; low peak -31.19 dBFS; stationary noise -31.3 dB; DNSMOS OVRL 2.573
+Common Voice,common_voice_yo_36893203.mp3,quiet -47.06 LUFS; low peak -28.34 dBFS; edge silence total 1.57 s; DNSMOS OVRL 2.704
+Common Voice,common_voice_yo_36893157.mp3,quiet -42.98 LUFS; low peak -24.06 dBFS; trail silence 1.44 s; edge silence total 2.17 s; DNSMOS OVRL 2.911
+Common Voice,common_voice_yo_36893184.mp3,quiet -47.68 LUFS; low peak -32.55 dBFS; stationary noise -24.5 dB; DNSMOS OVRL 2.649
+Common Voice,common_voice_yo_36893137.mp3,quiet -47.24 LUFS; low peak -31.07 dBFS; trail silence 1.15 s; edge silence total 1.88 s; stationary noise -32.9 dB; DNSMOS OVRL 2.812
+Common Voice,common_voice_yo_36893212.mp3,quiet -44.87 LUFS; low peak -28.0 dBFS; trail silence 1.34 s; edge silence total 1.63 s; DNSMOS OVRL 2.822
+Common Voice,common_voice_yo_36892730.mp3,quiet -44.92 LUFS; low peak -26.32 dBFS; stationary noise -32.4 dB; DNSMOS OVRL 2.845
+Common Voice,common_voice_yo_36893219.mp3,quiet -45.57 LUFS; low peak -25.57 dBFS; stationary noise -30.0 dB; DNSMOS OVRL 2.491
+Common Voice,common_voice_yo_36893140.mp3,quiet -48.84 LUFS; low peak -31.21 dBFS; stationary noise -27.6 dB; DNSMOS OVRL 2.688
+Common Voice,common_voice_yo_36892752.mp3,quiet -47.94 LUFS; low peak -27.75 dBFS; stationary noise -32.5 dB; DNSMOS OVRL 2.609
+Common Voice,common_voice_yo_36892792.mp3,quiet -48.63 LUFS; low peak -33.0 dBFS; DNSMOS OVRL 2.664
+Common Voice,common_voice_yo_36893166.mp3,quiet -47.31 LUFS; low peak -30.43 dBFS; stationary noise -30.3 dB; DNSMOS OVRL 2.864
+Common Voice,common_voice_yo_36892773.mp3,quiet -47.33 LUFS; low peak -28.21 dBFS; stationary noise -30.3 dB; DNSMOS OVRL 2.654
+Common Voice,common_voice_yo_36893225.mp3,quiet -48.17 LUFS; low peak -28.59 dBFS; stationary noise -32.1 dB; DNSMOS OVRL 2.577
+Common Voice,common_voice_yo_36892719.mp3,quiet -49.9 LUFS; low peak -29.78 dBFS; stationary noise -28.6 dB; DNSMOS OVRL 2.474
+Common Voice,common_voice_yo_36892784.mp3,quiet -46.34 LUFS; low peak -29.83 dBFS; stationary noise -34.0 dB; DNSMOS BAK 3.539; DNSMOS OVRL 2.398
+Common Voice,common_voice_yo_36892748.mp3,quiet -46.15 LUFS; low peak -27.63 dBFS; stationary noise -32.6 dB; DNSMOS BAK 3.758; DNSMOS OVRL 2.307
+Common Voice,common_voice_yo_36892785.mp3,quiet -47.02 LUFS; low peak -28.69 dBFS; DNSMOS OVRL 2.642
+Common Voice,common_voice_yo_36893165.mp3,quiet -45.46 LUFS; low peak -27.23 dBFS; trail silence 1.77 s; edge silence total 2.04 s
+Common Voice,common_voice_yo_36892702.mp3,quiet -45.8 LUFS; low peak -25.41 dBFS; stationary noise -33.0 dB; DNSMOS BAK 3.647; DNSMOS OVRL 2.407
+Common Voice,common_voice_yo_36893172.mp3,quiet -43.12 LUFS; low peak -25.76 dBFS; stationary noise -32.6 dB; DNSMOS OVRL 2.892
+Common Voice,common_voice_yo_36893111.mp3,quiet -47.63 LUFS; low peak -30.62 dBFS; trail silence 1.54 s; edge silence total 1.83 s; stationary noise -27.7 dB; DNSMOS OVRL 2.52
+Common Voice,common_voice_yo_36893173.mp3,quiet -47.95 LUFS; low peak -32.13 dBFS; trail silence 1.16 s; stationary noise -31.0 dB; DNSMOS BAK 3.672; DNSMOS OVRL 2.617
+Common Voice,common_voice_yo_36893200.mp3,quiet -45.78 LUFS; low peak -27.43 dBFS; trail silence 1.3 s; edge silence total 1.86 s; DNSMOS OVRL 2.764
+Common Voice,common_voice_yo_36892718.mp3,quiet -50.86 LUFS; low peak -32.51 dBFS; stationary noise -29.0 dB; DNSMOS OVRL 2.529
+Common Voice,common_voice_yo_36893134.mp3,quiet -43.8 LUFS; low peak -26.37 dBFS; DNSMOS OVRL 2.662
+Common Voice,common_voice_yo_36892772.mp3,quiet -46.71 LUFS; low peak -30.42 dBFS; stationary noise -27.6 dB; DNSMOS OVRL 2.66
+Common Voice,common_voice_yo_36893122.mp3,quiet -42.12 LUFS; low peak -25.81 dBFS; trail silence 1.28 s; edge silence total 1.71 s; stationary noise -34.2 dB; DNSMOS OVRL 2.873
+Common Voice,common_voice_yo_36893220.mp3,quiet -45.28 LUFS; low peak -25.9 dBFS; stationary noise -29.7 dB; DNSMOS OVRL 2.524
+Common Voice,common_voice_yo_36892781.mp3,quiet -46.39 LUFS; low peak -32.32 dBFS; stationary noise -26.8 dB; DNSMOS BAK 3.735; DNSMOS OVRL 2.25
+Common Voice,common_voice_yo_36892807.mp3,quiet -44.47 LUFS; low peak -27.19 dBFS
+Common Voice,common_voice_yo_36893189.mp3,quiet -43.41 LUFS; low peak -27.89 dBFS; trail silence 1.32 s; edge silence total 2.00 s; DNSMOS OVRL 2.797
+Common Voice,common_voice_yo_36893164.mp3,quiet -42.55 LUFS; low peak -28.0 dBFS; trail silence 1.88 s; edge silence total 2.33 s; stationary noise -30.3 dB
+Common Voice,common_voice_yo_36893179.mp3,quiet -47.45 LUFS; low peak -30.01 dBFS; trail silence 1.33 s; edge silence total 1.86 s; stationary noise -30.0 dB; DNSMOS OVRL 2.685
+Common Voice,common_voice_yo_36892813.mp3,quiet -49.31 LUFS; low peak -28.71 dBFS; stationary noise -27.8 dB; DNSMOS OVRL 2.405
+Common Voice,common_voice_yo_36892749.mp3,quiet -45.7 LUFS; low peak -28.47 dBFS; stationary noise -33.5 dB; DNSMOS OVRL 2.577
+Common Voice,common_voice_yo_36892727.mp3,quiet -50.16 LUFS; low peak -31.2 dBFS; stationary noise -26.4 dB; DNSMOS OVRL 2.509
+Common Voice,common_voice_yo_36893190.mp3,quiet -45.21 LUFS; low peak -28.62 dBFS; stationary noise -29.2 dB; DNSMOS OVRL 2.667
+Common Voice,common_voice_yo_36893170.mp3,quiet -43.63 LUFS; low peak -27.03 dBFS; trail silence 1.71 s; edge silence total 2.66 s; stationary noise -34.8 dB; DNSMOS OVRL 2.722
+Common Voice,common_voice_yo_36893182.mp3,quiet -46.37 LUFS; low peak -31.03 dBFS; trail silence 1.4 s; edge silence total 2.17 s; stationary noise -34.9 dB; DNSMOS OVRL 2.578
+Common Voice,common_voice_yo_36893223.mp3,quiet -50.65 LUFS; low peak -29.4 dBFS; stationary noise -27.8 dB; DNSMOS OVRL 2.499
+Common Voice,common_voice_yo_36893224.mp3,quiet -47.01 LUFS; low peak -28.81 dBFS; stationary noise -29.6 dB; DNSMOS OVRL 2.425
+Common Voice,common_voice_yo_36893176.mp3,quiet -50.5 LUFS; low peak -36.13 dBFS; stationary noise -27.2 dB; DNSMOS BAK 3.752; DNSMOS OVRL 2.417
+Common Voice,common_voice_yo_36892720.mp3,quiet -51.22 LUFS; low peak -31.54 dBFS; stationary noise -32.2 dB; DNSMOS OVRL 2.44
+Common Voice,common_voice_yo_36893192.mp3,quiet -43.25 LUFS; low peak -22.59 dBFS; stationary noise -31.6 dB; DNSMOS OVRL 2.588
+Common Voice,common_voice_yo_36893155.mp3,quiet -42.31 LUFS; low peak -26.62 dBFS; trail silence 1.15 s; edge silence total 1.83 s; stationary noise -32.3 dB; DNSMOS OVRL 2.747
+Common Voice,common_voice_yo_36893226.mp3,quiet -44.67 LUFS; low peak -27.28 dBFS; trail silence 1.23 s; edge silence total 2.11 s; stationary noise -30.8 dB; DNSMOS OVRL 2.743
+Common Voice,common_voice_yo_36893178.mp3,quiet -46.73 LUFS; low peak -27.62 dBFS; stationary noise -28.8 dB; DNSMOS OVRL 2.559
+Common Voice,common_voice_yo_36893110.mp3,quiet -48.97 LUFS; low peak -32.13 dBFS; stationary noise -32.3 dB; DNSMOS OVRL 2.546
+Common Voice,common_voice_yo_36893113.mp3,quiet -44.09 LUFS; low peak -27.67 dBFS; stationary noise -28.5 dB; DNSMOS OVRL 2.752
+Common Voice,common_voice_yo_36892706.mp3,quiet -50.77 LUFS; low peak -30.55 dBFS; stationary noise -28.1 dB; DNSMOS OVRL 2.395
+Common Voice,common_voice_yo_36892751.mp3,quiet -46.81 LUFS; low peak -27.47 dBFS; trail silence 1.1 s; edge silence total 1.54 s; DNSMOS OVRL 2.539
+Common Voice,common_voice_yo_36893129.mp3,quiet -44.2 LUFS; low peak -29.45 dBFS; stationary noise -34.8 dB; DNSMOS OVRL 2.769
+Common Voice,common_voice_yo_36892806.mp3,quiet -47.61 LUFS; low peak -31.67 dBFS; stationary noise -34.2 dB; DNSMOS OVRL 2.463
+Common Voice,common_voice_yo_36893187.mp3,quiet -44.36 LUFS; low peak -28.67 dBFS; DNSMOS OVRL 2.479
+Common Voice,common_voice_yo_36893213.mp3,quiet -44.52 LUFS; low peak -27.56 dBFS; trail silence 1.47 s; edge silence total 1.88 s; stationary noise -27.8 dB; DNSMOS OVRL 2.752
+Common Voice,common_voice_yo_36893121.mp3,quiet -42.51 LUFS; low peak -28.03 dBFS; stationary noise -28.9 dB; DNSMOS OVRL 2.827
+Common Voice,common_voice_yo_36893205.mp3,quiet -47.68 LUFS; low peak -30.03 dBFS; stationary noise -26.0 dB; DNSMOS OVRL 2.65
+Common Voice,common_voice_yo_36893171.mp3,quiet -45.82 LUFS; low peak -29.12 dBFS; trail silence 1.57 s; edge silence total 2.23 s; stationary noise -34.2 dB; DNSMOS OVRL 2.699
+Common Voice,common_voice_yo_36893169.mp3,quiet -45.11 LUFS; low peak -28.08 dBFS; trail silence 1.75 s; edge silence total 2.70 s; stationary noise -33.3 dB; DNSMOS OVRL 2.67
+Common Voice,common_voice_yo_36892716.mp3,quiet -49.61 LUFS; low peak -30.3 dBFS; DNSMOS BAK 3.635; DNSMOS OVRL 2.296
+Common Voice,common_voice_yo_36892783.mp3,quiet -50.03 LUFS; low peak -32.59 dBFS; stationary noise -32.9 dB; DNSMOS OVRL 2.724
+Common Voice,common_voice_yo_36893167.mp3,quiet -47.88 LUFS; low peak -31.93 dBFS; stationary noise -29.6 dB; DNSMOS OVRL 2.452
+Common Voice,common_voice_yo_36893159.mp3,quiet -43.76 LUFS; low peak -30.96 dBFS; trail silence 1.96 s; edge silence total 2.13 s; stationary noise -25.6 dB; DNSMOS OVRL 2.493
+Common Voice,common_voice_yo_36893148.mp3,quiet -41.44 LUFS; low peak -28.27 dBFS; trail silence 1.47 s; edge silence total 1.96 s; stationary noise -28.8 dB; DNSMOS OVRL 2.654
+Common Voice,common_voice_yo_36893156.mp3,quiet -41.27 LUFS; low peak -25.29 dBFS; trail silence 1.49 s; edge silence total 2.10 s; DNSMOS OVRL 2.82
+Common Voice,common_voice_yo_36893209.mp3,quiet -46.2 LUFS; low peak -31.34 dBFS; trail silence 1.32 s; edge silence total 2.17 s; DNSMOS OVRL 2.928
+Common Voice,common_voice_yo_36892753.mp3,quiet -45.58 LUFS; low peak -28.8 dBFS; stationary noise -25.1 dB; DNSMOS OVRL 2.793
+Common Voice,common_voice_yo_36893183.mp3,quiet -45.81 LUFS; low peak -30.32 dBFS; trail silence 1.31 s; edge silence total 1.83 s; stationary noise -27.6 dB; DNSMOS OVRL 2.475
+Common Voice,common_voice_yo_36893180.mp3,quiet -49.91 LUFS; low peak -33.84 dBFS; DNSMOS OVRL 2.811
+Common Voice,common_voice_yo_36893144.mp3,quiet -45.87 LUFS; low peak -27.36 dBFS; stationary noise -33.8 dB; DNSMOS OVRL 2.731
+Common Voice,common_voice_yo_36893136.mp3,quiet -47.3 LUFS; low peak -31.01 dBFS; trail silence 1.12 s; edge silence total 1.87 s; stationary noise -31.5 dB; DNSMOS OVRL 2.764
+Common Voice,common_voice_yo_36892771.mp3,quiet -46.25 LUFS; low peak -27.21 dBFS; stationary noise -29.7 dB; DNSMOS OVRL 2.554
+Common Voice,common_voice_yo_36892818.mp3,quiet -48.72 LUFS; low peak -25.73 dBFS; stationary noise -34.8 dB; DNSMOS OVRL 2.53
+Common Voice,common_voice_yo_36892726.mp3,quiet -46.82 LUFS; low peak -30.76 dBFS; stationary noise -30.3 dB; DNSMOS OVRL 2.55
+Common Voice,common_voice_yo_36893124.mp3,quiet -41.35 LUFS; low peak -25.91 dBFS; trail silence 1.08 s; stationary noise -32.8 dB; DNSMOS OVRL 2.914
+Common Voice,common_voice_yo_36893161.mp3,quiet -43.61 LUFS; low peak -26.0 dBFS; stationary noise -31.5 dB; DNSMOS OVRL 2.945
+Common Voice,common_voice_yo_36893135.mp3,quiet -43.68 LUFS; low peak -23.97 dBFS; trail silence 1.23 s; stationary noise -30.8 dB; DNSMOS OVRL 2.727
+Common Voice,common_voice_yo_36893202.mp3,quiet -44.04 LUFS; low peak -25.52 dBFS; stationary noise -34.7 dB
+Common Voice,common_voice_yo_36893128.mp3,quiet -41.95 LUFS; low peak -23.07 dBFS; stationary noise -34.4 dB; DNSMOS OVRL 2.791
+Common Voice,common_voice_yo_36893139.mp3,quiet -48.95 LUFS; low peak -29.64 dBFS; trail silence 1.28 s; DNSMOS BAK 3.761; DNSMOS OVRL 2.547
+Common Voice,common_voice_yo_36893114.mp3,quiet -44.98 LUFS; low peak -27.05 dBFS; stationary noise -30.4 dB; DNSMOS OVRL 2.574
+Common Voice,common_voice_yo_36892755.mp3,quiet -47.98 LUFS; low peak -26.4 dBFS; stationary noise -32.2 dB; DNSMOS OVRL 2.607
+Common Voice,common_voice_yo_36893130.mp3,quiet -44.65 LUFS; low peak -26.71 dBFS; trail silence 1.19 s; edge silence total 1.61 s; stationary noise -26.7 dB; DNSMOS OVRL 2.931
+Common Voice,common_voice_yo_36893131.mp3,quiet -48.11 LUFS; low peak -31.67 dBFS; trail silence 1.36 s; edge silence total 1.52 s; stationary noise -33.0 dB; DNSMOS OVRL 2.514
+Common Voice,common_voice_yo_36893215.mp3,quiet -43.97 LUFS; low peak -25.07 dBFS; stationary noise -31.0 dB; DNSMOS OVRL 2.955
+Common Voice,common_voice_yo_36893210.mp3,quiet -47.67 LUFS; low peak -28.49 dBFS; stationary noise -33.6 dB; DNSMOS OVRL 2.584
+Common Voice,common_voice_yo_36892812.mp3,quiet -46.89 LUFS; low peak -26.94 dBFS; stationary noise -33.4 dB; DNSMOS OVRL 2.703
+Common Voice,common_voice_yo_36892728.mp3,quiet -47.59 LUFS; low peak -29.32 dBFS; trail silence 1.67 s; edge silence total 2.12 s; stationary noise -28.2 dB; DNSMOS OVRL 2.283
+Common Voice,common_voice_yo_36893206.mp3,quiet -46.85 LUFS; low peak -29.64 dBFS; trail silence 1.58 s; edge silence total 2.01 s; stationary noise -31.2 dB; DNSMOS OVRL 2.649
+Common Voice,common_voice_yo_36893208.mp3,quiet -45.09 LUFS; low peak -28.69 dBFS; trail silence 1.55 s; edge silence total 2.35 s; DNSMOS OVRL 2.794
+Common Voice,common_voice_yo_36892729.mp3,quiet -47.76 LUFS; low peak -29.68 dBFS; stationary noise -33.0 dB; DNSMOS OVRL 2.647
+Common Voice,common_voice_yo_36892746.mp3,quiet -44.68 LUFS; low peak -26.63 dBFS; trail silence 1.45 s; edge silence total 2.05 s; stationary noise -33.6 dB; DNSMOS OVRL 2.494
+Common Voice,common_voice_yo_36881824.mp3,lead silence 1.31 s; edge silence total 1.98 s; DNSMOS OVRL 2.816
+Common Voice,common_voice_yo_36925766.mp3,DNSMOS BAK 3.008; DNSMOS OVRL 2.186
+Common Voice,common_voice_yo_36912668.mp3,DNSMOS OVRL 2.673
+Common Voice,common_voice_yo_36912596.mp3,DNSMOS OVRL 2.887
+Common Voice,common_voice_yo_36925638.mp3,DNSMOS OVRL 2.821
+Common Voice,common_voice_yo_36928071.mp3,DNSMOS OVRL 2.417
+Common Voice,common_voice_yo_36927964.mp3,DNSMOS OVRL 2.543
+Common Voice,common_voice_yo_36916840.mp3,quiet -30.18 LUFS; DNSMOS OVRL 2.76
+Common Voice,common_voice_yo_36925765.mp3,DNSMOS OVRL 2.784
+Common Voice,common_voice_yo_36924220.mp3,trail silence 1.37 s; edge silence total 1.92 s; DNSMOS BAK 3.748; DNSMOS OVRL 2.684
+Common Voice,common_voice_yo_36927975.mp3,DNSMOS OVRL 2.547
+Common Voice,common_voice_yo_36925689.mp3,DNSMOS OVRL 2.839
+Common Voice,common_voice_yo_36923302.mp3,trail silence 1.06 s; DNSMOS BAK 3.697; DNSMOS OVRL 2.822
+Common Voice,common_voice_yo_36839737.mp3,DNSMOS BAK 3.501; DNSMOS OVRL 2.856
+Common Voice,common_voice_yo_36946125.mp3,stationary noise -32.5 dB; DNSMOS OVRL 2.851
+Common Voice,common_voice_yo_36844065.mp3,DNSMOS BAK 3.787; DNSMOS OVRL 2.866
+Common Voice,common_voice_yo_36943046.mp3,quiet -30.36 LUFS; low peak -13.42 dBFS; stationary noise -32.1 dB; DNSMOS OVRL 2.916
+Common Voice,common_voice_yo_36848943.mp3,DNSMOS BAK 3.712
+Common Voice,common_voice_yo_36943088.mp3,DNSMOS BAK 3.524; DNSMOS OVRL 2.463
+Common Voice,common_voice_yo_36969601.mp3,DNSMOS BAK 3.768; DNSMOS OVRL 2.811
+Common Voice,common_voice_yo_36943147.mp3,lead silence 2.03 s; edge silence total 2.52 s
+Common Voice,common_voice_yo_36548453.mp3,DNSMOS BAK 3.787; DNSMOS OVRL 2.544
+Common Voice,common_voice_yo_36911703.mp3,DNSMOS BAK 2.729; DNSMOS OVRL 2.449
+Common Voice,common_voice_yo_36892281.mp3,DNSMOS BAK 3.551; DNSMOS OVRL 2.789
+Common Voice,common_voice_yo_36892249.mp3,DNSMOS BAK 3.601; DNSMOS OVRL 2.94
+Common Voice,common_voice_yo_36981722.mp3,stationary noise -33.0 dB; DNSMOS BAK 3.34; DNSMOS OVRL 2.017
+Common Voice,common_voice_yo_36981715.mp3,DNSMOS BAK 3.612; DNSMOS OVRL 2.863
+Common Voice,common_voice_yo_36981573.mp3,DNSMOS OVRL 2.965
+Common Voice,common_voice_yo_36892205.mp3,lead silence 1.09 s; edge silence total 1.98 s; DNSMOS BAK 3.586; DNSMOS OVRL 2.725
+Common Voice,common_voice_yo_36911706.mp3,DNSMOS BAK 3.423; DNSMOS OVRL 2.748
+Common Voice,common_voice_yo_36943049.mp3,DNSMOS BAK 3.691; DNSMOS OVRL 2.919
+Common Voice,common_voice_yo_36969572.mp3,quiet -31.13 LUFS; low peak -14.47 dBFS; stationary noise -33.6 dB
+Common Voice,common_voice_yo_36900648.mp3,DNSMOS BAK 3.377; DNSMOS OVRL 2.845
+Common Voice,common_voice_yo_36862123.mp3,edge silence total 1.82 s; DNSMOS BAK 3.491; DNSMOS OVRL 2.888
+Common Voice,common_voice_yo_36877274.mp3,DNSMOS BAK 3.701
+Common Voice,common_voice_yo_36943149.mp3,DNSMOS BAK 3.025; DNSMOS OVRL 2.579
+Common Voice,common_voice_yo_36981714.mp3,DNSMOS BAK 3.746; DNSMOS OVRL 2.749
+Common Voice,common_voice_yo_36888768.mp3,stationary noise -32.8 dB; DNSMOS BAK 3.76; DNSMOS OVRL 2.86

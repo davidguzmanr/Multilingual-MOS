@@ -1,5 +1,5 @@
 ref_id,language,lang_code,dataset,source,speaker_id,gender,age,text,duration_s,sample_rate,orig_id,audio_path
-yo-ref-f1,Yoruba,yo,Common Voice,Common Voice: sentence-collector,3c4370d14960,female,twenties,Fọ́nrán fídíò èkúté ní ilé ìwòsan jẹ́ ìdójútì fún ìjọba ilẹ̀ yìí.,8.39,32000,common_voice_yo_36927981.mp3,audios/Yoruba/reference-voices/yo-ref-f1.wav
-yo-ref-f2,Yoruba,yo,Common Voice,Common Voice: sentence-collector,f92039a87082,female,twenties,Ṣèyí sopé ọ̀sẹ̀ àkọ́kọ́ nínú oṣù ọpẹ́ ni òun màá sìnkú ìyá òun.,8.14,32000,common_voice_yo_36881569.mp3,audios/Yoruba/reference-voices/yo-ref-f2.wav
+yo-ref-f1,Yoruba,yo,Common Voice,Common Voice: sentence-collector,7bc2ed85985f,female,twenties,"Ìwé tí mo ní kí o kà lọ́jọ́sí, wọ́n ti ṣe é sínu fọ́nrán.",7.99,32000,common_voice_yo_36916932.mp3,audios/Yoruba/reference-voices/yo-ref-f1.wav
+yo-ref-f2,Yoruba,yo,Common Voice,Common Voice: sentence-collector,be963ba1add3,female,twenties,Nítorí ìsìnkú bàbá Abíọ́dún ni a fi fún ìpínlẹ̀ Ògùn ní owó,7.99,32000,common_voice_yo_36892813.mp3,audios/Yoruba/reference-voices/yo-ref-f2.wav
 yo-ref-m1,Yoruba,yo,Common Voice,Common Voice: sentence-collector,0ac82360fee5,male,twenties,Àwọn òbí ń fi ìpaya kó akẹ́kọ̀ọ́ kúrò nílé ẹ̀kọ́ ní Ìbàràpá.,7.96,32000,common_voice_yo_36891772.mp3,audios/Yoruba/reference-voices/yo-ref-m1.wav
 yo-ref-m2,Yoruba,yo,Common Voice,Common Voice: sentence-collector,49d3ca15aa29,male,thirties,Olúwo sọ pé Ìmẹ́lẹ́ jẹ́ orísun àìnílárí.,8.03,32000,common_voice_yo_37046728.mp3,audios/Yoruba/reference-voices/yo-ref-m2.wav

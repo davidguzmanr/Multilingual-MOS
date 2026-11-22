@@ -1,0 +1,5 @@
+ref_id,language,lang_code,dataset,source,speaker_id,gender,age,text,duration_s,sample_rate,orig_id,audio_path
+sw-ref-f1,Swahili,sw,Common Voice,Common Voice: wiki,8563b570a39b,female,fifties,"Istilahi hiyo inayotumiwa katika takwimu za watu, kwa mfano wakati wa sensa.",8.03,32000,common_voice_sw_28784288.mp3,audios/Swahili/reference-voices/sw-ref-f1.wav
+sw-ref-f2,Swahili,sw,Common Voice,Common Voice: batch-1-19-11-2021-contributors-set,cebe745d5d62,female,fourties,nembo ya taifa imeeleza ushirikiano vyema sana kupitia picha zake,7.99,32000,common_voice_sw_30569183.mp3,audios/Swahili/reference-voices/sw-ref-f2.wav
+sw-ref-m1,Swahili,sw,Common Voice,Common Voice: wiki,bff5b96bd539,male,fourties,Katika liturujia wanatajwa pia kama Watakatifu Andrea Dũng-Lạc na wenzake.,8.03,32000,common_voice_sw_29025480.mp3,audios/Swahili/reference-voices/sw-ref-m1.wav
+sw-ref-m2,Swahili,sw,Common Voice,Common Voice: batch-1-19-11-2021-contributors-set,f615bda60b0f,male,twenties,Mnamo elfu moja Mia tisa themanini bona tatu vikundi tofauti vya watafiti vilianza,8.03,32000,common_voice_sw_29928615.mp3,audios/Swahili/reference-voices/sw-ref-m2.wav

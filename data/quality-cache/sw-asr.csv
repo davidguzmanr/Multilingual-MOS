@@ -1,0 +1,43 @@
+key,asr_hyp,wer,cer,cer_plain
+WaxalNLP|swh_female_speaker_2_001_00088.mp3,muuguzi wa tatu ni dadangu nilitibiwa na muuguzi wa sita aliyevaa miwani muuguzi wa saba kati yao ndiye muuguzi mkuu,0.0,0.0,0.0
+WaxalNLP|swh_female_speaker_3_001_00095.mp3,mwaka wa elfu mbili ishirini na mbili wanafunzi mia mbili ishirini na wawili walipitia kwenye gredi ya pili,0.0,0.0,0.0
+WaxalNLP|swh_female_speaker_2_001_00069.mp3,saba zidisha nane jumla ni hamsini na sita,0.0,0.0,0.0
+WaxalNLP|swh_female_speaker_3_002_00202.mp3,nchini uganda wanafunzi wanaenda shuleni siku zote za wiki isipokuwa jumapili na jumamosi,0.0,0.0,0.0
+WaxalNLP|swh_female_speaker_2_001_00067.mp3,kumi na moja ongeza tatu ni kumi na nne,0.0,0.0,0.0
+WaxalNLP|swh_female_speaker_3_001_00077.mp3,robo tatu zidisha mia moja na ishirini na tisini,0.1111,0.0208,0.0208
+WaxalNLP|swh_male_speaker_1_001_00078.mp3,moja ya kumi ya milioni moja ni laki moja,0.0,0.0,0.0
+WaxalNLP|swh_male_speaker_4_002_00166.mp3,ni soko gani linaongoza kwa kuingiza mapato nchini tanzania soko kuu la kariakoo ndilo kitovu cha uchumi wa mkoa wa dar es salaam,0.0,0.0,0.0
+WaxalNLP|swh_male_speaker_1_002_00203.mp3,ni lizaliwa siku ya ijumaa ingawa siku mbuki tarehe na mwaka,0.4444,0.0345,0.0345
+WaxalNLP|swh_male_speaker_4_002_00116.mp3,wilaya ya temeke ndio wilaya ambako watu wanaishi maisha duni sana katika jiji la dar es salaam,0.0,0.0,0.0
+WaxalNLP|swh_male_speaker_1_001_00031.mp3,nyoka mkali ameviringa mwiri wake kwenye tawi kavu ramuti kavu nyoka anafanana na tawi ramuti kavu ariko viringa mwiri wake nyoka mkali ako juu ya kuni,0.3704,0.14,0.14
+WaxalNLP|swh_male_speaker_4_002_00135.mp3,wafanyabiashara kutoka jamhuri ya kidemokrasia ya kongo wanapenda kujihusisha na bidhaa za urembo,0.2143,0.0202,0.0202
+WaxalNLP|swh_male_speaker_1_001_00064.mp3,sita ongeza saba ni sawa na kumi na tatu,0.0,0.0,0.0
+FLEURS|1970/9555663639351901745.wav,hatujui kwa kweli lakini inaweza kuwa alikuwa na ulimu uliogawanyika lishe yake ni pamoja na kasa samaki wakubwa mossau wengine na labda anaweza kuwa kiumbe alaye wenzie,0.1111,0.0175,0.0175
+FLEURS|1871/5922476506095018856.wav,katika hali joto ya hewa ya mashariki ya kati nyumba haikuwa muhimu sana,0.0,0.0,0.0
+FLEURS|1781/12672681013623686438.wav,madagaska ndio ukubwa tena kwa mbali na bara lililojisimamia ikifikia ni suala la wanyamapori,0.2143,0.044,0.044
+FLEURS|1878/2137220820269882501.wav,mamlaka kuu ya kanisa yalikuwa katika roma kwa zaidi ya miaka elfu na uwepo huu wa mamlaka na pesa katika sehemu moja ulipelekea wengi kuulizia kama itikadi hii ilikuwa ikitekelezwa,0.0333,0.011,0.011
+FLEURS|1849/13254092903890595878.wav,iwapo umetazama sinema ya hazina za kitaifa huenda ukafikiri ramani ya hazina iliandikwa nyuma ya tangazo la uhuru,0.0556,0.0088,0.0088
+FLEURS|1796/11984038003310933182.wav,mashapo yalikuwa muhimu kwa kuunda mafumbo ya mchanga na pwani ambayo zilitumika kama makao ya wanyamapori,0.125,0.0377,0.0377
+FLEURS|1724/1405513087126844922.wav,"inajulikana kwa kuwa kitovu cha anasa ilianza takriban 403 ad na ilidumu hadi karibu 1,100 ad",0.3889,0.0526,0.0526
+FLEURS|1710/11034037752360335646.wav,wiki iliyopita meti ilitangaza kwamba apple ilikuwa imewaharifu kuhusu matukio 34 ya ziada ya utoaji wa joto jingi ambayo kampuni hiyo ilisema hayakuwa makubwa,0.0417,0.0063,0.0063
+FLEURS|1669/1305783249989953994.wav,mkuu wa polisi kandaharshek salaki alisema mshtakiwa alitokea mahakamani na uso uliofunikwa,0.2308,0.0957,0.0957
+Common Voice|common_voice_sw_30360720.mp3,alijiunga na siasa mwaka wa elfu mbili kamili,0.0,0.0,0.0
+Common Voice|common_voice_sw_30048605.mp3,baada ya kidatu ruaha mkuu unapita tambarare ya kilombero,0.0,0.0,0.0
+Common Voice|common_voice_sw_30394223.mp3,wanafunzi wa kwanza waliosoma katika chuo hicho ni mzee musa fungo,0.0,0.0,0.0
+Common Voice|common_voice_sw_30131473.mp3,baadaye alihamia bayern munich ya nchini ujerumani,0.1429,0.0204,0.0204
+Common Voice|common_voice_sw_30106223.mp3,wakurya huamini ng'ombe wote ni wao hivyo ni kama waliporwa,0.2,0.0172,0.0172
+Common Voice|common_voice_sw_30063042.mp3,mwaka elfu moja mia tisa arobaini na tisa alitumwa kaskazini kupigania waasi,0.0,0.0,0.0
+Common Voice|common_voice_sw_30115221.mp3,mkubwa wa marekani wala hakutarajia kuwa wa marekani watamtafuta kwa udi na uvumba,0.1667,0.0123,0.0123
+Common Voice|common_voice_sw_30327946.mp3,alihisi kwamba angeweza kuukosa uchifu kwa kumhofia kaka yake ngauonalopembe,0.1,0.0263,0.0263
+Common Voice|common_voice_sw_30116037.mp3,alipangiwa kusuluhisha mapigano ya karamojung na kabila la turkana,0.1111,0.0152,0.0152
+Common Voice|common_voice_sw_30127135.mp3,tundurisu alikuwa akipinga hadharani kilichokuwa kikionekana kama upendeleo wa wazi kwa chato,0.1538,0.0316,0.0316
+Common Voice|common_voice_sw_30095222.mp3,barcelona wamemwachia lionel messi kwa sababu wameshinda kulipa mshahara wake,0.2,0.026,0.026
+Common Voice|common_voice_sw_30129422.mp3,jina la mkwawa ni kifupisho cha mkwava ambalo tena ni kifupisho,0.0909,0.0156,0.0156
+FLEURS|1901/11281353523421910880.wav,ingawa akili bandia inahusishwa sana na tongo za kisayansi akili bandia huunda sehemu muhimu sana ya tawi la sayansi ya kompyuta kushughulikia tabia mafunzo na marekebisho ya akili kwa mashine,0.0333,0.0052,0.0052
+FLEURS|1741/8348525824662465045.wav,maeneo mapana upande wa juu wa kaskazini hayana idadi kubwa ya watu na baadhi yake nyika isiyokuwa na watu,0.0,0.0,0.0
+FLEURS|1887/6646089852122538957.wav,alipokuwa akifanya kazi hospitalini liggins alianza kuchunguza uchungu wa mapema au uzazi katika muda wake wa ziada,0.0588,0.0174,0.0174
+FLEURS|1828/17391393369618441439.wav,utafutaji wa kozi ya mazingira yenye huasama kwenye intaneti huenda pengine ukatoa anwani ya kampuni ya kienyeji,0.0588,0.0179,0.0179
+FLEURS|1866/16466308034633246650.wav,kwanza waendeshaji wengi huvaa kiatu cha boti kilicho juu na laini chembamba kabisa soli,0.0714,0.0114,0.0114
+FLEURS|1984/10993040792506934247.wav,umiliki wa magari kwa wingi pia hupelekea matukio mengi ya ajali za barabarani ambazo hupelekea uvumbuzi wa mbinu mpya katika matibabu za kutengeneza miili iliyovunjika,0.0,0.0,0.0
+FLEURS|1903/9661013170863111227.wav,wakati rasilimali zote zinapopatikana zinatumiwa kwa ufanisi katika idara zenye utendaji za shirika ubunifu na ustadi unaweza kutokea,0.0556,0.0075,0.0075
+FLEURS|1841/7374423759727909818.wav,hakuna kingine kinachoweza kuonekana ila anga safi na nzuri huko juu ya milima mingi inayolizunguka ni machache sana ya dunia hii yanayoweza kuonwa au kusikiwa ndani ya pango hili,0.0345,0.0056,0.0056

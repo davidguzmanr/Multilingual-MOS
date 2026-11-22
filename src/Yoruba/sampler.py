@@ -1,10 +1,11 @@
 """Ground-truth sampler for Yoruba (yo): picks the listening-test sentences with their human recordings from each
-dataset, copies the audio **unchanged** (original format) to audios/Yoruba/ground-truth/<dataset>/ and writes one
-metadata.csv per dataset plus a merged one. Deterministic (SEED); list orig_ids or texts in
-audios/Yoruba/ground-truth/exclude.txt to swap out bad clips without reshuffling the rest.
+dataset (WaxalNLP TTS test split, FLEURS test, Common Voice), copies the audio **unchanged** (original format) to
+audios/Yoruba/ground-truth/<dataset>/ and writes one metadata.csv per dataset plus a merged one. Deterministic (SEED); list
+orig_ids or texts in audios/Yoruba/ground-truth/exclude.txt to swap out bad clips without reshuffling the rest.
+Quality gates (skip, never modify): level, silence, stationary noise, DNSMOS P.835, ASR text match; thresholds per language.
     python "src/Yoruba/sampler.py"
 """
-import glob, hashlib, os, shutil, subprocess, sys, tempfile, unicodedata
+import glob, hashlib, io, os, shutil, subprocess, sys, tempfile, unicodedata
 import pandas as pd, soundfile as sf
 
 LANG, CODE = "Yoruba", "yo"
@@ -12,27 +13,29 @@ REPO = "/network/scratch/g/guzmand/Repositories/Multilingual-MOS"
 OUT = f"{REPO}/audios/{LANG}/ground-truth"
 SEED = 0
 MIN_S, MAX_S = 5.0, 20.0                      # clip duration in seconds
-QUALITY = dict(min_loudness_lufs=-28.0, min_peak_dbfs=-10.0,     # Yoruba thresholds (skip, never modify): level set from
-               min_snr_db=22.0, max_noise_floor_dbfs=-48.0,      # listening (-30.5 LUFS judged too quiet), silence,
-               max_edge_silence_s=1.0, max_total_edge_s=1.5,     # stationary background per band (src/audio_quality.py),
-               min_speech_ratio=0.45, max_clip_ratio=0.001,      # DNSMOS P.835 (src/dnsmos.py) and the ASR text match
-               max_band_floor_db=-35.0,                          # (src/asr_check.py, omniASR_LLM_1B_v2, CER with tone
-               min_dnsmos_bak=3.8, min_dnsmos_ovrl=3.0,          # marks stripped). None = check disabled.
-               max_cer_plain=0.30)
+QUALITY = dict(min_loudness_lufs=-28.0, min_peak_dbfs=-10.0,     # level: -30.5 LUFS was judged too quiet when listening
+               min_snr_db=22.0, max_noise_floor_dbfs=-48.0,      # frame-RMS noise floor
+               max_edge_silence_s=1.0, max_total_edge_s=1.5,     # leading / trailing silence
+               min_speech_ratio=0.45, max_clip_ratio=0.001,
+               max_band_floor_db=-35.0,                          # stationary background per band vs speech (src/audio_quality.py)
+               min_dnsmos_bak=3.8, min_dnsmos_ovrl=3.0,          # DNSMOS P.835 (src/dnsmos.py); None = check disabled
+               max_cer_plain=0.30)                               # ASR text match, omniASR_LLM_1B_v2, CER with diacritics stripped
 ASR_PYTHON = "/home/mila/g/guzmand/scratch/.conda/envs/Multilingual-MOS-asr/bin/python"
-N_OPEN_BIBLE, N_FLEURS, N_COMMON_VOICE = 12, 11, 11   # 34 sentences for 9 systems
-OPEN_BIBLE_NAME, OB_SPEAKERS = "Yoruba", 1            # single narrator
-FLEURS_CONFIG = "yo_ng"                                  # FLEURS test is male-only, no speaker ids
+QUALITY_OVERRIDES = {"WaxalNLP": dict(max_edge_silence_s=4.0, max_total_edge_s=7.0, min_speech_ratio=0.0)}   # the Yoruba Waxal studio
+# files are padded with silence (median lead 1.3 s, trail 3.8 s): kept for their studio quality, so the silence rule is loosened for
+# this dataset only (4.0 s per edge, 7.0 s total: 42 of 160 candidates pass, 12 female / 30 male); all other gates apply unchanged
+N_WAXAL, N_FLEURS, N_COMMON_VOICE = 12, 11, 11   # 34 sentences for 9 systems
+WAXAL_LANG, WAXAL_SPEAKERS_PER_GENDER, WAXAL_MIN_CHARS = "yor", 2, 25   # test: 354 clips, 8 studio speakers (4 f / 4 m), 182 in 5-20 s
+FLEURS_CONFIG = "yo_ng"                                  # FLEURS test is male-only, no speaker ids; 89 clips pass the level gate
 CV_DOMAIN = {"sentence-collector": "news"}               # Nigerian news prose
-CV_SPEAKERS_PER_GENDER = 3                               # 25 female / 15 male speakers pass the filters
+CV_SPEAKERS_PER_GENDER = 3
 
 def text_ok(text):
     """Yoruba needs tone marks: require at least 3 letters carrying a diacritic (FLEURS and Common Voice are inconsistent)."""
     return sum(1 for ch in unicodedata.normalize("NFD", text) if unicodedata.combining(ch)) >= 3
-
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]
-LICENCE = {"Open Bible": "CC BY-SA 4.0 (Biblica via open.bible)", "FLEURS": "CC BY 4.0", "Common Voice": "CC0 (MDC terms: no re-hosting)"}
+LICENCE = {"WaxalNLP": "CC BY-SA 4.0 (google/WaxalNLP)", "FLEURS": "CC BY 4.0", "Common Voice": "CC0 (MDC terms: no re-hosting)"}
 DATA = f"{REPO}/data"
 sys.path.insert(0, f"{REPO}/src"); from audio_quality import measure, passes, METRIC_COLUMNS, DNSMOS_COLUMNS   # noqa: E402
 from dnsmos import DNSMOS   # noqa: E402
@@ -46,13 +49,14 @@ _rejected = []
 def quality(row, audio_of, dataset):
     """Metrics for one candidate (cached). Returns the metrics dict plus _ok / _why."""
     key = f"{dataset}|{row.orig_id}"
-    if key not in _cache or any(c not in _cache[key] for c in DNSMOS_COLUMNS):
-        src = audio_of(row); m = {**measure(src), **_dnsmos.score(src)}; ok, why = passes(m, QUALITY)
-        _cache[key] = {**{c: m[c] for c in METRIC_COLUMNS + DNSMOS_COLUMNS}, "ok": ok, "why": "; ".join(why)}
+    if key not in _cache or any(c not in _cache[key] for c in METRIC_COLUMNS + DNSMOS_COLUMNS):
+        src = audio_of(row); m = {**measure(src), **_dnsmos.score(src)}
+        _cache[key] = {c: m[c] for c in METRIC_COLUMNS + DNSMOS_COLUMNS}
         os.makedirs(os.path.dirname(CACHE), exist_ok=True)
         pd.DataFrame.from_dict(_cache, orient="index").rename_axis("key").to_csv(CACHE)
-    m = _cache[key]
-    if not m["ok"]: _rejected.append((dataset, row.orig_id, m["why"]))
+    m = dict(_cache[key]); ok, why = passes(m, {**QUALITY, **QUALITY_OVERRIDES.get(dataset, {})})   # thresholds re-applied every run, only metrics cached
+    m["ok"], m["why"] = ok, "; ".join(why)
+    if not ok: _rejected.append((dataset, row.orig_id, m["why"]))
     return m
 
 
@@ -73,16 +77,19 @@ def spread(df, n, by, k, audio_of, dataset, quiet=False):
     Each candidate is measured lazily; clips failing QUALITY are skipped and the next one of that speaker is tried."""
     if len(df) == 0: return pd.DataFrame(columns=list(df.columns) + METRIC_COLUMNS + DNSMOS_COLUMNS)
     df = shuffled(df)
-    groups = [g for _, g in sorted(df.groupby(by), key=lambda kv: (-len(kv[1]), kv[0]))][:k]
-    picked, i = [], 0
-    while len(picked) < n and any(len(g) for g in groups):
-        g = groups[i % len(groups)]
-        if len(g):
-            row = g.iloc[0]; groups[i % len(groups)] = g.iloc[1:]
-            m = quality(row, audio_of, dataset)
-            if m["ok"]: picked.append(pd.concat([row, pd.Series({c: m[c] for c in METRIC_COLUMNS + DNSMOS_COLUMNS})]))
-            else: continue                                   # same speaker gets the next turn: i is not advanced
-        i += 1
+    queue = [g for _, g in sorted(df.groupby(by), key=lambda kv: (-len(kv[1]), kv[0]))]
+    active = queue[:k]; queue = queue[k:]                     # k speakers in rotation; a speaker whose clips all fail the
+    picked, i = [], 0                                         # gates is replaced by the next most-recorded speaker
+    while len(picked) < n and active:
+        j = i % len(active); g = active[j]
+        if len(g) == 0:
+            active.pop(j)
+            if queue: active.insert(j, queue.pop(0))
+            continue
+        row = g.iloc[0]; active[j] = g.iloc[1:]
+        m = quality(row, audio_of, dataset)
+        if m["ok"]: picked.append(pd.concat([row, pd.Series({c: m[c] for c in METRIC_COLUMNS + DNSMOS_COLUMNS})])); i += 1
+        # a rejected clip gives the same speaker the next turn: i is not advanced
     if len(picked) < n and not quiet: print(f"   WARNING: only {len(picked)} of {n} available")
     return pd.DataFrame(picked, columns=list(df.columns) + METRIC_COLUMNS + DNSMOS_COLUMNS)
 
@@ -142,7 +149,7 @@ def with_asr(select, audio_of, dataset, rounds=6):
 def write(dataset, picks, audio_of):
     """picks: DataFrame with the COLUMNS except clip_id/audio_path/sample_rate; audio_of(row) -> bytes or source path."""
     d = f"{OUT}/{dataset}"; shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
-    tag = {"Open Bible": "ob", "FLEURS": "fl", "Common Voice": "cv"}[dataset]
+    tag = {"WaxalNLP": "wx", "FLEURS": "fl", "Common Voice": "cv"}[dataset]
     rows = []
     for i, (_, r) in enumerate(picks.iterrows(), 1):
         a = audio_of(r)
@@ -161,17 +168,19 @@ def write(dataset, picks, audio_of):
     return out
 
 
-def sample_open_bible(n):
-    files = sorted(glob.glob(f"{DATA}/Open-Bible/{OPEN_BIBLE_NAME}/test*.parquet"))
+def sample_waxal(n):
+    """google/WaxalNLP <lang>_tts **test** split (studio read speech, phonetically balanced scripts, 48 kHz mp3, speaker id
+    and gender per clip), downloaded with snapshot_download(allow_patterns=["data/TTS/<lang>/*test*"]) to data/WaxalNLP/."""
+    files = sorted(glob.glob(f"{DATA}/WaxalNLP/data/TTS/{WAXAL_LANG}/*test*.parquet"))
     df = pd.concat([pd.read_parquet(f) for f in files], ignore_index=True)
-    df = df.assign(text=df.text.str.strip(), duration_s=df.duration_seconds.astype(float), speaker_id=df.speaker_id,
-                   gender="unknown", age="", domain="scripture", source="Open Bible " + df.testament.astype(str),
-                   orig_id=df.book + " " + df.chapter + ":" + df.verse + "/" + df.audio.map(lambda a: a["path"]))
-    df = df[df.duration_s.between(MIN_S, MAX_S)].drop_duplicates("text")
+    df = df.assign(text=df.text.str.strip(), duration_s=[sf.info(io.BytesIO(a["bytes"])).duration for a in df.audio],
+                   speaker_id="waxal-" + df.speaker_id.astype(str), gender=df.gender.str.lower(), age="", domain="read script",
+                   source=f"WaxalNLP {WAXAL_LANG}_tts test", orig_id=df.audio.map(lambda a: a["path"]))
+    df = df[df.duration_s.between(MIN_S, MAX_S) & df.text.map(text_ok) & (df.text.str.len() >= WAXAL_MIN_CHARS)].drop_duplicates("text")
     df = df[~df.orig_id.isin(excluded()) & ~df.text.isin(excluded())]
     audio_of = lambda r: r.audio["bytes"]
-    picks = with_asr(lambda: spread(df[~df.orig_id.isin(_asr_bad)], n, "speaker_id", OB_SPEAKERS, audio_of, "Open Bible"), audio_of, "Open Bible")
-    return write("Open Bible", picks, audio_of)
+    picks = with_asr(lambda: gender_balanced(df[~df.orig_id.isin(_asr_bad)], n, "speaker_id", WAXAL_SPEAKERS_PER_GENDER, audio_of, "WaxalNLP"), audio_of, "WaxalNLP")
+    return write("WaxalNLP", picks, audio_of)
 
 
 def sample_fleurs(n):
@@ -217,7 +226,7 @@ def sample_common_voice(n):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    parts = [sample_open_bible(N_OPEN_BIBLE)] if N_OPEN_BIBLE else []
+    parts = [sample_waxal(N_WAXAL)] if N_WAXAL else []
     parts += [sample_fleurs(N_FLEURS)] if N_FLEURS else []
     parts += [sample_common_voice(N_COMMON_VOICE)] if N_COMMON_VOICE else []
     all_ = pd.concat(parts, ignore_index=True); all_.to_csv(f"{OUT}/metadata.csv", index=False)
