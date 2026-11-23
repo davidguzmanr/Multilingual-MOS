@@ -14,7 +14,8 @@ voices = load_references(args.language)
 
 from huggingface_hub import snapshot_download
 from voxcpm import VoxCPM
-model = VoxCPM.from_pretrained(snapshot_download(model_id), load_denoiser=False)    # local dir, as the fine-tune card does
+model = VoxCPM.from_pretrained(snapshot_download(model_id), load_denoiser=False, optimize=False)   # local dir, as the fine-tune card does;
+# optimize=False skips torch.compile: its Triton helper failed to build with gcc on two cluster nodes (slower inference, same output)
 
 def synth(text, voice):
     torch.manual_seed(SEED)

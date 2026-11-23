@@ -29,6 +29,7 @@ CV_DOMAIN = {"sentence-collector": "conversational"}     # everyday conversation
 CV_SPEAKERS_PER_GENDER = 3                               # 2 female / 7 male speakers pass the filters
 
 def text_ok(text):
+    if any(ch.isdigit() for ch in text): return False          # no digits: every TTS reads numbers differently
     return True                                          # no text filter for Hausa
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]
@@ -207,6 +208,9 @@ def sample_common_voice(n):
     df = df[df.source.isin("Common Voice: " + pd.Series(list(CV_DOMAIN))) & df.duration_s.between(MIN_S, MAX_S)
             & (df.up_votes.astype(int) >= 2) & (df.down_votes.astype(int) == 0) & df.text.map(text_ok)]
     df = df[~df.orig_id.isin(excluded()) & ~df.text.isin(excluded())]
+    refs_path = f"{OUT}/../reference-voices/metadata.csv"                       # references are picked first (src/synthesis/references.py):
+    if os.path.exists(refs_path):                                                # their speakers and sentences stay out of the ground truth
+        refs = pd.read_csv(refs_path, dtype=str); df = df[~df.speaker_id.isin(set(refs.speaker_id)) & ~df.text.isin(set(refs.text))]
     df = shuffled(df).drop_duplicates("sentence_id")                             # one clip per sentence
     audio_of = lambda r: f"{d}/clips/{r.path}"
     def select():                                                                  # n split evenly over the sources

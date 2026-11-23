@@ -223,24 +223,33 @@ FLEURS,1804/2336209122559760518.wav,quiet -43.64 LUFS; low peak -24.71 dBFS; snr
 FLEURS,1967/10112352765273720289.wav,DNSMOS BAK 3.714; DNSMOS OVRL 2.909
 FLEURS,1748/12540197613249881119.wav,low peak -18.07 dBFS
 FLEURS,1862/5244925374841357030.wav,low peak -17.06 dBFS
-Common Voice,common_voice_sw_30360690.mp3,lead silence 1.09 s; edge silence total 1.73 s
-Common Voice,common_voice_sw_30394861.mp3,edge silence total 1.51 s
-Common Voice,common_voice_sw_30361751.mp3,DNSMOS BAK 3.653; DNSMOS OVRL 2.935
-Common Voice,common_voice_sw_30318750.mp3,lead silence 1.33 s; edge silence total 2.10 s
-Common Voice,common_voice_sw_29792607.mp3,edge silence total 1.57 s
 Common Voice,common_voice_sw_30327757.mp3,DNSMOS BAK 3.751; DNSMOS OVRL 2.968
 Common Voice,common_voice_sw_30262084.mp3,DNSMOS BAK 3.129; DNSMOS OVRL 2.534
 Common Voice,common_voice_sw_30355447.mp3,DNSMOS OVRL 2.815
 Common Voice,common_voice_sw_30074698.mp3,DNSMOS BAK 3.71; DNSMOS OVRL 2.924
 Common Voice,common_voice_sw_30131329.mp3,DNSMOS BAK 3.714; DNSMOS OVRL 2.45
 Common Voice,common_voice_sw_29901074.mp3,noise floor -46.29 dBFS
-Common Voice,common_voice_sw_30389878.mp3,lead silence 1.08 s; edge silence total 2.07 s
+Common Voice,common_voice_sw_30231317.mp3,stationary noise -29.9 dB; DNSMOS OVRL 2.732
+Common Voice,common_voice_sw_30074870.mp3,edge silence total 1.70 s; DNSMOS BAK 3.684; DNSMOS OVRL 2.608
+Common Voice,common_voice_sw_30074839.mp3,trail silence 1.03 s; stationary noise -34.6 dB; DNSMOS BAK 3.227; DNSMOS OVRL 2.374
+Common Voice,common_voice_sw_30052924.mp3,DNSMOS BAK 3.781
+Common Voice,common_voice_sw_30314689.mp3,edge silence total 1.52 s; stationary noise -33.3 dB; DNSMOS BAK 3.725; DNSMOS OVRL 2.697
+Common Voice,common_voice_sw_30089728.mp3,DNSMOS BAK 3.323; DNSMOS OVRL 2.573
+Common Voice,common_voice_sw_30176901.mp3,stationary noise -34.3 dB; DNSMOS BAK 3.612; DNSMOS OVRL 2.472
+Common Voice,common_voice_sw_30188888.mp3,stationary noise -32.9 dB; DNSMOS BAK 3.683; DNSMOS OVRL 2.81
+Common Voice,common_voice_sw_30275090.mp3,stationary noise -31.3 dB; DNSMOS BAK 3.553; DNSMOS OVRL 2.759
+Common Voice,common_voice_sw_30234589.mp3,stationary noise -27.8 dB; DNSMOS BAK 3.712; DNSMOS OVRL 2.534
+Common Voice,common_voice_sw_30275371.mp3,stationary noise -30.1 dB; DNSMOS OVRL 2.959
+Common Voice,common_voice_sw_30242948.mp3,stationary noise -33.6 dB; DNSMOS BAK 2.866; DNSMOS OVRL 2.442
+Common Voice,common_voice_sw_30363813.mp3,stationary noise -34.0 dB; DNSMOS BAK 3.406; DNSMOS OVRL 2.682
 Common Voice,common_voice_sw_30073191.mp3,DNSMOS OVRL 2.914
 Common Voice,common_voice_sw_30350582.mp3,DNSMOS BAK 3.393; DNSMOS OVRL 2.693
 Common Voice,common_voice_sw_30330380.mp3,stationary noise -32.1 dB; DNSMOS BAK 2.974; DNSMOS OVRL 2.432
 Common Voice,common_voice_sw_30313835.mp3,DNSMOS BAK 3.736; DNSMOS OVRL 2.812
 Common Voice,common_voice_sw_30000984.mp3,quiet -33.07 LUFS; low peak -20.66 dBFS; stationary noise -28.6 dB; DNSMOS BAK 3.302; DNSMOS OVRL 2.338
 Common Voice,common_voice_sw_30314698.mp3,DNSMOS BAK 3.682; DNSMOS OVRL 2.805
+Common Voice,common_voice_sw_30138692.mp3,DNSMOS BAK 3.668; DNSMOS OVRL 2.933
+Common Voice,common_voice_sw_30021349.mp3,DNSMOS OVRL 2.845
 Common Voice,common_voice_sw_29821120.mp3,stationary noise -28.0 dB
 Common Voice,common_voice_sw_30051699.mp3,stationary noise -34.3 dB; DNSMOS BAK 3.476; DNSMOS OVRL 2.891
 Common Voice,common_voice_sw_29981748.mp3,stationary noise -31.6 dB; DNSMOS BAK 3.502; DNSMOS OVRL 2.906
@@ -248,12 +257,15 @@ Common Voice,common_voice_sw_30223013.mp3,DNSMOS BAK 3.59; DNSMOS OVRL 2.695
 Common Voice,common_voice_sw_30059374.mp3,DNSMOS BAK 3.767; DNSMOS OVRL 2.998
 Common Voice,common_voice_sw_29864234.mp3,stationary noise -34.6 dB; DNSMOS BAK 3.253; DNSMOS OVRL 2.704
 Common Voice,common_voice_sw_30133421.mp3,noise floor -46.81 dBFS; stationary noise -26.4 dB; DNSMOS BAK 3.634; DNSMOS OVRL 2.524
+Common Voice,common_voice_sw_30441421.mp3,trail silence 1.06 s; DNSMOS OVRL 2.975
+Common Voice,common_voice_sw_30515437.mp3,trail silence 1.1 s; edge silence total 1.79 s
+Common Voice,common_voice_sw_30486178.mp3,trail silence 1.02 s; edge silence total 1.80 s
+Common Voice,common_voice_sw_30465497.mp3,edge silence total 1.51 s
+Common Voice,common_voice_sw_30432924.mp3,lead silence 1.74 s; edge silence total 2.61 s
+Common Voice,common_voice_sw_30519827.mp3,trail silence 1.25 s; edge silence total 1.98 s
 Common Voice,common_voice_sw_29851569.mp3,stationary noise -25.9 dB; DNSMOS BAK 3.448; DNSMOS OVRL 2.913
 Common Voice,common_voice_sw_30219783.mp3,edge silence total 1.57 s; stationary noise -34.4 dB; DNSMOS BAK 2.87; DNSMOS OVRL 2.406
 Common Voice,common_voice_sw_30264482.mp3,stationary noise -34.7 dB; DNSMOS BAK 3.674
 Common Voice,common_voice_sw_30311491.mp3,noise floor -45.3 dBFS; DNSMOS BAK 3.5; DNSMOS OVRL 2.984
-Common Voice,common_voice_sw_30061777.mp3,DNSMOS BAK 3.713; DNSMOS OVRL 2.909
-Common Voice,common_voice_sw_29974085.mp3,DNSMOS BAK 3.568; DNSMOS OVRL 2.753
-Common Voice,common_voice_sw_30009094.mp3,DNSMOS BAK 2.982; DNSMOS OVRL 2.427
-Common Voice,common_voice_sw_30062053.mp3,DNSMOS BAK 3.78
-Common Voice,common_voice_sw_30052017.mp3,edge silence total 1.55 s
+Common Voice,common_voice_sw_30515380.mp3,trail silence 1.28 s; edge silence total 1.98 s
+Common Voice,common_voice_sw_30439767.mp3,lead silence 1.06 s; edge silence total 1.91 s

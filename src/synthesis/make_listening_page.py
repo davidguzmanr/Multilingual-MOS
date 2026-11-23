@@ -18,7 +18,7 @@ for m in sorted(glob.glob(f"{root}/*/metadata.csv")):
     if name in ("ground-truth", "reference-voices") or name in exclude: continue
     d = pd.read_csv(m, dtype=str)
     systems[name] = {r.clip_id: (os.path.relpath(f"{REPO}/{r.audio_path}", root), f"{r.voice_id} · {float(r.duration_s):.1f} s") for r in d.itertuples()}
-refs = pd.read_csv(f"{root}/reference-voices/metadata.csv", dtype=str) if os.path.exists(f"{root}/reference-voices/metadata.csv") else None
+refs = pd.read_csv(f"{root}/reference-voices/metadata.csv", dtype=str, keep_default_na=False) if os.path.exists(f"{root}/reference-voices/metadata.csv") else None
 
 def player(rel, label):
     """The ?v= query string is the file's mtime: clip ids are reused when the ground truth is re-sampled, and without it the
@@ -34,7 +34,9 @@ for r in gt.itertuples():
     rows.append(f"<tr><th class=id>{r.clip_id}<br><small>{html.escape(r.dataset)} · {html.escape(r.domain)}</small>"
                 f"<div class=txt>{html.escape(r.text)}</div></th>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
 ref_html = "" if refs is None else "<h2>Reference voices (cloning models)</h2><table><tr>" + "".join(
-    f"<td>{player(os.path.relpath(f'{REPO}/{x.audio_path}', root), f'{x.ref_id} · {x.gender} · {x.age}')}<div class=txt>{html.escape(x.text)}</div></td>"
+    f"<td>{player(os.path.relpath(f'{REPO}/{x.audio_path}', root), f'{x.ref_id} · {x.gender} · {x.dataset} · {x.speaker_id}')}"
+    f"<div class=lab>{float(x.loudness_lufs):.1f} LUFS · BAK {float(x.dnsmos_bak):.2f} · OVRL {float(x.dnsmos_ovrl):.2f} · CER {float(x.cer_plain):.2f}{' · relaxed: ' + x.relaxed if x.relaxed else ''}{' · TRIMMED ' + x.trimmed if getattr(x, 'trimmed', '') else ''}</div>"
+    f"<div class=txt>{html.escape(x.text)}</div></td>"
     for x in refs.itertuples()) + "</tr></table>"
 page = f"""<!doctype html><html><head><meta charset="utf-8"><title>{html.escape(args.language)} listening page</title>
 <style>
