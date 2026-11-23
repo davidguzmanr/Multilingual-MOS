@@ -5,7 +5,7 @@ orig_ids or texts in audios/Yoruba/ground-truth/exclude.txt to swap out bad clip
 Quality gates (skip, never modify): level, silence, stationary noise, DNSMOS P.835, ASR text match; thresholds per language.
     python "src/Yoruba/sampler.py"
 """
-import glob, hashlib, io, os, shutil, subprocess, sys, tempfile, unicodedata
+import glob, hashlib, io, os, re, shutil, subprocess, sys, tempfile, unicodedata
 import pandas as pd, soundfile as sf
 
 LANG, CODE = "Yoruba", "yo"
@@ -30,8 +30,12 @@ FLEURS_CONFIG = "yo_ng"                                  # FLEURS test is male-o
 CV_DOMAIN = {"sentence-collector": "news"}               # Nigerian news prose
 CV_SPEAKERS_PER_GENDER = 3
 
+ALLOWED_PUNCT = set(".,;:!?'’‘\"“”«»-–—()")      # everything else that is not a letter, mark or space is rejected by text_ok
+
 def text_ok(text):
     if any(ch.isdigit() for ch in text): return False          # no digits: every TTS reads numbers differently
+    if re.search(r"\b[A-Z]{2,}\b|\b(?:[A-Z]\.){2,}", text): return False   # no acronyms (ALLCAPS tokens, dotted abbreviations)
+    if any(unicodedata.category(ch)[0] not in "LM" and not ch.isspace() and ch not in ALLOWED_PUNCT for ch in text): return False   # no symbols/units (%, °, $, /, &, ...)
     """Yoruba needs tone marks: require at least 3 letters carrying a diacritic (FLEURS and Common Voice are inconsistent)."""
     return sum(1 for ch in unicodedata.normalize("NFD", text) if unicodedata.combining(ch)) >= 3
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",

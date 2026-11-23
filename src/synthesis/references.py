@@ -26,6 +26,9 @@ RELAX = [dict(), dict(max_edge_silence_s=1.5, max_total_edge_s=2.5), dict(max_ed
               min_speech_ratio=0.3)]                                                   # last resort: studio clips padded with silence (WaxalNLP)
 MAX_CER, MIN_CHARS, CANDIDATES_PER_GENDER = 0.10, 40, 8
 NO_DIGITS = lambda s: not any(ch.isdigit() for ch in str(s))      # reference transcripts without numbers, like the ground truth
+NO_ACRONYMS = lambda s: not __import__('re').search(r"\b[A-Z]{2,}\b|\b(?:[A-Z]\.){2,}", str(s))
+ALLOWED_PUNCT = set(".,;:!?'’‘\"“”«»-–—()")
+NO_SYMBOLS = lambda s: all(__import__('unicodedata').category(ch)[0] in "LM" or ch.isspace() or ch in ALLOWED_PUNCT for ch in str(s))
 COLUMNS = ["ref_id", "language", "lang_code", "dataset", "source", "speaker_id", "gender", "age", "text", "duration_s", "sample_rate", "orig_id",
            "audio_path", "asr_hyp", "cer", "cer_plain", "relaxed", "trimmed"] + METRIC_COLUMNS + DNSMOS_COLUMNS
 
@@ -78,7 +81,7 @@ if d:
     v = v.merge(s, on="sentence_id", how="left").merge(dur, on="path", how="left")
     v["duration_s"] = v.ms.astype(float) / 1000; v["gender"] = v.gender.map({"female_feminine": "female", "male_masculine": "male"}); v["speaker_id"] = v.client_id.str[:12]
     v = v[v.gender.notna() & v.duration_s.between(args.min_s, args.max_s) & (v.up_votes.astype(int) >= 2) & (v.down_votes.astype(int) == 0)
-          & (v.sentence.str.strip().str.len() >= MIN_CHARS) & v.sentence.map(NO_DIGITS) & ~v.speaker_id.isin(set(filter(None, args.exclude_speakers.split(","))))]   # references come first; the sampler avoids them
+          & (v.sentence.str.strip().str.len() >= MIN_CHARS) & v.sentence.map(NO_DIGITS) & v.sentence.map(NO_ACRONYMS) & v.sentence.map(NO_SYMBOLS) & ~v.speaker_id.isin(set(filter(None, args.exclude_speakers.split(","))))]   # references come first; the sampler avoids them
     for r in v.itertuples():
         cands.append(dict(dataset="Common Voice", source=f"Common Voice: {r.source}", speaker_id=r.speaker_id, gender=r.gender, age=r.age if isinstance(r.age, str) else "",
                           text=r.sentence.strip(), duration_s=r.duration_s, orig_id=r.path, audio=f"{d}/clips/{r.path}"))

@@ -28,7 +28,11 @@ if not args.dry_run:
     else: sys.exit("higgs server did not come up within an hour")
 
 def synth(text, voice):
-    body = dict(model=MODEL_ID, voice="default", input=text, references=[dict(audio_path=voice["audio_path"], text=voice["text"])], **GEN)
+    # cap the generation at ~2x the expected duration (0.1 s per character + 2 s, at 25 tokens/s) so a runaway stops early
+    # instead of at the 1024-token / 40.7 s ceiling observed on 4 of 72 Hausa+Swahili clips
+    expected_s = 0.1 * len(text) + 2.0
+    gen = {**GEN, "max_new_tokens": int(min(GEN["max_new_tokens"], 25 * min(2.0 * expected_s, expected_s + 10.0)))}   # at most +10 s over the estimate
+    body = dict(model=MODEL_ID, voice="default", input=text, references=[dict(audio_path=voice["audio_path"], text=voice["text"])], **gen)
     for attempt in range(3):
         r = requests.post(f"http://127.0.0.1:{PORT}/v1/audio/speech", json=body, timeout=600)
         if r.ok: wav, sr = sf.read(io.BytesIO(r.content), dtype="int16"); return wav, sr

@@ -5,7 +5,7 @@ orig_ids or texts in audios/Hausa/ground-truth/exclude.txt to swap out bad clips
 Quality gates (skip, never modify): level, silence, stationary noise, DNSMOS P.835, ASR text match; thresholds per language.
     python "src/Hausa/sampler.py"
 """
-import glob, hashlib, io, os, shutil, subprocess, sys, tempfile, unicodedata
+import glob, hashlib, io, os, re, shutil, subprocess, sys, tempfile, unicodedata
 import pandas as pd, soundfile as sf
 
 LANG, CODE = "Hausa", "ha"
@@ -28,8 +28,12 @@ FLEURS_CONFIG = "ha_ng"                                  # FLEURS test is female
 CV_DOMAIN = {"sentence-collector": "conversational"}     # everyday conversation
 CV_SPEAKERS_PER_GENDER = 3                               # 2 female / 7 male speakers pass the filters
 
+ALLOWED_PUNCT = set(".,;:!?'’‘\"“”«»-–—()")      # everything else that is not a letter, mark or space is rejected by text_ok
+
 def text_ok(text):
     if any(ch.isdigit() for ch in text): return False          # no digits: every TTS reads numbers differently
+    if re.search(r"\b[A-Z]{2,}\b|\b(?:[A-Z]\.){2,}", text): return False   # no acronyms (ALLCAPS tokens, dotted abbreviations)
+    if any(unicodedata.category(ch)[0] not in "LM" and not ch.isspace() and ch not in ALLOWED_PUNCT for ch in text): return False   # no symbols/units (%, °, $, /, &, ...)
     return True                                          # no text filter for Hausa
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]

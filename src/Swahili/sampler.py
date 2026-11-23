@@ -5,7 +5,7 @@ orig_ids or texts in audios/Swahili/ground-truth/exclude.txt to swap out bad cli
 Quality gates (skip, never modify): level, silence, stationary noise, DNSMOS P.835, ASR text match; thresholds per language.
     python "src/Swahili/sampler.py"
 """
-import glob, hashlib, io, os, shutil, subprocess, sys, tempfile, unicodedata
+import glob, hashlib, io, os, re, shutil, subprocess, sys, tempfile, unicodedata
 import pandas as pd, soundfile as sf
 
 LANG, CODE = "Swahili", "sw"
@@ -30,8 +30,12 @@ FLEURS_CONFIG = "sw_ke"                                  # both genders present 
 CV_DOMAIN = {"batch-1-19-11-2021-contributors-set": "news"}      # East African news only: the everyday set (batch-3) has 68
 CV_SPEAKERS_PER_GENDER = 3                                       # gender-tagged clips in 5-20 s and none pass the DNSMOS gate
 
+ALLOWED_PUNCT = set(".,;:!?'’‘\"“”«»-–—()")      # everything else that is not a letter, mark or space is rejected by text_ok
+
 def text_ok(text):
     if any(ch.isdigit() for ch in text): return False          # no digits: every TTS reads numbers differently
+    if re.search(r"\b[A-Z]{2,}\b|\b(?:[A-Z]\.){2,}", text): return False   # no acronyms (ALLCAPS tokens, dotted abbreviations)
+    if any(unicodedata.category(ch)[0] not in "LM" and not ch.isspace() and ch not in ALLOWED_PUNCT for ch in text): return False   # no symbols/units (%, °, $, /, &, ...)
     return True                                          # no text filter for Swahili
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]

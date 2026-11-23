@@ -241,3 +241,5 @@ audios/**/*.mp3
 audios/**/*.flac
 synthesis_output/
 data/WaxalNLP/
+repositories/UTMOSv2/
+upwork/
