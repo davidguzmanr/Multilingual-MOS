@@ -234,3 +234,10 @@ data/figures/
 data/Common-Voice/
 # Slurm job output logs
 jobs/**/*.out
+/audios/
+data/FLEURS/
+data/Open-Bible/
+data/proxy/
+data/WaxalNLP/
+synthesis_output/
+upwork/

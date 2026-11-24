@@ -20,9 +20,9 @@
   <Header value="2. Intelligibility: does the audio say exactly the reference text, word for word?" size="4" />
   <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Mostly wrong" hint="Most of the text missing or wrong, a different sentence or language, or unintelligible." />
-    <Choice value="2 - Several errors" hint="Several words wrong or missing, or part of the sentence cut off." />
-    <Choice value="3 - One error" hint="One word wrong, missing, added, or mispronounced so it changes or hides the meaning." />
-    <Choice value="4 - Minor slip" hint="A word slightly mispronounced, but the meaning is clear." />
+    <Choice value="2 - Many errors" hint="Many words wrong, missing or mispronounced, or part of the sentence cut off; hard to follow." />
+    <Choice value="3 - A few errors" hint="Two or three words wrong, missing, added, mispronounced or hard to make out; the sentence can still be followed." />
+    <Choice value="4 - Minor slip" hint="One word wrong, missing, mispronounced or hard to make out; the sentence is still easy to follow." />
     <Choice value="5 - Every word correct" hint="Nothing missing, added or mispronounced." />
   </Choices>
 </View>
