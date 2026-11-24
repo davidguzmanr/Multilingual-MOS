@@ -8,21 +8,21 @@
 
   <Audio name="audio" value="$audio_url" />
 
-  <Header value="1. Naturalness: does the voice sound like a real person speaking?" size="4" />
+  <Header value="1. Naturalness: how natural does the voice sound, like a real person speaking? Judge only how it sounds, not whether the words are correct." size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
     <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
-    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat), but easy to follow." />
+    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat)." />
     <Choice value="4 - Mostly natural" hint="Small artifacts or slightly odd rhythm, noticeable only when listening closely." />
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Intelligibility: does the audio say exactly the reference text, word for word?" size="4" />
+  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Count the words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
   <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
-    <Choice value="1 - Mostly wrong" hint="Most of the text missing or wrong, a different sentence or language, or unintelligible." />
-    <Choice value="2 - Many errors" hint="Many words wrong, missing or mispronounced, or part of the sentence cut off; hard to follow." />
-    <Choice value="3 - A few errors" hint="Two or three words wrong, missing, added, mispronounced or hard to make out; the sentence can still be followed." />
-    <Choice value="4 - Minor slip" hint="One word wrong, missing, mispronounced or hard to make out; the sentence is still easy to follow." />
-    <Choice value="5 - Every word correct" hint="Nothing missing, added or mispronounced." />
+    <Choice value="1 - Mostly wrong" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
+    <Choice value="2 - Many words off" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off." />
+    <Choice value="3 - A few words off" hint="Two or three words are unclear, wrong, missing, added or repeated." />
+    <Choice value="4 - One word off" hint="One word is unclear, wrong, missing, added or repeated. Everything else is correct." />
+    <Choice value="5 - Every word correct" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
   </Choices>
 </View>

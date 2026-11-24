@@ -10,10 +10,10 @@ GPU). Open `index.html` in a browser to listen to all clips with their target sc
 | # | File | Naturalness | Intelligibility | What was done | Talking point |
 |---|---|:-:|:-:|---|---|
 | 1 | `01_nat5_int5.wav` | 5 | 5 | Original recording | The reference: a real person, every word right |
-| 2 | `02_nat3_int4.wav` | 3 | 4 | Neural-HMM, an older TTS | Clearly synthetic: flat, muffled and buzzy; a word or two is blurred, still easy to follow |
-| 3 | `03_nat2_int3.wav` | 2 | 3 | Robotization (phase zeroed) | Robotic and tiring; the buzz makes several words hard to make out |
+| 2 | `02_nat3_int4.wav` | 3 | 4 | Neural-HMM, an older TTS | Clearly synthetic: flat, muffled and buzzy; one word ('purpose') is unclear |
+| 3 | `03_nat2_int3.wav` | 2 | 3 | Robotization (phase zeroed) | Robotic and tiring; the buzz makes a few words unclear |
 | 4 | `04_nat1_int2.wav` | 1 | 2 | VITS sampled with far too much noise | The model falls apart: garbled, barely speech; only fragments of the text survive |
-| 5 | `05_nat4_int3.wav` | 4 | 3 | VITS says "these these" and "hoose" for "house" | A repeated word and a mispronounced word: two errors, still followable |
+| 5 | `05_nat4_int3.wav` | 4 | 3 | VITS says "these these" and "hoose" for "house" | A repeated word and a mispronounced word: two words off |
 | 6 | `06_nat5_int2.wav` | 5 | 2 | Audio cut after "after lapsing into crime," | Missing end of sentence is an intelligibility problem |
 | 7 | `07_nat5_int1.wav` | 5 | 1 | Audio is a different sentence | Natural voice, completely wrong content |
 | 8 | `08_nat3_int3.wav` | 3 | 3 | Neural-HMM skips "ordinary" and says "wahrds" | Both problems at once: rate each separately |
@@ -24,10 +24,15 @@ naturalness (5, 4, 3, 2). All clips are
 loudness-matched to the natural recording of their sentence. Full metadata, including the exact text
 shown, is in `examples.csv`.
 
-**Intelligibility scale.** The hints in `labeling_config.xml` count errors, where a word that is hard to
-make out also counts: 4 = one word wrong, missing, mispronounced or hard to make out, easy to follow;
-3 = two or three such words, still followable; 2 = many errors or part of the
-sentence cut off, hard to follow; 1 = mostly wrong, a different sentence, or unintelligible.
+**Intelligibility scale.** The question in `labeling_config.xml` asks whether all the words are clear and
+the same as in the text, and the anchors count words that are unclear, wrong, missing, added or repeated,
+or cut off: 5 = every word correct; 4 = one word off; 3 = a few words off (two or three); 2 = many words
+off, or part of the text skipped or cut off; 1 = mostly wrong, a different sentence or language, or no
+words made out. The instructions add three rules: spelling and missing accent marks in the text are not
+errors, a wrong tone or vowel length that makes a different word is an error, and a word you cannot make
+out counts even if you can guess it from the text. The naturalness question tells raters to judge only how
+the voice sounds, not whether the words are correct. Rationale and sources: `reports/Intelligibility in
+TTS listening tests.md` (local, not tracked).
 
 **How the errors were made.** Mispronunciations are G2P errors, the way TTS systems actually make them:
 the phonemes of a word are replaced before synthesis (`hˈaʊs` → `hˈuːs`, `wˈɔːɹdz` → `wˈɑːɹdz`) and the
@@ -76,7 +81,7 @@ On the screen, you always see the text that the voice should say.
 
 For each clip, you answer two questions."
 
-### 2. The screen and the two questions (60 s)
+### 2. The screen and the two questions (90 s)
 
 *[Point to each part of the screen as you mention it.]*
 
@@ -84,14 +89,21 @@ For each clip, you answer two questions."
 the voice should say. Then you have the audio player. Listen to the whole clip. You can play it
 again as many times as you need.
 
-Question one is **naturalness**. Does the voice sound like a real person? Listen to the rhythm, the
-melody of the voice, and any buzzing, metallic or robotic sound. Five means it sounds like a real
-person. One means it barely sounds like speech.
+Question one is **naturalness**. How natural does the voice sound? Does it sound like a real person
+speaking? Listen to the rhythm, the melody of the voice, and any buzzing, metallic or robotic sound.
+Judge only how it sounds, not whether the words are correct. Five means it sounds like a real person.
+One means it barely sounds like speech.
 
-Question two is **intelligibility**. Does the audio say exactly the text on the screen? Can you
-hear every word clearly? Listen for words that are wrong, missing, repeated, or pronounced badly,
-and for words that are hard to understand. Five means every word is correct and clear. One means
-most of the text is wrong, or you cannot understand it.
+Question two is **intelligibility**. Are all the words clear, and the same as in the text? Listen
+while you read the text, and count the words with a problem: words that are unclear, wrong, missing,
+added or repeated, or cut off. Five means every word is correct and clear. Four means one word has a
+problem. Three means two or three words. Two means many words, or a part of the text is missing. One
+means most of the text is wrong, or it is a different sentence.
+
+Three rules. Judge the spoken words, not the spelling: if the text spells a word differently, or has
+no accent marks, that is not an error. A regional accent is not an error if it is still the same
+word. But if a wrong tone or a wrong vowel length makes it a different word, count it as a wrong
+word. And a word you cannot make out counts as an error, even if you can guess it from the text.
 
 If you are not sure, move your mouse over an option to see a short description.
 
@@ -113,14 +125,14 @@ Intelligibility five."
 *[Play clip 2.]*
 
 "This is an older computer voice. It is flat and a bit muffled. You can hear it is not a person.
-Naturalness three. All the words are there and easy to follow, but one or two are a little blurred.
-For example, 'purpose'. Intelligibility four."
+Naturalness three. All the words are the right ones, but the muffled sound makes one word unclear:
+'purpose'. One word off. Intelligibility four."
 
 *[Play clip 3.]*
 
 "This voice is robotic, with a strong buzz. It is tiring to listen to. Naturalness two. The words
-are correct, but the buzz makes some of them hard to catch. You need the text to follow it.
-Intelligibility three."
+are correct, but the buzz makes two or three of them unclear. A few words off. Intelligibility
+three."
 
 *[Play clip 4.]*
 
@@ -137,8 +149,7 @@ sits between clip one and clip two."
 
 "This is a good computer voice. It sounds almost human. Naturalness four. Now look at the words.
 The voice says 'these' two times: 'these these'. And at the end, it says 'hoose' instead of
-'house'. That is two mistakes. You can still follow the sentence with the text. Intelligibility
-three. With only one small mistake, it would be a four."
+'house'. That is two words off. Intelligibility three. With only one word off, it would be a four."
 
 *[Play clip 6.]*
 
@@ -156,7 +167,7 @@ from the text on the screen. Intelligibility one."
 
 "Real clips often have both kinds of problems. This is the older computer voice again, flat and
 muffled. Naturalness three. It also skips the word 'ordinary', and it says 'wards' wrongly. Two
-mistakes. Intelligibility three.
+words off. Intelligibility three.
 
 Remember: answer each question on its own."
 

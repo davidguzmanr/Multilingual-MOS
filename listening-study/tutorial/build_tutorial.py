@@ -23,7 +23,11 @@ Outputs (next to this script):
   labeling_config.xml     two-axis Label Studio interface (also the draft for the real survey)
   index.html              local listening page (open in a browser) to review the clips before the survey
 
-Needs coqui-tts, phonemizer-fork and espeakng-loader (no espeak-ng binary required) and a GPU:
+Needs coqui-tts, phonemizer-fork and espeakng-loader (no espeak-ng binary required) and a GPU. The seed is
+fixed, but CPU and GPU sampling draw different random numbers, so a rebuild on a different device produces
+different (audibly different) synthesized clips. The committed wavs are the approved ones: to change only the
+wording, run with --preview-only or edit the text constants and rebuild on the same kind of GPU node, then
+check that the wavs are unchanged (git status).
 
     module load miniconda/3 && conda activate Multilingual-MOS
     python listening-study/tutorial/build_tutorial.py [--audio-base-url URL]
@@ -192,13 +196,12 @@ def main() -> None:
          "A real person reading: smooth rhythm, natural intonation, no artifacts.",
          "Every word matches the text.", "LJ001-0009")
     emit(3, 4, synth(hmm, text), x, text, "Neural-HMM (Coqui, trained on LJSpeech), an older statistical TTS",
-         "Clearly synthetic: flat, monotone intonation and a muffled, buzzy voice quality, but easy to follow.",
-         "All the words are there, but the muffled sound blurs a word or two (e.g. 'purpose'); "
-         "the sentence is still easy to follow.", "LJ001-0009")
+         "Clearly synthetic: flat, monotone intonation and a muffled, buzzy voice quality, ",
+         "All the words are the right ones, but the muffled sound makes one word unclear ('purpose'): "
+         "one word off.", "LJ001-0009")
     emit(2, 3, robotize(x), x, text, "robotization (all STFT phases set to zero)",
          "Monotone robot voice with constant buzz; tiring to listen to.",
-         "The words are the right ones, but the buzz makes several of them hard to make out; "
-         "with the text in front of you the sentence can still be followed.", "LJ001-0009")
+         "The words are the right ones, but the buzz makes two or three of them unclear: a few words off.", "LJ001-0009")
     emit(1, 2, synth(vits, text, noise_scale=3.0), x, text,
          "VITS sampled with far too much noise (noise_scale 3.0 instead of 0.667): the model falls apart",
          "Garbled, slurred and distorted throughout; barely sounds like a person speaking.",
@@ -214,8 +217,7 @@ def main() -> None:
          "VITS (Coqui, trained on LJSpeech) repeating a word ('these these') and mispronouncing "
          "'house' as 'hoose'",
          "A good modern TTS: sounds human, but the rhythm is a little too even and smooth.",
-         "One word is repeated and another is mispronounced: two errors. The sentence can still be "
-         "followed with the text.", utt)
+         "One word is repeated and another is mispronounced: two words off.", utt)
 
     utt = _pick(by_id, "He left Newgate utterly corrupted")
     x, text = load(utt)
@@ -241,8 +243,7 @@ def main() -> None:
     emit(3, 3, synth(hmm, spoken, overrides=[("wˈɔːɹdz", "wˈɑːɹdz")]), x, text,
          "Neural-HMM (same as clip 2) skipping 'ordinary' and saying 'wards' as 'wahrds' (like 'cards')",
          "Same flat, buzzy synthetic voice as clip 2.",
-         "One word is missing and another is mispronounced, but the sentence can be followed. "
-         "Rate each question on its own.", utt)
+         "One word is missing and another is mispronounced: two words off. Rate each question on its own.", utt)
 
     with open(HERE / "examples.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
@@ -266,15 +267,48 @@ def main() -> None:
 
 
 def write_preview() -> None:
-    """Write index.html: one row per clip with a player, target scores, the text shown and the notes.
-    Audio links carry ?v=<mtime> so the browser reloads clips after a rebuild instead of using its cache."""
+    """Write index.html: a mock of one survey task exactly as annotators see it (instructions, reference
+    text, player, both questions with their 1-5 options and hints), then one row per clip with a player,
+    target scores, the text shown and the notes. Audio links carry ?v=<mtime> so the browser reloads clips
+    after a rebuild instead of using its cache."""
+    import xml.etree.ElementTree as ET
+
     with open(HERE / "examples.csv", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     e = html.escape
+
+    def audio_src(file: str) -> str:
+        wav = AUDIO_DIR / file
+        return f"audios/{file}?v={wav.stat().st_mtime_ns}" if wav.exists() else ""
+
+    # survey mock, built from the same constants that produce labeling_config.xml and tasks.json
+    first = rows[0]
+    questions = []
+    config = ET.fromstring(LABELING_CONFIG)
+    question_headers = [h for h in config.iter("Header") if h.get("size") == "4"]
+    choice_blocks = list(config.iter("Choices"))
+    assert len(question_headers) == len(choice_blocks) == 2, (len(question_headers), len(choice_blocks))
+    for header, choices in zip(question_headers, choice_blocks):
+        opts = "".join(
+            f'<label title="{e(c.get("hint", ""))}"><input type="radio" name="{e(choices.get("name"))}"> '
+            f'{e(c.get("value"))}<span class=hint>{e(c.get("hint", ""))}</span></label>'
+            for c in choices.findall("Choice"))
+        questions.append(f'<h3>{e(header.get("value"))}</h3><div class=opts>{opts}</div>')
+    mock = f"""<section class=mock>
+<h2>What annotators see</h2>
+<div class=sub>One task rendered from <code>labeling_config.xml</code> and <code>tasks.json</code> (clip 1).
+Hints appear in HumanSignal when hovering an option; here they are printed under each option.</div>
+<div class=task>
+{INSTRUCTIONS_HTML.format(language="English")}
+<div class=ref><div class=refh>Reference text</div>{e(first["reference_text_shown"])}</div>
+<audio controls preload="none" src="{e(audio_src(first["file"]))}"></audio>
+{"".join(questions)}
+</div></section>
+"""
+
     body = []
     for i, r in enumerate(rows, 1):
-        wav = AUDIO_DIR / r["file"]
-        src = f"audios/{r['file']}?v={wav.stat().st_mtime_ns}" if wav.exists() else ""
+        src = audio_src(r["file"])
         player = f'<audio controls preload="none" src="{e(src)}"></audio>' if src else '<span class=miss>missing</span>'
         body.append(
             f"<tr><td class=n>{i}</td>"
@@ -290,8 +324,16 @@ table{{border-collapse:collapse}} th,td{{border:1px solid #ddd;padding:6px 8px;v
 thead th{{position:sticky;top:0;background:#fff;z-index:1}} tr:nth-child(even) td{{background:#f3f3f3}}
 td.n{{color:#666}} td.score{{text-align:center;font-weight:600;font-size:16px}} td.txt{{max-width:320px;font-style:italic}}
 .lab{{font-size:11px;color:#666;margin-top:2px}} audio{{width:240px;height:32px}} .miss{{color:#b00}}
+.mock{{margin-bottom:28px}} .mock h2{{margin:0 0 4px}} .task{{max-width:900px;background:#fff;border:1px solid #ddd;border-radius:6px;padding:16px 20px;font-size:14px}}
+.task p{{margin:0 0 12px}} .task audio{{width:100%;margin:8px 0 4px}}
+.ref{{background:#f5f5f5;border-left:4px solid #aaa;padding:10px 16px;margin:12px 0;border-radius:4px}} .refh{{font-weight:600;font-size:13px;margin-bottom:4px}}
+.task h3{{font-size:15px;margin:16px 0 6px}} .opts{{display:flex;gap:8px;flex-wrap:wrap}}
+.opts label{{flex:1 1 150px;border:1px solid #ddd;border-radius:4px;padding:6px 8px;background:#fafafa;cursor:pointer}}
+.opts label:hover{{background:#eef}} .hint{{display:block;font-size:11px;color:#666;margin-top:4px}}
 </style></head><body>
 <h1>Annotator tutorial clips</h1>
+{mock}
+<h2>Tutorial clips</h2>
 <div class=sub>{len(rows)} clips. N = naturalness, I = intelligibility (target scores). The text column is what annotators
 see on screen. Regenerate with <code>build_tutorial.py</code>, or <code>build_tutorial.py --preview-only</code> to refresh this page.</div>
 <table><thead><tr><th>#</th><th>audio</th><th>N</th><th>I</th><th>text shown</th><th>what was done</th><th>why</th></tr></thead>
@@ -311,11 +353,15 @@ def _pick(by_id: dict, prefix: str) -> str:
 INSTRUCTIONS_HTML = (
     "<p>You will hear a short speech clip in {language}, which may be a real recording or "
     "computer-generated, together with the text it is supposed to say. Listen to the whole clip, "
-    "then answer two separate questions. <strong>Naturalness</strong> is about how human-like the voice "
-    "sounds: its rhythm, intonation and audio quality. <strong>Intelligibility</strong> is about the words: whether "
-    "the audio says exactly the text shown and you can make out every word, with nothing missing, added, "
-    "repeated or mispronounced. Answer each question on its own: a natural voice can say the wrong words, "
-    "and a poor voice can make the right words hard to catch.</p>"
+    "then answer two separate questions. <strong>Naturalness</strong> is about how the voice sounds: does it "
+    "sound like a real person speaking? Judge only the sound, not whether the words are correct. "
+    "<strong>Intelligibility</strong> is about the words: are all the words clear and the same as in the text? "
+    "Listen while reading the text and count the words that are unclear, wrong, missing, added or repeated, "
+    "or cut off. Judge the spoken words, not the spelling: different spelling or missing accent marks in the "
+    "text are not errors, and a regional accent is not an error if it is still the same word. If a wrong tone "
+    "or a wrong vowel length makes it a different word, count it as a wrong word. A word you cannot make out "
+    "counts as an error even if you can guess it from the text. Answer each question on its own: a natural "
+    "voice can say the wrong words, and a poor voice can say the right words.</p>"
 )
 
 LABELING_CONFIG = """\
@@ -329,22 +375,22 @@ LABELING_CONFIG = """\
 
   <Audio name="audio" value="$audio_url" />
 
-  <Header value="1. Naturalness: does the voice sound like a real person speaking?" size="4" />
+  <Header value="1. Naturalness: how natural does the voice sound, like a real person speaking? Judge only how it sounds, not whether the words are correct." size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
     <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
-    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat), but easy to follow." />
+    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat)." />
     <Choice value="4 - Mostly natural" hint="Small artifacts or slightly odd rhythm, noticeable only when listening closely." />
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Intelligibility: does the audio say exactly the reference text, word for word?" size="4" />
+  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Count the words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
   <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
-    <Choice value="1 - Mostly wrong" hint="Most of the text missing or wrong, a different sentence or language, or unintelligible." />
-    <Choice value="2 - Many errors" hint="Many words wrong, missing or mispronounced, or part of the sentence cut off; hard to follow." />
-    <Choice value="3 - A few errors" hint="Two or three words wrong, missing, added, mispronounced or hard to make out; the sentence can still be followed." />
-    <Choice value="4 - Minor slip" hint="One word wrong, missing, mispronounced or hard to make out; the sentence is still easy to follow." />
-    <Choice value="5 - Every word correct" hint="Nothing missing, added or mispronounced." />
+    <Choice value="1 - Mostly wrong" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
+    <Choice value="2 - Many words off" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off." />
+    <Choice value="3 - A few words off" hint="Two or three words are unclear, wrong, missing, added or repeated." />
+    <Choice value="4 - One word off" hint="One word is unclear, wrong, missing, added or repeated. Everything else is correct." />
+    <Choice value="5 - Every word correct" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
   </Choices>
 </View>
 """
