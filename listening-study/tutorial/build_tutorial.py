@@ -26,11 +26,12 @@ Outputs (next to this script):
 Needs coqui-tts, phonemizer-fork and espeakng-loader (no espeak-ng binary required) and a GPU. The seed is
 fixed, but CPU and GPU sampling draw different random numbers, so a rebuild on a different device produces
 different (audibly different) synthesized clips. The committed wavs are the approved ones: to change only the
-wording, run with --preview-only or edit the text constants and rebuild on the same kind of GPU node, then
-check that the wavs are unchanged (git status).
+wording (instructions, questions, hints), edit the text constants and run with --text-only, which rewrites
+tasks.json, labeling_config.xml and index.html from the existing examples.csv and audios/ without synthesis.
 
     module load miniconda/3 && conda activate Multilingual-MOS
     python listening-study/tutorial/build_tutorial.py [--audio-base-url URL]
+    python listening-study/tutorial/build_tutorial.py --text-only      # no synthesis; rewrite text outputs
     python listening-study/tutorial/build_tutorial.py --preview-only   # only rewrite index.html
 """
 
@@ -155,13 +156,19 @@ def match_rms(y: np.ndarray, ref: np.ndarray) -> np.ndarray:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--audio-base-url", default=DEFAULT_AUDIO_BASE_URL)
+    ap.add_argument("--text-only", action="store_true",
+                    help="no synthesis: rewrite tasks.json, labeling_config.xml and index.html from examples.csv")
     ap.add_argument("--preview-only", action="store_true",
                     help="only rewrite index.html from the existing examples.csv and audios/")
     args = ap.parse_args()
+    base = args.audio_base_url.rstrip("/")
     if args.preview_only:
         write_preview()
         return
-    base = args.audio_base_url.rstrip("/")
+    if args.text_only:
+        with open(HERE / "examples.csv", encoding="utf-8") as f:
+            write_outputs(list(csv.DictReader(f)), base)
+        return
 
     ds = load_dataset("davidguzmanr/CSS10-Multilingual-LJSpeech", "English", split="test")
     ds = ds.cast_column("audio", Audio(decode=False))
@@ -197,11 +204,12 @@ def main() -> None:
          "Every word matches the text.", "LJ001-0009")
     emit(3, 4, synth(hmm, text), x, text, "Neural-HMM (Coqui, trained on LJSpeech), an older statistical TTS",
          "Clearly synthetic: flat, monotone intonation and a muffled, buzzy voice quality, ",
-         "All the words are the right ones, but the muffled sound makes one word unclear ('purpose'): "
-         "one word off.", "LJ001-0009")
+         "All the words are the right ones, but the muffled sound makes one word ('purpose') hard to "
+         "make out: a small problem, almost every word clear.", "LJ001-0009")
     emit(2, 3, robotize(x), x, text, "robotization (all STFT phases set to zero)",
          "Monotone robot voice with constant buzz; tiring to listen to.",
-         "The words are the right ones, but the buzz makes two or three of them unclear: a few words off.", "LJ001-0009")
+         "The words are the right ones, but the buzz makes some of them unclear; you can still follow the "
+         "sentence: most words.", "LJ001-0009")
     emit(1, 2, synth(vits, text, noise_scale=3.0), x, text,
          "VITS sampled with far too much noise (noise_scale 3.0 instead of 0.667): the model falls apart",
          "Garbled, slurred and distorted throughout; barely sounds like a person speaking.",
@@ -217,7 +225,7 @@ def main() -> None:
          "VITS (Coqui, trained on LJSpeech) repeating a word ('these these') and mispronouncing "
          "'house' as 'hoose'",
          "A good modern TTS: sounds human, but the rhythm is a little too even and smooth.",
-         "One word is repeated and another is mispronounced: two words off.", utt)
+         "One word is repeated and another is mispronounced, but you can still follow the sentence: most words.", utt)
 
     utt = _pick(by_id, "He left Newgate utterly corrupted")
     x, text = load(utt)
@@ -243,27 +251,32 @@ def main() -> None:
     emit(3, 3, synth(hmm, spoken, overrides=[("wˈɔːɹdz", "wˈɑːɹdz")]), x, text,
          "Neural-HMM (same as clip 2) skipping 'ordinary' and saying 'wards' as 'wahrds' (like 'cards')",
          "Same flat, buzzy synthetic voice as clip 2.",
-         "One word is missing and another is mispronounced: two words off. Rate each question on its own.", utt)
+         "One word is missing and another is mispronounced, but you can still follow the sentence: most words. "
+         "Rate each question on its own.", utt)
 
     with open(HERE / "examples.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)
+    write_outputs(rows, base)
 
+
+def write_outputs(rows: list[dict], base: str) -> None:
+    """Write tasks.json, labeling_config.xml and index.html from the example rows (no synthesis)."""
     instructions = INSTRUCTIONS_HTML.format(language="English")
     tasks = [{"data": {"task_uid": f"tutorial-{i + 1:02d}",
                        "instructions_html": instructions,
                        "reference_text": r["reference_text_shown"],
                        "audio_url": f"{base}/{r['file']}",
-                       "expected_naturalness": r["naturalness"],
-                       "expected_intelligibility": r["intelligibility"]}}
+                       "expected_naturalness": int(r["naturalness"]),
+                       "expected_intelligibility": int(r["intelligibility"])}}
              for i, r in enumerate(rows)]
     (HERE / "tasks.json").write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
     (HERE / "labeling_config.xml").write_text(LABELING_CONFIG, encoding="utf-8")
     write_preview()
 
     for r in rows:
-        print(f"{r['file']:20s} N{r['naturalness']} I{r['intelligibility']} {r['duration_s']:5.2f}s  {r['manipulation']}")
+        print(f"{r['file']:20s} N{r['naturalness']} I{r['intelligibility']} {float(r['duration_s']):5.2f}s  {r['manipulation']}")
 
 
 def write_preview() -> None:
@@ -353,19 +366,31 @@ def _pick(by_id: dict, prefix: str) -> str:
 INSTRUCTIONS_HTML = (
     "<p>You will hear a short speech clip in {language}, which may be a real recording or "
     "computer-generated, together with the text it is supposed to say. Listen to the whole clip, "
-    "then answer two separate questions. <strong>Naturalness</strong> is about how the voice sounds: does it "
-    "sound like a real person speaking? Judge only the sound, not whether the words are correct. "
-    "<strong>Intelligibility</strong> is about the words: are all the words clear and the same as in the text? "
-    "Listen while reading the text and count the words that are unclear, wrong, missing, added or repeated, "
-    "or cut off. Judge the spoken words, not the spelling: different spelling or missing accent marks in the "
-    "text are not errors, and a regional accent is not an error if it is still the same word. If a wrong tone "
-    "or a wrong vowel length makes it a different word, count it as a wrong word. A word you cannot make out "
-    "counts as an error even if you can guess it from the text. Answer each question on its own: a natural "
-    "voice can say the wrong words, and a poor voice can say the right words.</p>"
+    "then answer two separate questions.</p>"
+    "<p><strong>1. Naturalness</strong> is about how the voice sounds.</p>"
+    "<ul>"
+    "<li>Does it sound like a real person speaking?</li>"
+    "<li>Judge only the sound, not whether the words are correct.</li>"
+    "</ul>"
+    "<p><strong>2. Intelligibility</strong> is about the words.</p>"
+    "<ul>"
+    "<li>Listen while reading the text: are all the words clear and the same as in the text? Look out for "
+    "words that are unclear, wrong, missing, added or repeated, or cut off.</li>"
+    "<li>Listen to the pronunciation: a word that is pronounced as a different word, even a similar-sounding "
+    "one, is a wrong word.</li>"
+    "<li>A word you cannot make out is an error, even if you can guess it from the text.</li>"
+    "</ul>"
+    "<p>Answer each question on its own: a natural voice can say the wrong words, and a poor voice can say "
+    "the right words.</p>"
 )
 
 LABELING_CONFIG = """\
 <View>
+  <!-- Hide the auto-assigned hotkey hints ([1]..[0] superscripts) next to each option: they clash with
+       the 1-5 scale values. The number keys still work; only the hint is hidden. -->
+  <Style>
+    .lsf-choice sup, .choice sup, .lsf-hint, sup.hint { display: none !important; }
+  </Style>
   <HyperText name="instructions" value="$instructions_html" />
 
   <View style="background:#f5f5f5;border-left:4px solid #aaa;padding:10px 16px;margin:12px 0;border-radius:4px;">
@@ -378,19 +403,19 @@ LABELING_CONFIG = """\
   <Header value="1. Naturalness: how natural does the voice sound, like a real person speaking? Judge only how it sounds, not whether the words are correct." size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
-    <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
-    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat)." />
+    <Choice value="2 - Unnatural" hint="Strong artifacts or very unnatural rhythm and intonation throughout; clearly not a person." />
+    <Choice value="3 - Somewhat unnatural" hint="You can tell it is not a person, but it is not unpleasant to listen to." />
     <Choice value="4 - Mostly natural" hint="Small artifacts or slightly odd rhythm, noticeable only when listening closely." />
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Count the words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
+  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Look out for words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
   <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
-    <Choice value="1 - Mostly wrong" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
-    <Choice value="2 - Many words off" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off." />
-    <Choice value="3 - A few words off" hint="Two or three words are unclear, wrong, missing, added or repeated." />
-    <Choice value="4 - One word off" hint="One word is unclear, wrong, missing, added or repeated. Everything else is correct." />
-    <Choice value="5 - Every word correct" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
+    <Choice value="1 - Hardly any" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
+    <Choice value="2 - Only part of it" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off. You cannot follow the sentence without reading the text." />
+    <Choice value="3 - Most words" hint="Some words are unclear, wrong, missing, added or repeated, but you can still follow the sentence." />
+    <Choice value="4 - Almost every word" hint="Nearly everything is clear and as in the text. There is a small problem that hardly gets in the way." />
+    <Choice value="5 - Every word" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
   </Choices>
 </View>
 """

@@ -1,8 +1,8 @@
 # Annotator tutorial (English)
 
 Eight clips, all in the LJSpeech voice, that show what the scores mean on the two questions of the study:
-**naturalness** (how human the voice sounds) and **intelligibility** (whether the audio says exactly the
-reference text). Degraded clips come from real TTS systems trained on LJSpeech (Coqui VITS and Neural-HMM)
+**naturalness** (how human the voice sounds) and **intelligibility** (whether all the words are clear and
+the same as in the reference text). Degraded clips come from real TTS systems trained on LJSpeech (Coqui VITS and Neural-HMM)
 and reproduce errors annotators will meet in the study: synthetic voice quality, a model that falls apart,
 mispronounced words, a skipped word. Rebuild with `python listening-study/tutorial/build_tutorial.py` (env `Multilingual-MOS`,
 GPU). Open `index.html` in a browser to listen to all clips with their target scores and notes.
@@ -10,10 +10,10 @@ GPU). Open `index.html` in a browser to listen to all clips with their target sc
 | # | File | Naturalness | Intelligibility | What was done | Talking point |
 |---|---|:-:|:-:|---|---|
 | 1 | `01_nat5_int5.wav` | 5 | 5 | Original recording | The reference: a real person, every word right |
-| 2 | `02_nat3_int4.wav` | 3 | 4 | Neural-HMM, an older TTS | Clearly synthetic: flat, muffled and buzzy; one word ('purpose') is unclear |
-| 3 | `03_nat2_int3.wav` | 2 | 3 | Robotization (phase zeroed) | Robotic and tiring; the buzz makes a few words unclear |
+| 2 | `02_nat3_int4.wav` | 3 | 4 | Neural-HMM, an older TTS | Clearly synthetic: flat, muffled and buzzy; one word ('purpose') is hard to make out, almost every word clear |
+| 3 | `03_nat2_int3.wav` | 2 | 3 | Robotization (phase zeroed) | Robotic and tiring; the buzz makes some words unclear, but you can still follow it |
 | 4 | `04_nat1_int2.wav` | 1 | 2 | VITS sampled with far too much noise | The model falls apart: garbled, barely speech; only fragments of the text survive |
-| 5 | `05_nat4_int3.wav` | 4 | 3 | VITS says "these these" and "hoose" for "house" | A repeated word and a mispronounced word: two words off |
+| 5 | `05_nat4_int3.wav` | 4 | 3 | VITS says "these these" and "hoose" for "house" | A repeated word and a mispronounced word; the sentence can still be followed |
 | 6 | `06_nat5_int2.wav` | 5 | 2 | Audio cut after "after lapsing into crime," | Missing end of sentence is an intelligibility problem |
 | 7 | `07_nat5_int1.wav` | 5 | 1 | Audio is a different sentence | Natural voice, completely wrong content |
 | 8 | `08_nat3_int3.wav` | 3 | 3 | Neural-HMM skips "ordinary" and says "wahrds" | Both problems at once: rate each separately |
@@ -25,12 +25,16 @@ loudness-matched to the natural recording of their sentence. Full metadata, incl
 shown, is in `examples.csv`.
 
 **Intelligibility scale.** The question in `labeling_config.xml` asks whether all the words are clear and
-the same as in the text, and the anchors count words that are unclear, wrong, missing, added or repeated,
-or cut off: 5 = every word correct; 4 = one word off; 3 = a few words off (two or three); 2 = many words
-off, or part of the text skipped or cut off; 1 = mostly wrong, a different sentence or language, or no
-words made out. The instructions add three rules: spelling and missing accent marks in the text are not
-errors, a wrong tone or vowel length that makes a different word is an error, and a word you cannot make
-out counts even if you can guess it from the text. The naturalness question tells raters to judge only how
+the same as in the text, and tells raters to look out for words that are unclear, wrong, missing, added or
+repeated, or cut off. The anchors describe how much of the text comes through rather than counting
+errors, so raters do not have to tally words: 5 = every word; 4 = almost every word (a small problem
+that hardly gets in the way); 3 = most words (some words off, but the sentence can still be followed);
+2 = only part of it (many words off, or part skipped or cut off; cannot be followed without the text);
+1 = hardly any (mostly wrong, a different sentence or language, or no words made out). The research
+report below favoured counted anchors for reliability; the quantity words were chosen to keep the task
+quick and less discouraging. The instructions add two rules: a word pronounced as a different word, even a
+similar-sounding one, is a wrong word, and a word you cannot make out counts even if you can guess it from
+the text. The naturalness question tells raters to judge only how
 the voice sounds, not whether the words are correct. Rationale and sources: `reports/Intelligibility in
 TTS listening tests.md` (local, not tracked).
 
@@ -95,79 +99,73 @@ Judge only how it sounds, not whether the words are correct. Five means it sound
 One means it barely sounds like speech.
 
 Question two is **intelligibility**. Are all the words clear, and the same as in the text? Listen
-while you read the text, and count the words with a problem: words that are unclear, wrong, missing,
-added or repeated, or cut off. Five means every word is correct and clear. Four means one word has a
-problem. Three means two or three words. Two means many words, or a part of the text is missing. One
-means most of the text is wrong, or it is a different sentence.
-
-Three rules. Judge the spoken words, not the spelling: if the text spells a word differently, or has
-no accent marks, that is not an error. A regional accent is not an error if it is still the same
-word. But if a wrong tone or a wrong vowel length makes it a different word, count it as a wrong
-word. And a word you cannot make out counts as an error, even if you can guess it from the text.
+while you read the text, and look out for words with a problem: words that are unclear, wrong, missing,
+added or repeated, or cut off. Five means every word is clear and
+correct. One means hardly any: most of the text is wrong, or it is a different sentence.
 
 If you are not sure, move your mouse over an option to see a short description.
 
 These are two different questions. A natural voice can say the wrong words. A bad voice can say
 the right words. Answer each question on its own.
 
-Now let's listen to some examples."
-
 ### 3. Naturalness: clips 1 to 4 (90 s)
 
 "The first four clips all say the same sentence: *Printing, then, for our purpose, may be
 considered as the art of making books by means of movable types.* Listen to how the voice changes."
 
-*[Play clip 1.]*
+*[Play clip 1 — naturalness 5, intelligibility 5.]*
 
 "This is a real person. It sounds natural, and every word is clear. Naturalness five.
 Intelligibility five."
 
-*[Play clip 2.]*
+*[Play clip 2 — naturalness 3, intelligibility 4.]*
 
 "This is an older computer voice. It is flat and a bit muffled. You can hear it is not a person.
-Naturalness three. All the words are the right ones, but the muffled sound makes one word unclear:
-'purpose'. One word off. Intelligibility four."
+Naturalness three. All the words are the right ones, but the muffled sound makes one word hard to
+make out: 'purpose'. A small problem, almost every word clear. Intelligibility four."
 
-*[Play clip 3.]*
+*[Play clip 3 — naturalness 2, intelligibility 3.]*
 
 "This voice is robotic, with a strong buzz. It is tiring to listen to. Naturalness two. The words
-are correct, but the buzz makes two or three of them unclear. A few words off. Intelligibility
-three."
+are correct, but the buzz makes some of them unclear. You can still follow the sentence, so most
+words come through. Intelligibility three."
 
-*[Play clip 4.]*
+*[Play clip 4 — naturalness 1, intelligibility 2.]*
 
 "Here the computer voice breaks down. It is garbled, and it barely sounds like speech.
-Naturalness one. You can only catch a few pieces, like 'considered as' and 'movable types'. Many
-words are lost. Intelligibility two.
+Naturalness one. You can only catch a few pieces, like 'considered as' and 'movable types'. Only
+part of it comes through. Intelligibility two.
 
 A voice that sounds almost human, but a little too smooth or too even, is a naturalness four. It
 sits between clip one and clip two."
 
 ### 4. Intelligibility: clips 5 to 7 (60 s)
 
-*[Play clip 5. Point at the text: "Two of these photographs were taken from the rear of Walker's house."]*
+*[Play clip 5 — naturalness 4, intelligibility 3. Point at the text: "Two of these photographs were taken from the rear of Walker's house."]*
 
 "This is a good computer voice. It sounds almost human. Naturalness four. Now look at the words.
 The voice says 'these' two times: 'these these'. And at the end, it says 'hoose' instead of
-'house'. That is two words off. Intelligibility three. With only one word off, it would be a four."
+'house'. Two words have problems, but you can still follow the sentence: most words.
+Intelligibility three. If the only problem were a small one that hardly got in the way, it would be
+a four."
 
-*[Play clip 6.]*
+*[Play clip 6 — naturalness 5, intelligibility 2.]*
 
 "This is a real person, so naturalness is five. But the clip stops in the middle. The end of the
 sentence is missing. Intelligibility two."
 
-*[Play clip 7.]*
+*[Play clip 7 — naturalness 5, intelligibility 1.]*
 
 "This is also a real person. Naturalness five. But the voice reads a completely different sentence
 from the text on the screen. Intelligibility one."
 
 ### 5. Both problems at once: clip 8 (30 s)
 
-*[Play clip 8. Point at the text: "Sick women and their children remained in the ordinary wards, and propagated disease."]*
+*[Play clip 8 — naturalness 3, intelligibility 3. Point at the text: "Sick women and their children remained in the ordinary wards, and propagated disease."]*
 
 "Real clips often have both kinds of problems. This is the older computer voice again, flat and
-muffled. Naturalness three. It also skips the word 'ordinary', and it says 'wards' wrongly. Two
-words off. Intelligibility three.
+muffled. Naturalness three. It also skips the word 'ordinary', and it says 'wards' wrongly. You
+can still follow the sentence: most words. Intelligibility three.
 
 Remember: answer each question on its own."
 

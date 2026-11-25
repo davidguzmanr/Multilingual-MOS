@@ -1,4 +1,9 @@
 <View>
+  <!-- Hide the auto-assigned hotkey hints ([1]..[0] superscripts) next to each option: they clash with
+       the 1-5 scale values. The number keys still work; only the hint is hidden. -->
+  <Style>
+    .lsf-choice sup, .choice sup, .lsf-hint, sup.hint { display: none !important; }
+  </Style>
   <HyperText name="instructions" value="$instructions_html" />
 
   <View style="background:#f5f5f5;border-left:4px solid #aaa;padding:10px 16px;margin:12px 0;border-radius:4px;">
@@ -11,18 +16,18 @@
   <Header value="1. Naturalness: how natural does the voice sound, like a real person speaking? Judge only how it sounds, not whether the words are correct." size="4" />
   <Choices name="naturalness" toName="audio" choice="single" showInline="true" required="true">
     <Choice value="1 - Completely unnatural" hint="Severe distortion or garbling; barely sounds like speech." />
-    <Choice value="2 - Unnatural" hint="Strong artifacts or robotic throughout; tiring to listen to." />
-    <Choice value="3 - Somewhat unnatural" hint="Clearly synthetic (metallic, buzzy, flat)." />
+    <Choice value="2 - Unnatural" hint="Strong artifacts or very unnatural rhythm and intonation throughout; clearly not a person." />
+    <Choice value="3 - Somewhat unnatural" hint="You can tell it is not a person, but it is not unpleasant to listen to." />
     <Choice value="4 - Mostly natural" hint="Small artifacts or slightly odd rhythm, noticeable only when listening closely." />
     <Choice value="5 - Completely natural" hint="Sounds like a real person speaking; no artifacts." />
   </Choices>
 
-  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Count the words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
+  <Header value="2. Intelligibility: are all the words clear and the same as in the text? Look out for words that are unclear, wrong, missing, added or repeated, or cut off." size="4" />
   <Choices name="intelligibility" toName="audio" choice="single" showInline="true" required="true">
-    <Choice value="1 - Mostly wrong" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
-    <Choice value="2 - Many words off" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off." />
-    <Choice value="3 - A few words off" hint="Two or three words are unclear, wrong, missing, added or repeated." />
-    <Choice value="4 - One word off" hint="One word is unclear, wrong, missing, added or repeated. Everything else is correct." />
-    <Choice value="5 - Every word correct" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
+    <Choice value="1 - Hardly any" hint="Most of the text is wrong or missing, it is a different sentence or a different language, or no words can be made out." />
+    <Choice value="2 - Only part of it" hint="Many words are unclear, wrong, missing or repeated, or a part of the text is skipped or cut off. You cannot follow the sentence without reading the text." />
+    <Choice value="3 - Most words" hint="Some words are unclear, wrong, missing, added or repeated, but you can still follow the sentence." />
+    <Choice value="4 - Almost every word" hint="Nearly everything is clear and as in the text. There is a small problem that hardly gets in the way." />
+    <Choice value="5 - Every word" hint="All words are clear and exactly the words in the text. Nothing is missing, added or changed." />
   </Choices>
 </View>
