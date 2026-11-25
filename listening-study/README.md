@@ -62,7 +62,7 @@ Survey generator and configs: `~/scratch/Repositories/open-bible-surveys`.
   and intelligibility (whether the audio says exactly the shown text, word for word). The text stays
   visible, so intelligibility here means faithfulness to the text rather than P.800 unaided
   understanding. Expect +20-40% time per clip; pilot on 50 clips. Wording and examples:
-  [tutorial/](tutorial/).
+  [tutorial/](tutorial/). Per-language HumanSignal projects (config, tasks, tracking): [surveys/](surveys/).
 - **Widen the quality range cheaply** with degraded conditions (codec resynthesis, noise, speed) rather
   than more TTS systems. This was suggested by Erica.
 
@@ -127,8 +127,8 @@ Core sources (scripture, Wikipedia, crowd-read sentences), all with human audio;
 Scripture comes from the OpenBibleTTS release [davidguzmanr/open-bible-resources](https://huggingface.co/datasets/davidguzmanr/open-bible-resources)
 (Biblica audio via open.bible, CC BY-SA; fields audio, text, testament/book/chapter/verse, duration, speaker_id): take sentences only from
 the **test** split, since EveryVoice and VITS are trained on train, and keep one speaker_id where several narrators exist. Verses run
-7-12 s and 112-134 characters on average, longer than the pilot's 8 s clips, so filter by duration. Common Voice audio may be used as
-GT in the test but not re-hosted.
+7-12 s and 112-134 characters on average, longer than the pilot's 8 s clips, so filter by duration. Common Voice audio is CC0 1.0 (verified on the MDC dataset record, 2026-11-25) and may be re-hosted with the
+no-re-identification condition.
 
 | Language | FLEURS (Wikipedia) | Common Voice 27.0 (validated, crowd) | Dataset/Domain 3 | Total |
 |---|---|---|---|---:|
@@ -190,7 +190,7 @@ Menu for further domains:
 
 Open items: Turkish Open Bible audio may be TTS (24 kHz mono mp3, no narrator credited; listen to
 https://ebible.org/turytc/mp3/1JN01.mp3); Korean has no open scripture/literature audio; Haitian Creole has no
-single-speaker third domain; Common Voice and CMU Wilderness audio cannot be re-hosted; corpora used to train
+single-speaker third domain; Common Voice 27.0 is CC0 1.0 (re-hosting allowed, speakers must not be re-identified) while CMU Wilderness audio cannot be re-hosted; corpora used to train
 EveryVoice/VITS (JSUT, KSS, INDspeech, CSS10) must contribute only held-out sentences.
 
 ## Candidate TTS systems per language

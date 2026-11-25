@@ -39,7 +39,7 @@ def text_ok(text):
     return True                                          # no text filter for Swahili
 COLUMNS = ["clip_id", "language", "lang_code", "dataset", "domain", "source", "text", "speaker_id", "gender", "age",
            "duration_s", "sample_rate", "orig_id", "licence", "audio_path"]
-LICENCE = {"WaxalNLP": "CC BY-SA 4.0 (google/WaxalNLP)", "FLEURS": "CC BY 4.0", "Common Voice": "CC0 (MDC terms: no re-hosting)"}
+LICENCE = {"WaxalNLP": "CC BY-SA 4.0 (google/WaxalNLP)", "FLEURS": "CC BY 4.0", "Common Voice": "CC0 1.0 (Mozilla Common Voice 27.0; do not re-identify speakers)"}
 DATA = f"{REPO}/data"
 sys.path.insert(0, f"{REPO}/src"); from audio_quality import measure, passes, METRIC_COLUMNS, DNSMOS_COLUMNS   # noqa: E402
 from dnsmos import DNSMOS   # noqa: E402

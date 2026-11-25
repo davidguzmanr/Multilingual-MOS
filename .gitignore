@@ -243,3 +243,5 @@ synthesis_output/
 data/WaxalNLP/
 repositories/UTMOSv2/
 upwork/
+data/proxy/
+data/hf-upload/
